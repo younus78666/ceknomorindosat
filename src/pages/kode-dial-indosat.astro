@@ -1,0 +1,235 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import QuickAnswer from "~/components/QuickAnswer.astro";
+import AdSlot from "~/components/AdSlot.astro";
+import FAQ from "~/components/FAQ.astro";
+import DataTable from "~/components/DataTable.astro";
+
+const slug = "kode-dial-indosat";
+const h1 = "Kode Dial Indosat Terbaru untuk Cek Nomor, Pulsa, dan Kuota";
+
+const seo = {
+  title: "Kode Dial Indosat Terbaru: Cek Nomor, Pulsa, Kuota",
+  noSuffix: true,
+  description:
+    "Daftar lengkap kode dial Indosat IM3: cek nomor, pulsa, kuota, beli paket, masa aktif, bantuan, dan registrasi NIK. Diperbarui Mei 2026.",
+  canonicalPath: `/${slug}`,
+  type: "article" as const,
+  publishedTime: "2026-05-01",
+  modifiedTime: "2026-05-01",
+  keywords: [
+    "kode dial indosat",
+    "kode umb indosat",
+    "kode ussd indosat",
+    "kode rahasia indosat",
+    "*888#",
+    "*123#",
+    "*726#",
+  ],
+};
+
+const faqItems = [
+  {
+    question: "Apa beda kode dial, kode UMB, dan kode USSD?",
+    answer:
+      "Kode dial adalah istilah umum untuk kode pendek yang ditekan di aplikasi telepon, lalu dipanggil. Kode UMB (USSD Menu Browser) adalah jenis kode dial bermenu seperti *888# yang dipakai operator Indonesia. Kode USSD adalah protokol di balik keduanya. Dalam pemakaian sehari-hari, ketiganya sering dianggap sama.",
+  },
+  {
+    question: "Apakah semua kode di tabel berlaku untuk pelanggan pascabayar?",
+    answer:
+      "Mayoritas berlaku, tetapi beberapa kode khusus prabayar seperti perpanjang masa aktif tidak relevan untuk pascabayar. Pelanggan pascabayar IM3 lebih banyak memakai aplikasi myIM3 untuk pengelolaan tagihan dan paket.",
+  },
+  {
+    question: "Kenapa kode yang saya tekan tidak merespon?",
+    answer:
+      "Tiga sebab paling umum: sinyal lemah, kartu sudah masuk masa tenggang, atau aplikasi telepon memblokir kode USSD. Coba pindah ke area sinyal kuat, restart ponsel, lalu ulangi. Untuk Android, pastikan izin USSD aktif di Pengaturan Aplikasi Telepon.",
+  },
+  {
+    question: "Apakah ada kode rahasia Indosat yang belum tertulis di tabel?",
+    answer:
+      "Indosat tidak menyembunyikan kode resmi pelanggan. Yang sering disebut 'kode rahasia' biasanya kode lama yang sudah dinonaktifkan atau kode internal teknisi yang tidak ditujukan untuk pelanggan umum. Pakai kode di tabel ini sebagai panduan resmi terbaru.",
+  },
+  {
+    question: "Mana yang dipakai dulu, kode dial atau aplikasi myIM3?",
+    answer:
+      "Pilih sesuai kondisi. Kode dial cocok saat tanpa internet, butuh respon cepat, atau pulsa minim. Aplikasi myIM3 lebih lengkap saat ingin lihat rincian per aplikasi, riwayat transaksi, dan grafik pemakaian. Banyak pelanggan memakai keduanya bergantian.",
+  },
+  {
+    question: "Apakah kode dial Indosat bisa berubah?",
+    answer:
+      "Bisa. Operator sesekali mengubah struktur menu, mengganti angka submenu, atau menonaktifkan kode lama. Verifikasi kode sebelum pemakaian penting selalu dianjurkan, terutama lewat aplikasi myIM3 atau care.im3.id sebagai sumber resmi yang paling cepat update.",
+  },
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  breadcrumbs={[
+    { name: "Beranda", href: "/" },
+    { name: "Kode Dial Indosat" },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Tiga kode dial Indosat IM3 yang paling sering dipakai:
+      <strong><code>*888#</code></strong> untuk cek nomor, pulsa, dan kuota
+      sekaligus, <strong><code>*123#</code></strong> untuk menu lengkap, dan
+      <strong><code>*726#</code></strong> untuk cek serta stop layanan VAS.
+      Halaman ini menyajikan tabel lengkap kode dial menurut tujuan, mulai
+      dari registrasi sampai bantuan.
+    </p>
+  </QuickAnswer>
+
+  <p>
+    Kode dial adalah jalur tercepat mengakses layanan Indosat tanpa internet.
+    Pelanggan IM3 prabayar dan pascabayar memakai kode yang hampir sama,
+    walaupun beberapa fungsi seperti perpanjang masa aktif relevan hanya
+    untuk prabayar. Halaman ini menyajikan kode dial menurut tujuan, sehingga
+    Anda tinggal mencari bagian yang dibutuhkan.
+  </p>
+
+  <div role="note" class="warn">
+    <p>
+      <strong>Catatan.</strong> Operator sesekali memperbarui menu dan
+      menonaktifkan kode lama. Sebelum pemakaian penting, verifikasi kode
+      lewat aplikasi <strong>myIM3</strong> atau pusat bantuan resmi di
+      <strong>care.im3.id</strong>.
+    </p>
+  </div>
+
+  <h2>Kode dial untuk cek nomor</h2>
+  <DataTable
+    caption="Kode dial cek nomor IM3"
+    headers={["Kode", "Fungsi", "Biaya"]}
+    rows={[
+      ["<code>*888#</code>", "Cek nomor, pulsa, dan masa aktif sekaligus (UMB cepat)", "Gratis"],
+      ["<code>*123#</code>", "Menu utama IM3 dengan navigasi ke Info Pelanggan", "Gratis"],
+      ["<code>*12330#</code>", "Akses langsung info pelanggan (cadangan)", "Gratis"],
+      ["<code>*885#</code>", "Layanan tambahan di sebagian wilayah", "Gratis"],
+    ]}
+  />
+
+  <h2>Kode dial untuk cek pulsa</h2>
+  <DataTable
+    caption="Kode dial cek saldo pulsa"
+    headers={["Kode", "Fungsi", "Biaya"]}
+    rows={[
+      ["<code>*888#</code>", "Saldo pulsa pada baris pertama tampilan", "Gratis"],
+      ["<code>*123#</code>", "Pilih menu Info, lalu Cek Pulsa", "Gratis"],
+      ["<code>*123*151#</code>", "Transfer pulsa ke nomor IM3 lain", "Sesuai tarif transfer"],
+    ]}
+  />
+
+  <AdSlot name="post-answer" />
+
+  <h2>Kode dial untuk cek kuota</h2>
+  <DataTable
+    caption="Kode dial cek sisa kuota internet"
+    headers={["Kode", "Fungsi", "Biaya"]}
+    rows={[
+      ["<code>*123*7*1#</code>", "Shortcut langsung ke ringkasan kuota", "Gratis"],
+      ["<code>*123#</code>", "Menu lengkap, pilih Info lalu Cek Kuota", "Gratis"],
+      ["<code>*888#</code>", "Pop up berisi sisa kuota di baris akhir", "Gratis"],
+    ]}
+  />
+
+  <h2>Kode dial untuk beli paket</h2>
+  <DataTable
+    caption="Kode dial pembelian paket internet, telepon, dan SMS"
+    headers={["Kode", "Fungsi", "Biaya"]}
+    rows={[
+      ["<code>*123#</code>", "Pilih menu Beli Paket untuk semua jenis paket", "Sesuai paket"],
+      ["<code>*123*1#</code>", "Shortcut paket internet (sebagian wilayah)", "Sesuai paket"],
+      ["<code>*123*111#</code>", "Akses promo Yellow dan paket harian", "Sesuai paket"],
+      ["<code>*556*kode-voucher#</code>", "Aktifkan voucher pulsa fisik", "Gratis"],
+    ]}
+  />
+
+  <h2>Kode dial untuk masa aktif</h2>
+  <DataTable
+    caption="Kode dial cek dan perpanjang masa aktif"
+    headers={["Kode atau format", "Fungsi", "Biaya"]}
+    rows={[
+      ["<code>*888#</code>", "Lihat tanggal masa aktif kartu", "Gratis"],
+      ["SMS <code>AKTIF3</code> ke <code>555</code>", "Perpanjang masa aktif 3 hari", "Rp 2.000"],
+      ["SMS <code>AKTIF14</code> ke <code>555</code>", "Perpanjang masa aktif 14 hari", "Rp 5.000"],
+      ["SMS <code>AKTIF30</code> ke <code>555</code>", "Perpanjang masa aktif 30 hari", "Bervariasi per wilayah"],
+    ]}
+  />
+
+  <AdSlot name="mid-content" />
+
+  <h2>Kode dial untuk bantuan dan call center</h2>
+  <DataTable
+    caption="Kanal bantuan dari nomor IM3"
+    headers={["Nomor", "Fungsi", "Biaya"]}
+    rows={[
+      ["<code>185</code>", "Call center IM3 dari kartu Indosat", "Gratis"],
+      ["<code>021-3000-3000</code>", "Call center dari telepon lain", "Sesuai tarif"],
+      ["SMS <code>BANTUAN</code> ke <code>363</code>", "Bantuan lewat SMS", "Tarif SMS standar"],
+      ["<code>*726#</code>", "Cek dan hentikan layanan VAS yang menyedot pulsa", "Gratis"],
+      ["<code>*123*44#</code>", "Unreg semua layanan VAS dalam satu langkah", "Gratis"],
+      ["SMS <code>STOP</code> ke <code>726</code>", "Stop layanan VAS via SMS", "Tarif SMS standar"],
+    ]}
+  />
+
+  <h2>Kode dial untuk registrasi kartu</h2>
+  <DataTable
+    caption="Format SMS registrasi kartu prabayar IM3"
+    headers={["Format SMS", "Fungsi", "Biaya"]}
+    rows={[
+      ["<code>NIK#NomorKK#</code> kirim ke <code>4444</code>", "Registrasi pertama kartu prabayar IM3 baru", "Gratis"],
+      ["SMS <code>INFO#NIK</code> ke <code>4444</code>", "Cek NIK yang dipakai pada nomor terdaftar", "Gratis"],
+      ["SMS <code>INFO#MSISDN</code> ke <code>4444</code>", "Cek nomor terdaftar pada NIK Anda", "Gratis"],
+      ["SMS <code>UNREG#NomorIM3#</code> ke <code>4444</code>", "Hapus pendaftaran nomor lama", "Gratis"],
+    ]}
+  />
+
+  <h2>Kode dial cadangan untuk cek nomor</h2>
+  <p>
+    Saat kode utama gagal merespon, dua jalur cadangan layak dicoba sebelum
+    beralih ke aplikasi myIM3.
+  </p>
+  <ul>
+    <li><strong><code>*12330#</code></strong> akses langsung info pelanggan dengan menu yang lebih ringkas dibanding *123#.</li>
+    <li><strong><code>*885#</code></strong> aktif di sebagian wilayah untuk akses cepat ke menu pelanggan.</li>
+  </ul>
+
+  <h2>Tips memakai kode dial</h2>
+  <ul>
+    <li>Ketik kode persis tanpa spasi. Tanda bintang dan pagar harus lengkap di depan dan belakang.</li>
+    <li>Pengguna dual SIM perlu memilih kartu IM3 sebagai SIM panggilan default.</li>
+    <li>Tutup aplikasi keamanan yang memblokir USSD sebelum memakai kode dial.</li>
+    <li>Kalau pop up tidak muncul setelah 10 detik, restart ponsel lalu ulangi.</li>
+    <li>Beberapa kode butuh saldo pulsa, terutama yang berkaitan dengan transaksi paket atau perpanjangan masa aktif.</li>
+  </ul>
+
+  <AdSlot name="pre-faq" />
+
+  <FAQ items={faqItems} />
+
+  <h2>Panduan terkait</h2>
+  <ul>
+    <li><a href="/">Panduan utama cek nomor Indosat</a>.</li>
+    <li><a href="/cek-nomor-indosat-lewat-ussd">Cara cek nomor lewat USSD lengkap</a>.</li>
+    <li><a href="/cek-pulsa-indosat">Cara cek pulsa Indosat IM3</a>.</li>
+    <li><a href="/cek-kuota-indosat">Cara cek kuota Indosat</a>.</li>
+    <li><a href="/cek-nomor-indosat-masih-aktif-atau-tidak">Cek masa aktif kartu IM3</a>.</li>
+    <li><a href="/cara-registrasi-kartu-indosat">Cara registrasi kartu IM3 dengan NIK</a>.</li>
+  </ul>
+</PageLayout>
+
+<style>
+  .warn {
+    background: var(--color-warning-soft);
+    border-left: 3px solid var(--color-warning);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    margin: var(--space-4) 0 var(--space-6);
+    color: var(--color-fg);
+  }
+  .warn p { margin-bottom: 0; }
+  .warn strong { font-weight: 700; }
+</style>

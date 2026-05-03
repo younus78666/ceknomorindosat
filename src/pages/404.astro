@@ -1,0 +1,135 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import { NAV_PRIMARY } from "~/data/site.config";
+
+const seo = {
+  title: "Halaman Tidak Ditemukan",
+  noSuffix: true,
+  description:
+    "Halaman yang Anda cari tidak ditemukan di CekNomorIndosat.com. Kembali ke beranda atau pilih panduan utama dari daftar di bawah.",
+  canonicalPath: "/404",
+  type: "website" as const,
+  noindex: true,
+};
+
+const featured = NAV_PRIMARY.filter((n) => n.href !== "/");
+---
+
+<BaseLayout seo={seo}>
+  <article class="nf">
+    <div class="nf-inner">
+      <p class="code" aria-hidden="true">404</p>
+      <h1>Halaman tidak ditemukan</h1>
+      <p class="lead">
+        Halaman yang Anda cari mungkin sudah dipindahkan, namanya berubah,
+        atau memang tidak pernah ada di situs ini. Coba pilih salah satu
+        panduan utama di bawah.
+      </p>
+
+      <div class="actions">
+        <a href="/" class="btn-primary">Kembali ke beranda</a>
+      </div>
+
+      <h2>Panduan paling sering dicari</h2>
+      <ul>
+        {featured.map((f) => (
+          <li>
+            <a href={f.href}>
+              <span>{f.label}</span>
+              <span class="arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .nf { background: var(--color-bg); }
+  .nf-inner {
+    max-width: var(--container-prose);
+    margin: 0 auto;
+    padding: var(--space-16) var(--space-4) var(--space-16);
+    text-align: center;
+  }
+  .code {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 12vw, 7rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--color-brand);
+    margin-bottom: var(--space-4);
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    line-height: var(--leading-tight);
+    letter-spacing: -0.02em;
+    color: var(--color-fg);
+    margin-bottom: var(--space-3);
+  }
+  .lead {
+    color: var(--color-fg-muted);
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    margin: 0 auto var(--space-6);
+    max-width: 32rem;
+  }
+  .actions { margin-bottom: var(--space-12); }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    background: var(--color-fg);
+    color: var(--color-fg-inverted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--text-base);
+    transition: transform var(--motion-fast) var(--ease-standard),
+      box-shadow var(--motion-fast) var(--ease-standard);
+  }
+  .btn-primary:hover {
+    color: var(--color-fg-inverted);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+  }
+  h2 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-fg);
+    margin-bottom: var(--space-4);
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-2);
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+  li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--color-fg);
+    font-weight: 500;
+    transition: border-color var(--motion-fast) var(--ease-standard);
+  }
+  li a:hover {
+    border-color: var(--color-brand-strong);
+  }
+  .arrow { color: var(--color-fg-subtle); }
+</style>

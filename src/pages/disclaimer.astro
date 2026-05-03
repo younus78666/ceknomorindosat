@@ -1,0 +1,134 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import { SITE } from "~/data/site.config";
+import { webPageSchema, organizationSchema } from "~/lib/schema";
+
+const slug = "disclaimer";
+const h1 = "Disclaimer";
+
+const seo = {
+  title: "Disclaimer CekNomorIndosat.com",
+  noSuffix: true,
+  description:
+    "Disclaimer resmi CekNomorIndosat.com: situs informasi independen yang tidak berafiliasi dengan Indosat Ooredoo Hutchison.",
+  canonicalPath: `/${slug}`,
+  type: "website" as const,
+  publishedTime: "2026-05-04",
+  modifiedTime: "2026-05-04",
+};
+
+const url = `${SITE.url}/${slug}`;
+const pageJsonLd = [
+  webPageSchema({
+    type: "WebPage",
+    name: h1,
+    description: seo.description,
+    url,
+    datePublished: "2026-05-04",
+    dateModified: "2026-05-04",
+  }),
+  organizationSchema(),
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  emitArticleSchema={false}
+  jsonLd={pageJsonLd}
+  breadcrumbs={[{ name: "Beranda", href: "/" }, { name: "Disclaimer" }]}
+>
+  <p>
+    Halaman ini berisi pernyataan resmi tentang sifat, batasan, dan
+    posisi CekNomorIndosat.com sebagai sumber informasi seluler.
+  </p>
+
+  <h2>Sifat informasi</h2>
+  <p>
+    Seluruh konten di CekNomorIndosat.com disediakan untuk tujuan
+    informasi umum saja. Walau kami berusaha memastikan setiap kode dial,
+    format SMS, nomor telepon, dan langkah aplikasi yang ditampilkan
+    akurat pada saat publikasi, perubahan dari sisi operator atau
+    perangkat pengguna sangat mungkin terjadi tanpa pemberitahuan.
+    Pengunjung disarankan memverifikasi informasi penting lewat aplikasi
+    resmi <strong>myIM3</strong> atau pusat bantuan resmi
+    <strong> care.im3.id</strong> sebelum mengambil keputusan yang
+    bergantung pada akurasi data.
+  </p>
+
+  <h2>Tidak berafiliasi dengan Indosat Ooredoo Hutchison</h2>
+  <p>
+    CekNomorIndosat.com adalah situs panduan independen yang tidak
+    dimiliki, didanai, dikelola, atau berafiliasi dengan PT Indosat Tbk
+    (Indosat Ooredoo Hutchison) maupun anak perusahaan dan mitranya.
+    Penyebutan nama "Indosat", "IM3", "Indosat Ooredoo Hutchison",
+    "Mentari", atau "Tri" di situs ini semata-mata sebagai keterangan
+    layanan yang dibahas, bukan klaim afiliasi atau perwakilan.
+  </p>
+  <p>
+    Logo, merek dagang, dan nama dagang adalah hak masing-masing pemilik.
+    Kami tidak menggunakan logo Indosat di header, footer, atau materi
+    branding situs.
+  </p>
+
+  <h2>Yang tidak dilakukan situs ini</h2>
+  <p>
+    Untuk menghindari kesalahpahaman pengunjung, kami menyebutkan secara
+    eksplisit hal-hal yang berada di luar lingkup operasional situs.
+  </p>
+  <ul>
+    <li>
+      <strong>Tidak menerima atau memproses data NIK dan nomor KK.</strong>
+      Halaman registrasi kartu di situs ini hanya menjelaskan format yang
+      dipakai, tanpa form yang menerima data identitas pengunjung.
+    </li>
+    <li>
+      <strong>Tidak menerima pembayaran.</strong> Tidak ada layanan beli
+      pulsa, paket, atau langganan yang berjalan di server kami.
+    </li>
+    <li>
+      <strong>Tidak menangani pengembalian dana.</strong> Klaim refund,
+      sengketa tagihan, dan dispute pembayaran adalah ranah operator atau
+      dompet digital terkait.
+    </li>
+    <li>
+      <strong>Tidak melayani permintaan akun spesifik.</strong> Pertanyaan
+      seperti "kenapa kartu saya terblokir", "kenapa pulsa saya berkurang",
+      atau "bagaimana mengembalikan paket yang salah beli" harus diajukan
+      ke 185, bukan ke kami.
+    </li>
+    <li>
+      <strong>Tidak melakukan customer service untuk operator.</strong>
+      Kami bukan agen, distributor, atau outsourcing.
+    </li>
+  </ul>
+
+  <h2>Iklan dan rekomendasi pihak ketiga</h2>
+  <p>
+    Situs ini memuat iklan dari jaringan periklanan tampilan dan native
+    yang muncul di slot yang ditandai jelas. Penampilan iklan tidak
+    mencerminkan dukungan kami terhadap produk atau layanan yang
+    diiklankan. Tautan ke layanan pihak ketiga (kalau ada) disertakan
+    sebagai referensi, dan pengunjung diminta menilai sendiri sebelum
+    bertransaksi dengan pihak ketiga manapun.
+  </p>
+
+  <h2>Batas tanggung jawab</h2>
+  <p>
+    Kami tidak bertanggung jawab atas kerugian langsung maupun tidak
+    langsung yang muncul akibat pemakaian informasi di situs ini, termasuk
+    tetapi tidak terbatas pada kehilangan pulsa, gagal aktivasi paket,
+    salah memasukkan kode dial, atau salah tafsir langkah panduan. Setiap
+    keputusan yang diambil pengunjung berdasarkan informasi situs adalah
+    tanggung jawab pribadi pengunjung.
+  </p>
+
+  <h2>Perubahan disclaimer</h2>
+  <p>
+    Disclaimer ini dapat diperbarui sewaktu-waktu seiring perubahan
+    layanan atau aturan industri. Versi terbaru selalu tersedia di
+    halaman ini. Tanggal "Terakhir diperbarui" di bagian atas halaman
+    menunjukkan revisi paling akhir.
+  </p>
+</PageLayout>

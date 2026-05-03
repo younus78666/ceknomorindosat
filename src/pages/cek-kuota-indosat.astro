@@ -1,0 +1,237 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import QuickAnswer from "~/components/QuickAnswer.astro";
+import AdSlot from "~/components/AdSlot.astro";
+import FAQ from "~/components/FAQ.astro";
+import HowTo from "~/components/HowTo.astro";
+import DataTable from "~/components/DataTable.astro";
+
+const slug = "cek-kuota-indosat";
+const h1 = "Cara Cek Kuota Indosat Terbaru";
+
+const seo = {
+  title: "Cara Cek Kuota Indosat IM3 Terbaru (Mei 2026)",
+  noSuffix: true,
+  description:
+    "Cara cek kuota Indosat lewat *123*7*1#, SMS USAGE ke 363, dan aplikasi myIM3, plus solusi data tidak update, bonus, dan kuota malam.",
+  canonicalPath: `/${slug}`,
+  type: "article" as const,
+  publishedTime: "2026-05-01",
+  modifiedTime: "2026-05-01",
+  keywords: [
+    "cek kuota indosat",
+    "cek kuota im3",
+    "*123*7*1#",
+    "kuota malam indosat",
+    "kuota bonus indosat",
+    "myim3 cek kuota",
+  ],
+};
+
+const faqItems = [
+  {
+    question: "Berapa biaya cek kuota lewat USSD?",
+    answer:
+      "Gratis. Kode *123# dan shortcut *123*7*1# tidak menarik biaya pulsa, tidak memotong kuota, dan tidak membutuhkan internet. Yang penting kartu masih dalam masa aktif dan ada sinyal seluler.",
+  },
+  {
+    question: "Apa itu kuota malam Indosat?",
+    answer:
+      "Kuota malam adalah blok data yang hanya bisa dipakai pada jam tertentu, biasanya pukul 00:00 sampai 07:00 atau 01:00 sampai 06:00 tergantung paket. Kuota ini ideal untuk unduh berkas besar, update sistem, dan streaming saat tarif jaringan paling longgar.",
+  },
+  {
+    question: "Kenapa pemakaian data saya tidak sesuai dengan tampilan myIM3?",
+    answer:
+      "Tampilan kuota di myIM3 punya jeda 1 sampai 5 menit setelah pemakaian terakhir. Selain itu, beberapa paket memprioritaskan kuota bonus atau aplikasi tertentu lebih dulu sebelum kuota utama, sehingga sisa kuota terlihat berbeda dari prediksi. Tarik halaman ke bawah untuk refresh manual.",
+  },
+  {
+    question: "Bagaimana cek kuota TikTok atau YouTube khusus dari paket?",
+    answer:
+      "Buka aplikasi myIM3, masuk ke kartu paket aktif, lalu tap tab Aplikasi atau Hiburan. Tab ini menampilkan rincian kuota khusus per aplikasi seperti TikTok, YouTube, Instagram, dan kuota chat.",
+  },
+  {
+    question: "Apakah kuota bonus dan kuota utama dipakai bersamaan?",
+    answer:
+      "Tidak. Kuota dipakai berurutan sesuai aturan paket. Pada banyak paket, sistem memakai kuota bonus dulu sampai habis, baru beralih ke kuota utama. Pada paket lain, urutan dibalik. Cek halaman detail paket di myIM3 untuk tahu prioritas masing-masing.",
+  },
+  {
+    question: "Kenapa kuota saya nol padahal baru beli paket?",
+    answer:
+      "Tiga sebab paling umum: paket belum aktif sepenuhnya (tunggu 5 sampai 15 menit), paket dibeli untuk nomor lain karena salah pilih SIM, atau pembayaran sedang diverifikasi. Cek halaman riwayat transaksi di myIM3 untuk konfirmasi status pembelian.",
+  },
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  breadcrumbs={[
+    { name: "Beranda", href: "/" },
+    { name: "Cek Kuota Indosat" },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Cara cek kuota Indosat IM3 paling cepat: tekan
+      <strong><code>*123*7*1#</code></strong> lalu panggil. Sisa kuota utama,
+      kuota malam, dan kuota bonus akan tampil dalam beberapa detik tanpa
+      memotong pulsa atau membutuhkan internet. Untuk tampilan lebih lengkap
+      dengan rincian per aplikasi, buka aplikasi myIM3.
+    </p>
+  </QuickAnswer>
+
+  <p>
+    Paket internet Indosat IM3 sering memecah kuota menjadi beberapa kategori:
+    kuota utama, kuota malam, kuota bonus, dan kuota khusus aplikasi seperti
+    TikTok atau YouTube. Tampilan yang berbeda di tiap metode cek kadang
+    membuat pelanggan bingung saat angka tidak sesuai harapan. Panduan ini
+    merangkum cara tercepat melihat sisa kuota, bagaimana membaca tiap
+    kategori, dan apa yang harus dilakukan saat informasi tidak update.
+  </p>
+
+  <h2>Tabel metode cek kuota Indosat</h2>
+  <DataTable
+    caption="Empat cara resmi cek kuota Indosat IM3 dan kebutuhannya"
+    headers={["Metode", "Format", "Kelengkapan info", "Butuh internet"]}
+    rows={[
+      ["USSD shortcut", "Tekan <code>*123*7*1#</code>", "Ringkas (utama, malam, bonus)", "Tidak"],
+      ["USSD menu", "Tekan <code>*123#</code> &rarr; Info &rarr; Kuota", "Ringkas dengan navigasi", "Tidak"],
+      ["Aplikasi myIM3", "Halaman beranda kartu paket", "Lengkap (rincian per aplikasi)", "Ya"],
+      ["SMS Usage", "Ketik <code>USAGE</code> kirim ke <code>363</code>", "Ringkas", "Tidak"],
+    ]}
+  />
+
+  <AdSlot name="post-answer" />
+
+  <HowTo
+    name="Cek kuota Indosat lewat *123*7*1#"
+    description="Shortcut tanpa navigasi menu, cocok dipakai saat sedang terburu-buru."
+    totalTime="PT20S"
+    steps={[
+      {
+        name: "Buka aplikasi telepon",
+        text: "Pengguna dual SIM perlu memilih kartu IM3 sebagai SIM panggilan default sebelum melanjutkan.",
+      },
+      {
+        name: "Ketik *123*7*1# pada keypad",
+        text: "Pastikan kode dimasukkan persis seperti tertulis, lengkap dengan tanda bintang dan pagar.",
+      },
+      {
+        name: "Tekan tombol panggil",
+        text: "Tunggu pop up muncul dalam 2 sampai 5 detik. Pop up berisi sisa kuota dan masa berlaku tiap kategori.",
+      },
+      {
+        name: "Baca kategori kuota",
+        text: "Tampilan biasanya berisi tiga sampai lima baris: Kuota Utama, Kuota Malam, Kuota Aplikasi, Kuota Bonus, dan tanggal masa berlaku paket.",
+      },
+    ]}
+  />
+
+  <h2>Cek kuota lewat *123# menu navigasi</h2>
+  <p>
+    Kode <code>*123#</code> adalah pintu masuk utama menu UMB Indosat. Setelah
+    pop up muncul, balas dengan angka menu Info, lalu pilih Cek Kuota. Cara ini
+    butuh dua atau tiga balasan dibanding shortcut <code>*123*7*1#</code>,
+    tetapi memberi akses ke menu lain seperti Cek Pulsa, Cek Tagihan, dan Beli
+    Paket dalam alur yang sama.
+  </p>
+
+  <h2>Cek kuota di aplikasi myIM3</h2>
+  <p>
+    myIM3 adalah cara paling lengkap untuk melihat sisa kuota. Setelah login,
+    halaman beranda menampilkan satu kartu untuk setiap paket aktif, lengkap
+    dengan diagram lingkaran sisa kuota dan tanggal kedaluwarsa. Tap satu
+    kartu untuk membuka rincian.
+  </p>
+  <p>
+    Halaman rincian memecah kuota menjadi tab terpisah: Kuota Utama, Kuota
+    Malam, Kuota Aplikasi, dan Kuota Bonus. Untuk pelanggan paket Freedom
+    Internet dan IM3 Platinum, tab Aplikasi memperlihatkan kuota khusus per
+    aplikasi seperti TikTok, YouTube, WhatsApp, Instagram, dan kuota chat.
+    Tarik halaman ke bawah agar aplikasi melakukan refresh manual.
+  </p>
+
+  <h2>SMS USAGE ke 363</h2>
+  <p>
+    Cara klasik via SMS masih bekerja. Buka aplikasi pesan, ketik
+    <strong>USAGE</strong>, lalu kirim ke <strong>363</strong>. Balasan berisi
+    rincian sisa kuota dan masa aktif paket masuk dalam beberapa detik. Biaya
+    mengikuti tarif SMS standar, biasanya Rp 150 sampai Rp 350 per pengiriman.
+    Cara ini cocok dipakai saat USSD gagal merespon atau aplikasi myIM3 tidak
+    bisa login.
+  </p>
+
+  <AdSlot name="mid-content" />
+
+  <h2>Membaca laporan kuota: utama, malam, bonus, aplikasi</h2>
+  <p>
+    Tampilan kuota Indosat IM3 sering memecah kuota dalam empat kategori
+    berbeda. Pahami fungsinya agar tidak salah hitung sisa data.
+  </p>
+  <ul>
+    <li><strong>Kuota utama.</strong> Bisa dipakai 24 jam untuk semua aplikasi dan jaringan.</li>
+    <li><strong>Kuota malam.</strong> Hanya aktif pada jam tertentu, biasanya 00:00 sampai 07:00 atau 01:00 sampai 06:00.</li>
+    <li><strong>Kuota bonus.</strong> Tambahan dari promo, isi pulsa, atau program loyalitas. Sering dipakai lebih dulu sebelum kuota utama.</li>
+    <li><strong>Kuota aplikasi.</strong> Khusus aplikasi tertentu seperti TikTok, YouTube, WhatsApp, atau game. Tidak bisa dipakai di luar aplikasi yang ditentukan.</li>
+  </ul>
+
+  <h2>Pemakaian data tidak sesuai? Penyebab umum</h2>
+  <p>
+    Pelanggan kadang merasa kuota habis terlalu cepat atau angka pemakaian
+    tidak masuk akal. Tujuh penyebab paling sering:
+  </p>
+  <ol>
+    <li>Aplikasi update otomatis di latar belakang saat tersambung WiFi diasumsikan WiFi padahal pakai data seluler.</li>
+    <li>Streaming video pada kualitas Full HD atau 4K tanpa sadar.</li>
+    <li>Sinkronisasi cloud (Google Photos, iCloud, OneDrive) saat foto baru diambil.</li>
+    <li>Aplikasi rapat (Zoom, Google Meet) yang memakai 600 MB sampai 1,5 GB per jam.</li>
+    <li>Jaringan WiFi otomatis terputus tanpa pemberitahuan, sehingga ponsel pindah ke data seluler.</li>
+    <li>Hotspot ke perangkat lain yang menjalankan unduhan besar.</li>
+    <li>Iklan video atau autoplay di media sosial.</li>
+  </ol>
+  <p>
+    Solusi cepat: matikan auto-update aplikasi, batasi streaming ke kualitas
+    HD ke bawah, dan periksa daftar aplikasi yang paling banyak konsumsi data
+    di pengaturan ponsel.
+  </p>
+
+  <h2>Paket tidak muncul di myIM3</h2>
+  <p>
+    Paket yang baru dibeli kadang tidak langsung tampil. Ada empat sebab umum
+    dan cara perbaikinya.
+  </p>
+  <ul>
+    <li><strong>Paket belum aktif.</strong> Tunggu 5 sampai 15 menit setelah pembelian sukses sebelum cek lagi.</li>
+    <li><strong>Aplikasi cache lama.</strong> Tarik halaman ke bawah untuk refresh, atau logout dan login ulang.</li>
+    <li><strong>Salah nomor.</strong> Pembelian dilakukan untuk nomor lain. Cek riwayat transaksi di myIM3 untuk konfirmasi.</li>
+    <li><strong>Pembayaran masih diverifikasi.</strong> Untuk pembelian via dompet digital atau transfer bank, status pending muncul sampai sistem konfirmasi pembayaran.</li>
+  </ul>
+
+  <h2>Kuota tidak update setelah pemakaian</h2>
+  <p>
+    Tampilan kuota memang punya jeda 1 sampai 5 menit. Kalau angka belum
+    bergerak setelah lebih dari sepuluh menit, lakukan langkah berikut.
+  </p>
+  <ol>
+    <li>Tarik halaman beranda myIM3 ke bawah agar aplikasi memuat data terbaru.</li>
+    <li>Logout dari myIM3, lalu login ulang.</li>
+    <li>Coba kode <code>*123*7*1#</code> sebagai pembanding angka di server.</li>
+    <li>Aktifkan dan matikan Mode Pesawat selama 10 detik.</li>
+    <li>Restart ponsel.</li>
+    <li>Hubungi 185 jika angka tetap tidak bergerak setelah satu jam, terutama setelah transaksi besar.</li>
+  </ol>
+
+  <AdSlot name="pre-faq" />
+
+  <FAQ items={faqItems} />
+
+  <h2>Panduan terkait</h2>
+  <ul>
+    <li><a href="/">Panduan utama cek nomor Indosat</a>.</li>
+    <li><a href="/cara-cek-pulsa-indosat">Cara cek pulsa Indosat</a>.</li>
+    <li><a href="/cek-nomor-indosat-lewat-ussd">Panduan kode USSD Indosat lengkap</a>.</li>
+    <li><a href="/cek-nomor-indosat-lewat-aplikasi-myim3">Cara pakai aplikasi myIM3</a>.</li>
+    <li><a href="/cek-nomor-indosat-masih-aktif-atau-tidak">Cek masa aktif dan masa tenggang IM3</a>.</li>
+  </ul>
+</PageLayout>

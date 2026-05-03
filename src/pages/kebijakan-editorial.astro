@@ -1,0 +1,129 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import { SITE } from "~/data/site.config";
+import { webPageSchema, organizationSchema } from "~/lib/schema";
+
+const slug = "kebijakan-editorial";
+const h1 = "Kebijakan Editorial";
+
+const seo = {
+  title: "Kebijakan Editorial CekNomorIndosat.com",
+  noSuffix: true,
+  description:
+    "Cara CekNomorIndosat.com meneliti, memverifikasi, memperbarui, dan mengoreksi panduan, plus pemisahan konten redaksi dan iklan.",
+  canonicalPath: `/${slug}`,
+  type: "website" as const,
+  publishedTime: "2026-05-04",
+  modifiedTime: "2026-05-04",
+};
+
+const url = `${SITE.url}/${slug}`;
+const pageJsonLd = [
+  webPageSchema({
+    type: "WebPage",
+    name: h1,
+    description: seo.description,
+    url,
+    datePublished: "2026-05-04",
+    dateModified: "2026-05-04",
+  }),
+  organizationSchema(),
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  emitArticleSchema={false}
+  jsonLd={pageJsonLd}
+  breadcrumbs={[{ name: "Beranda", href: "/" }, { name: "Kebijakan Editorial" }]}
+>
+  <p>
+    Halaman ini menjelaskan cara tim CekNomorIndosat.com bekerja, mulai
+    dari riset awal sampai publikasi dan pembaruan rutin. Tujuannya agar
+    pengunjung tahu standar yang kami pakai dan bisa menilai kualitas
+    setiap panduan secara mandiri.
+  </p>
+
+  <h2>Riset</h2>
+  <p>
+    Setiap panduan dimulai dari pertanyaan nyata yang dicari pelanggan
+    Indosat IM3. Kami memetakan kebutuhan ini lewat data publik dari mesin
+    pencari dan diskusi di komunitas, lalu menyusun draf jawaban yang
+    paling langsung. Untuk topik teknis seperti kode dial, USSD, dan SMS,
+    kami menelusuri dokumentasi resmi Indosat sebagai titik tolak.
+  </p>
+
+  <h2>Verifikasi</h2>
+  <p>
+    Sebelum publikasi, setiap kode, format SMS, nomor support, dan
+    langkah aplikasi diuji silang dengan minimal tiga sumber. Sumber
+    resmi selalu diutamakan dibanding blog pihak ketiga.
+  </p>
+  <ul>
+    <li>Halaman bantuan resmi <strong>care.im3.id</strong>.</li>
+    <li>Aplikasi <strong>myIM3</strong> sebagai sumber kode dan info paket.</li>
+    <li>Akun media sosial resmi <strong>@IndosatCare</strong>.</li>
+    <li>Pengumuman dari call center <strong>185</strong>.</li>
+    <li>Liputan media yang mengutip pernyataan resmi langsung.</li>
+  </ul>
+
+  <h2>Penulisan</h2>
+  <p>
+    Panduan ditulis dalam Bahasa Indonesia yang mudah dimengerti, dengan
+    jawaban langsung di paragraf pertama. Kami menghindari kata-kata
+    sambutan klise, basa-basi yang tidak perlu, dan janji-janji yang
+    tidak bisa kami penuhi. Kalimat panjang dipecah menjadi paragraf
+    pendek agar nyaman dibaca di layar ponsel.
+  </p>
+
+  <h2>Pembaruan</h2>
+  <p>
+    Setiap halaman menampilkan tanggal "Terakhir diperbarui" agar
+    pengunjung tahu seberapa baru informasinya. Kami menjadwalkan ulasan
+    rutin dengan pola berikut.
+  </p>
+  <ul>
+    <li>Halaman dengan kode dial dan format SMS: tinjauan tiga bulan sekali.</li>
+    <li>Halaman tentang nomor support dan kanal resmi: tinjauan enam bulan sekali.</li>
+    <li>Halaman tentang aturan registrasi atau perubahan regulasi: ditinjau saat ada pengumuman resmi baru.</li>
+    <li>Halaman lain: ditinjau setidaknya satu kali per tahun.</li>
+  </ul>
+
+  <h2>Koreksi</h2>
+  <p>
+    Bila pengunjung melaporkan kesalahan, kami menelusurinya dalam waktu
+    tiga hari kerja. Detail proses koreksi tersedia di halaman
+    <a href="/kebijakan-koreksi">Kebijakan Koreksi</a>. Setiap koreksi
+    yang material mengubah informasi (bukan hanya tata bahasa) dicatat di
+    bagian bawah halaman terkait dengan tanggal dan ringkasan perubahan.
+  </p>
+
+  <h2>Pemisahan konten redaksi dan iklan</h2>
+  <p>
+    Iklan tampilan dan native muncul di slot yang ditandai jelas. Tim
+    redaksi tidak menyetujui konten iklan dan pemasang iklan tidak punya
+    pengaruh pada apa yang ditulis. Bila satu artikel menyebut produk,
+    layanan, atau aplikasi tertentu, hal itu murni karena fungsinya
+    relevan untuk pengunjung, bukan karena perjanjian komersial.
+  </p>
+
+  <h2>Catatan tentang perubahan layanan operator</h2>
+  <p>
+    Operator seluler sesekali mengubah menu UMB, format SMS, dan struktur
+    paket. Kami berusaha mengejar perubahan secepat mungkin, tetapi
+    selalu ada celah waktu antara perubahan resmi dan pembaruan kami.
+    Pengunjung yang menemukan kode atau langkah yang sudah tidak bekerja
+    dianjurkan memverifikasi lewat aplikasi myIM3 atau care.im3.id, lalu
+    melapor ke kami agar halaman segera diperbarui.
+  </p>
+
+  <h2>Identitas penulis</h2>
+  <p>
+    Konten ditulis oleh tim editorial CekNomorIndosat.com. Profil tim
+    tersedia di halaman <a href="/penulis">Tim Penulis</a>. Kami tidak
+    menggunakan nama atau gelar palsu, dan tidak mengaku punya
+    afiliasi resmi dengan operator manapun.
+  </p>
+</PageLayout>

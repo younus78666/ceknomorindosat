@@ -1,0 +1,139 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import { SITE } from "~/data/site.config";
+import { webPageSchema, organizationSchema } from "~/lib/schema";
+
+const slug = "kebijakan-koreksi";
+const h1 = "Kebijakan Koreksi";
+
+const seo = {
+  title: "Kebijakan Koreksi CekNomorIndosat.com",
+  noSuffix: true,
+  description:
+    "Cara melaporkan kode tidak bekerja, langkah keliru, tautan rusak, atau instruksi tidak jelas di CekNomorIndosat.com, plus alur penanganannya.",
+  canonicalPath: `/${slug}`,
+  type: "website" as const,
+  publishedTime: "2026-05-04",
+  modifiedTime: "2026-05-04",
+};
+
+const url = `${SITE.url}/${slug}`;
+const pageJsonLd = [
+  webPageSchema({
+    type: "WebPage",
+    name: h1,
+    description: seo.description,
+    url,
+    datePublished: "2026-05-04",
+    dateModified: "2026-05-04",
+  }),
+  organizationSchema(),
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  emitArticleSchema={false}
+  jsonLd={pageJsonLd}
+  breadcrumbs={[{ name: "Beranda", href: "/" }, { name: "Kebijakan Koreksi" }]}
+>
+  <p>
+    Walau setiap panduan diverifikasi sebelum publikasi, perubahan dari
+    sisi operator, salah ketik, atau langkah yang tidak lagi akurat tetap
+    bisa terjadi. Halaman ini menjelaskan cara melaporkan kesalahan dan
+    bagaimana kami menanganinya.
+  </p>
+
+  <h2>Yang bisa dilaporkan</h2>
+  <ul>
+    <li><strong>Kode dial yang sudah tidak merespon</strong> di area atau ponsel Anda.</li>
+    <li><strong>Format SMS yang ditolak</strong> walau sudah ditulis sesuai panduan.</li>
+    <li><strong>Nomor support yang tidak aktif</strong> atau dialihkan ke layanan lain.</li>
+    <li><strong>Tautan rusak</strong> yang mengarah ke halaman 404 atau tujuan salah.</li>
+    <li><strong>Langkah aplikasi</strong> yang berbeda dengan tampilan terbaru myIM3.</li>
+    <li><strong>Salah ketik</strong> yang mengubah arti, terutama pada angka kode dan biaya.</li>
+    <li><strong>Informasi yang tidak konsisten</strong> antara dua halaman di situs ini.</li>
+  </ul>
+
+  <h2>Cara melapor</h2>
+  <p>
+    Kirim email ke <strong>redaksi@ceknomorindosat.com</strong> dengan
+    format berikut agar tim bisa langsung menelusuri.
+  </p>
+  <ol>
+    <li>
+      <strong>Subjek:</strong> tulis "Koreksi" diikuti URL halaman, contohnya
+      "Koreksi /kode-dial-indosat".
+    </li>
+    <li>
+      <strong>Bagian salah:</strong> kutip kalimat atau kode yang menurut Anda
+      tidak akurat.
+    </li>
+    <li>
+      <strong>Yang seharusnya:</strong> sebutkan informasi yang benar bila
+      Anda sudah memverifikasinya.
+    </li>
+    <li>
+      <strong>Bukti pendukung:</strong> tautan ke care.im3.id, screenshot dari
+      myIM3, atau referensi resmi lain yang mendukung koreksi.
+    </li>
+  </ol>
+  <p>
+    Anda tidak wajib melampirkan semuanya. Laporan singkat tanpa bukti
+    tetap kami terima dan kami verifikasi sendiri.
+  </p>
+
+  <h2>Alur penanganan</h2>
+  <ol>
+    <li>
+      <strong>Hari kerja pertama:</strong> tim membaca laporan dan menentukan
+      apakah perlu verifikasi independen atau bisa langsung dikoreksi.
+    </li>
+    <li>
+      <strong>Hari kerja kedua sampai ketiga:</strong> verifikasi ulang
+      dilakukan dengan cara mengetik ulang kode di ponsel uji, mencocokkan
+      ke care.im3.id, atau menghubungi 185 untuk konfirmasi.
+    </li>
+    <li>
+      <strong>Setelah verifikasi:</strong> halaman diperbarui dan tanggal
+      "Terakhir diperbarui" diubah ke tanggal koreksi.
+    </li>
+    <li>
+      <strong>Catatan koreksi:</strong> untuk koreksi yang material (bukan
+      sekadar tata bahasa), kami menambahkan catatan di bawah halaman
+      dengan ringkasan perubahan dan tanggalnya.
+    </li>
+    <li>
+      <strong>Konfirmasi pelapor:</strong> bila pelapor menyertakan email,
+      kami mengirim balasan singkat saat koreksi sudah live.
+    </li>
+  </ol>
+
+  <h2>Yang tidak masuk koreksi editorial</h2>
+  <p>
+    Beberapa hal di luar lingkup koreksi panduan kami:
+  </p>
+  <ul>
+    <li>Permintaan refund pulsa atau pengembalian dana paket. Hubungi 185.</li>
+    <li>Permintaan menghapus nomor pribadi dari sistem Indosat. Hubungi 185.</li>
+    <li>Pengaduan layanan jaringan, sinyal, atau kualitas operator.</li>
+    <li>Sengketa tagihan pascabayar.</li>
+    <li>Permintaan bantuan teknis untuk akun spesifik.</li>
+  </ul>
+  <p>
+    Untuk hal-hal di atas, hubungi langsung saluran resmi Indosat yang
+    tercantum di halaman <a href="/nomor-call-center-indosat">Nomor Call
+    Center Indosat</a>.
+  </p>
+
+  <h2>Komitmen transparansi</h2>
+  <p>
+    Kami percaya pengunjung berhak tahu kapan halaman pernah diperbarui
+    dan apa yang berubah. Itulah alasan setiap halaman menampilkan
+    tanggal "Terakhir diperbarui" yang akurat, dan koreksi material
+    selalu dicatat. Kalau Anda menemukan koreksi yang seharusnya
+    diumumkan tapi tidak terlihat di halaman, laporkan juga.
+  </p>
+</PageLayout>

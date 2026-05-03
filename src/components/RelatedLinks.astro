@@ -1,0 +1,79 @@
+---
+import { getRelated } from "~/data/internal-links";
+
+interface Props {
+  slug: string;
+  heading?: string;
+  limit?: number;
+}
+
+const { slug, heading = "Baca juga", limit = 4 } = Astro.props as Props;
+const related = getRelated(slug, limit);
+---
+
+{related.length > 0 && (
+  <aside class="related" aria-label={heading}>
+    <h2>{heading}</h2>
+    <ul>
+      {related.map((p) => (
+        <li>
+          <a href={`/${p.slug}`}>
+            <span class="r-title">{p.title}</span>
+            <span class="r-desc">{p.description}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </aside>
+)}
+
+<style>
+  .related {
+    margin: var(--space-12) 0;
+    padding: var(--space-6);
+    background: var(--color-bg-subtle);
+    border-radius: var(--radius-lg);
+  }
+  .related h2 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+  }
+  .related ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+  .related li a {
+    display: block;
+    padding: var(--space-4);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: border-color var(--motion-fast) var(--ease-standard),
+      box-shadow var(--motion-fast) var(--ease-standard);
+  }
+  .related li a:hover {
+    border-color: var(--color-brand-strong);
+    box-shadow: var(--shadow-sm);
+  }
+  .r-title {
+    display: block;
+    font-weight: 600;
+    color: var(--color-fg);
+    margin-bottom: var(--space-1);
+  }
+  .r-desc {
+    display: block;
+    color: var(--color-fg-muted);
+    font-size: var(--text-sm);
+    line-height: var(--leading-snug);
+  }
+  @media (max-width: 640px) {
+    .related ul { grid-template-columns: 1fr; }
+  }
+</style>

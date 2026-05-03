@@ -1,0 +1,70 @@
+---
+/**
+ * Custom event tracking. Pushes events to dataLayer (for GTM) and gtag (for GA4).
+ * No-ops gracefully when neither is configured.
+ *
+ * Events:
+ *   page_view             auto-fired by GA4 config
+ *   article_read_75       fires when user scrolls past 75% of article
+ *   outbound_click        any link click to external host
+ *   contact_form_submit   form with [data-event="contact"]
+ *   correction_report_submit  form with [data-event="correction"]
+ */
+---
+
+<script is:inline>
+  {`
+    (function(){
+      function track(name, params){
+        try {
+          if (window.gtag) window.gtag('event', name, params || {});
+          if (window.dataLayer) window.dataLayer.push(Object.assign({event: name}, params || {}));
+        } catch(e){}
+      }
+
+      // outbound_click
+      document.addEventListener('click', function(e){
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a) return;
+        var href = a.getAttribute('href');
+        if (!href || href.charAt(0) === '#' || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        try {
+          var url = new URL(href, window.location.href);
+          if (url.host && url.host !== window.location.host) {
+            track('outbound_click', { url: url.toString(), host: url.host });
+          }
+        } catch(_){}
+      });
+
+      // article_read_75
+      var article = document.querySelector('article.page, article.home, article.blog, article.nf');
+      if (article) {
+        var fired = false;
+        function checkScroll(){
+          if (fired) return;
+          var rect = article.getBoundingClientRect();
+          var visibleBottom = window.innerHeight - rect.top;
+          var pct = visibleBottom / rect.height;
+          if (pct >= 0.75) {
+            fired = true;
+            track('article_read_75', { path: window.location.pathname });
+            window.removeEventListener('scroll', checkScroll);
+          }
+        }
+        window.addEventListener('scroll', checkScroll, { passive: true });
+      }
+
+      // form submit events
+      document.addEventListener('submit', function(e){
+        var form = e.target;
+        if (!form || !form.getAttribute) return;
+        var ev = form.getAttribute('data-event');
+        if (!ev) return;
+        var name = ev === 'contact' ? 'contact_form_submit'
+                 : ev === 'correction' ? 'correction_report_submit'
+                 : null;
+        if (name) track(name, { path: window.location.pathname });
+      });
+    })();
+  `}
+</script>

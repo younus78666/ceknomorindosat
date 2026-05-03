@@ -1,0 +1,94 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Breadcrumbs from "~/components/Breadcrumbs.astro";
+import LastUpdated from "~/components/LastUpdated.astro";
+import RelatedLinks from "~/components/RelatedLinks.astro";
+import Disclaimer from "~/components/Disclaimer.astro";
+import AdSlot from "~/components/AdSlot.astro";
+import { articleSchema } from "~/lib/schema";
+import { SITE } from "~/data/site.config";
+import type { SEOInput } from "~/lib/seo";
+
+interface Props {
+  seo: SEOInput;
+  h1: string;
+  slug: string; // for related links + canonical
+  breadcrumbs?: { name: string; href?: string }[];
+  lastUpdated?: string;
+  lastUpdatedIso?: string;
+  showFooterDisclaimer?: boolean;
+  jsonLd?: unknown[]; // FAQ, HowTo, Breadcrumb already self-emit; pass extras here
+  emitArticleSchema?: boolean;
+  schemaType?: "Article" | "BlogPosting";
+}
+
+const {
+  seo,
+  h1,
+  slug,
+  breadcrumbs = [{ name: "Beranda", href: "/" }, { name: h1 }],
+  lastUpdated = SITE.lastUpdatedDefault,
+  lastUpdatedIso,
+  showFooterDisclaimer = true,
+  jsonLd = [],
+  emitArticleSchema = true,
+  schemaType = "Article",
+} = Astro.props as Props;
+
+const articleJsonLd = emitArticleSchema
+  ? [
+      articleSchema(
+        {
+          headline: h1,
+          description: seo.description,
+          url: new URL(seo.canonicalPath, SITE.url).toString(),
+          datePublished: seo.publishedTime,
+          dateModified: seo.modifiedTime,
+        },
+        schemaType
+      ),
+    ]
+  : [];
+---
+
+<BaseLayout seo={seo} jsonLd={[...articleJsonLd, ...jsonLd]}>
+  <article class="page">
+    <div class="page-inner">
+      <Breadcrumbs items={breadcrumbs} />
+      <h1>{h1}</h1>
+      <LastUpdated date={lastUpdated} iso={lastUpdatedIso} />
+
+      <div class="prose-id">
+        <slot />
+      </div>
+
+      <AdSlot name="footer-area" />
+      <RelatedLinks slug={slug} />
+      {showFooterDisclaimer && <Disclaimer variant="boxed" />}
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .page {
+    background: var(--color-bg);
+  }
+  .page-inner {
+    max-width: var(--container-prose);
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-4) var(--space-12);
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    line-height: var(--leading-tight);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--color-fg);
+    margin-bottom: var(--space-3);
+  }
+  @media (max-width: 640px) {
+    h1 { font-size: var(--text-3xl); }
+    .page-inner { padding: var(--space-6) var(--space-4) var(--space-10); }
+  }
+</style>

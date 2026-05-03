@@ -1,0 +1,128 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import { SITE } from "~/data/site.config";
+import { webPageSchema, organizationSchema } from "~/lib/schema";
+
+const slug = "penulis";
+const h1 = "Tim Penulis";
+
+const seo = {
+  title: "Tim Penulis CekNomorIndosat.com",
+  noSuffix: true,
+  description:
+    "Tim editorial CekNomorIndosat.com terdiri dari penulis panduan telekomunikasi dan kontributor yang berpengalaman menyederhanakan informasi teknis untuk pengguna sehari-hari.",
+  canonicalPath: `/${slug}`,
+  type: "website" as const,
+  publishedTime: "2026-05-04",
+  modifiedTime: "2026-05-04",
+};
+
+const url = `${SITE.url}/${slug}`;
+const pageJsonLd = [
+  webPageSchema({
+    type: "ProfilePage",
+    name: h1,
+    description: seo.description,
+    url,
+    datePublished: "2026-05-04",
+    dateModified: "2026-05-04",
+  }),
+  organizationSchema(),
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  emitArticleSchema={false}
+  jsonLd={pageJsonLd}
+  breadcrumbs={[{ name: "Beranda", href: "/" }, { name: "Tim Penulis" }]}
+>
+  <p>
+    CekNomorIndosat.com dikelola tim editorial kecil yang fokus pada satu
+    hal: menyederhanakan informasi teknis seputar layanan seluler Indonesia
+    agar bisa dimengerti pengguna sehari-hari. Kami bukan karyawan
+    operator, bukan reseller, dan bukan agen resmi. Kami pengamat
+    independen yang menulis panduan harian.
+  </p>
+
+  <h2>Tim editorial CekNomorIndosat.com</h2>
+  <p>
+    Tim terdiri dari penulis dan editor yang membagi tugas berdasarkan
+    fokus topik. Beberapa anggota lebih banyak menangani konten teknis
+    seperti USSD dan struktur paket, sementara yang lain fokus pada
+    panduan registrasi, keamanan data, dan kanal support. Identitas
+    individu tidak dicantumkan untuk menghindari kebingungan dengan
+    figur publik atau karyawan operator.
+  </p>
+
+  <h2>Bidang keahlian tim</h2>
+  <p>
+    Tulisan tim tersusun di tiga bidang utama berikut.
+  </p>
+  <ul>
+    <li>
+      <strong>Panduan telekomunikasi.</strong> Kode dial, USSD, format SMS
+      operator, dan layanan UMB. Tim memantau perubahan menu Indosat IM3
+      lewat pengujian berkala dan dokumentasi resmi.
+    </li>
+    <li>
+      <strong>Pemecahan masalah perangkat seluler.</strong> Topik seputar
+      Android, iPhone, dual SIM, eSIM, dan SIM Toolkit. Tim merangkum
+      langkah-langkah yang bekerja di mayoritas merek ponsel populer di
+      Indonesia.
+    </li>
+    <li>
+      <strong>Konten utilitas digital.</strong> Panduan registrasi NIK,
+      keamanan data pribadi, manajemen pulsa, dan pencegahan penipuan via
+      SMS atau telepon.
+    </li>
+  </ul>
+
+  <h2>Standar penulisan tim</h2>
+  <p>
+    Setiap penulis di tim berkomitmen pada standar yang sama agar
+    pengalaman pembaca konsisten dari satu halaman ke halaman lain.
+  </p>
+  <ul>
+    <li>Jawaban langsung di paragraf pertama, bukan setelah lima paragraf intro.</li>
+    <li>Verifikasi minimal tiga sumber sebelum publikasi.</li>
+    <li>Bahasa Indonesia yang ringkas, tanpa basa-basi atau klaim berlebihan.</li>
+    <li>Pengakuan terbuka kalau ada keterbatasan data atau perubahan layanan operator.</li>
+    <li>Pemisahan jelas antara fakta, opini, dan tips praktis.</li>
+  </ul>
+
+  <h2>Kenapa tim tidak menggunakan nama lengkap</h2>
+  <p>
+    Banyak situs Indonesia menampilkan nama penulis dengan gelar dan
+    portofolio. Kami memilih jalur lain dan ingin terbuka tentang
+    alasannya. Tiga pertimbangan utama.
+  </p>
+  <ul>
+    <li>
+      <strong>Menghindari klaim otoritas yang menyesatkan.</strong> Tim
+      editorial situs ini tidak punya hubungan resmi dengan Indosat. Kami
+      tidak ingin nama personal disalahartikan sebagai juru bicara
+      operator.
+    </li>
+    <li>
+      <strong>Menjaga privasi anggota tim.</strong> Topik yang kami bahas
+      sederhana, tetapi kami sadar lingkungan online tidak selalu ramah
+      bagi penulis yang namanya terekspos.
+    </li>
+    <li>
+      <strong>Konsistensi suara editorial.</strong> Yang penting adalah
+      kualitas dan akurasi panduan, bukan figur penulis individual.
+    </li>
+  </ul>
+
+  <h2>Kontak tim</h2>
+  <p>
+    Tim editorial bisa dihubungi lewat email
+    <strong> redaksi@ceknomorindosat.com</strong> untuk koreksi panduan,
+    masukan editorial, atau pertanyaan tentang topik tertentu. Untuk
+    detail prosedur kontak, kunjungi halaman
+    <a href="/kontak">Kontak</a>.
+  </p>
+</PageLayout>

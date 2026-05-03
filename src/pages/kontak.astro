@@ -1,0 +1,128 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import { SITE } from "~/data/site.config";
+import { webPageSchema, organizationSchema } from "~/lib/schema";
+
+const slug = "kontak";
+const h1 = "Kontak";
+
+const seo = {
+  title: "Kontak Redaksi CekNomorIndosat.com",
+  noSuffix: true,
+  description:
+    "Hubungi tim redaksi CekNomorIndosat.com untuk koreksi panduan, masukan editorial, kerja sama media, atau penempatan iklan. Pertanyaan akun ke 185.",
+  canonicalPath: `/${slug}`,
+  type: "website" as const,
+  publishedTime: "2026-05-04",
+  modifiedTime: "2026-05-04",
+};
+
+const url = `${SITE.url}/${slug}`;
+const pageJsonLd = [
+  webPageSchema({
+    type: "ContactPage",
+    name: h1,
+    description: seo.description,
+    url,
+    datePublished: "2026-05-04",
+    dateModified: "2026-05-04",
+  }),
+  organizationSchema(),
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  emitArticleSchema={false}
+  jsonLd={pageJsonLd}
+  breadcrumbs={[{ name: "Beranda", href: "/" }, { name: "Kontak" }]}
+>
+  <p>
+    Tim redaksi CekNomorIndosat.com membaca setiap pesan masuk dan membalas
+    sesuai jenis pertanyaan. Halaman ini memuat saluran resmi yang kami
+    pakai. Pilih kategori sesuai kebutuhan agar pesan Anda sampai ke pihak
+    yang tepat.
+  </p>
+
+  <div role="note" class="warn">
+    <p>
+      <strong>Catatan penting.</strong> Kami tidak punya akses ke data akun
+      Indosat, tidak bisa membuka blokir kartu, mengembalikan pulsa, atau
+      menyelesaikan masalah teknis di kartu Anda. Untuk hal itu, hubungi
+      <strong>185</strong> dari kartu IM3 atau <strong>021-3000-3000</strong>
+      dari telepon lain.
+    </p>
+  </div>
+
+  <h2>Koreksi panduan</h2>
+  <p>
+    Menemukan kode yang sudah tidak bekerja, langkah yang berubah, atau
+    tautan rusak di salah satu artikel? Kami sangat menghargai laporan
+    seperti ini.
+  </p>
+  <ul>
+    <li><strong>Email:</strong> redaksi@ceknomorindosat.com</li>
+    <li><strong>Subjek pesan:</strong> tulis "Koreksi" diikuti URL halaman.</li>
+    <li><strong>Isi:</strong> sebutkan bagian mana yang perlu diperbarui dan, kalau bisa, sumber resmi yang memuat informasi terbaru.</li>
+  </ul>
+  <p>
+    Detail proses koreksi tersedia di halaman
+    <a href="/kebijakan-koreksi">Kebijakan Koreksi</a>.
+  </p>
+
+  <h2>Masukan editorial</h2>
+  <p>
+    Punya saran topik baru, panduan yang perlu ditambahkan, atau format
+    yang lebih mudah diikuti? Kirim ke alamat yang sama dengan subjek
+    "Saran Editorial". Kami menampung semua masukan walau tidak semua bisa
+    langsung dieksekusi.
+  </p>
+
+  <h2>Iklan dan kerja sama bisnis</h2>
+  <p>
+    Untuk penawaran iklan tampilan, native, kerja sama konten, atau
+    afiliasi, kirim email ke alamat yang sama dengan subjek "Kerja Sama".
+    Sertakan nama perusahaan, jenis kerja sama, dan rentang waktu yang
+    diinginkan. Tim akan membalas dalam dua sampai lima hari kerja.
+  </p>
+
+  <h2>Bantuan akun: hubungi Indosat resmi</h2>
+  <p>
+    Untuk masalah yang berhubungan langsung dengan kartu, akun, atau
+    layanan IM3 Anda, hubungi saluran resmi Indosat. Tim kami tidak punya
+    wewenang menyelesaikan hal-hal ini.
+  </p>
+  <ul>
+    <li><strong>Call center 185</strong> dari kartu IM3 (gratis, 24 jam).</li>
+    <li><strong>Call center 021-3000-3000</strong> dari telepon lain.</li>
+    <li><strong>Portal bantuan</strong> di care.im3.id.</li>
+    <li><strong>Twitter resmi</strong> @IndosatCare untuk respon cepat di media sosial.</li>
+    <li><strong>Live chat</strong> di aplikasi myIM3.</li>
+  </ul>
+  <p>
+    Penjelasan lengkap kanal-kanal di atas tersedia di halaman
+    <a href="/nomor-call-center-indosat">Nomor Call Center Indosat</a>.
+  </p>
+
+  <h2>Catatan keamanan</h2>
+  <p>
+    Tidak ada satu pun saluran kontak resmi kami atau Indosat yang akan
+    meminta NIK, nomor KK, OTP, password, atau detail kartu kredit lewat
+    email atau pesan. Kalau Anda menerima pesan yang mengaku dari
+    CekNomorIndosat.com dengan permintaan seperti itu, abaikan dan jangan
+    balas.
+  </p>
+</PageLayout>
+
+<style>
+  .warn {
+    background: var(--color-warning-soft);
+    border-left: 3px solid var(--color-warning);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    margin: var(--space-4) 0 var(--space-6);
+  }
+  .warn p { margin-bottom: 0; }
+</style>

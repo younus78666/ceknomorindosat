@@ -1,0 +1,229 @@
+@import "tailwindcss";
+
+/* =========================================================
+   DESIGN TOKENS — single source of truth
+   Brand: Panduan Cek Nomor Indosat
+   Independent informational site (not affiliated with Indosat)
+   ========================================================= */
+
+@theme {
+  /* ---- Color tokens (semantic, not raw) ---- */
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f7f8fa;
+  --color-bg-muted: #eef0f4;
+  --color-surface: #ffffff;
+  --color-surface-raised: #ffffff;
+
+  --color-fg: #11161d;
+  --color-fg-muted: #4a5260;
+  --color-fg-subtle: #5f6470; /* WCAG AA: 5.61:1 on white */
+  --color-fg-inverted: #ffffff;
+
+  --color-border: #e3e6ec;
+  --color-border-strong: #c9cfd9;
+
+  --color-brand: #ffd200;
+  --color-brand-fg: #1a1a1a;
+  --color-brand-strong: #f5b400;
+  --color-brand-soft: #fff7cc;
+
+  --color-accent: #d12027;
+  --color-accent-fg: #ffffff;
+  --color-accent-soft: #fde7e8;
+
+  --color-success: #1f8a4c;
+  --color-success-soft: #e6f4ec;
+  --color-warning: #b86b00;
+  --color-warning-soft: #fff1d6;
+  --color-info: #1d6fbf;
+  --color-info-soft: #e3f0fc;
+  --color-danger: #c92a2a;
+  --color-danger-soft: #fde2e2;
+
+  --color-link: #1d6fbf;
+  --color-link-hover: #155088;
+
+  /* ---- Typography ---- */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Menlo,
+    Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.7;
+
+  /* ---- Spacing scale (4px base) ---- */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  /* ---- Radius / shadow / motion ---- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-pill: 999px;
+
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-sm: 0 1px 3px rgb(0 0 0 / 0.06), 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 0.06), 0 2px 4px rgb(0 0 0 / 0.04);
+  --shadow-lg: 0 12px 28px rgb(0 0 0 / 0.08), 0 4px 8px rgb(0 0 0 / 0.04);
+
+  --motion-fast: 120ms;
+  --motion-base: 200ms;
+  --motion-slow: 320ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0.2, 1);
+
+  /* ---- Layout ---- */
+  --container-prose: 44rem;
+  --container-page: 72rem;
+}
+
+/* Base reset and defaults */
+html {
+  font-family: var(--font-sans);
+  color: var(--color-fg);
+  background: var(--color-bg);
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  line-height: var(--leading-normal);
+  font-size: var(--text-base);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover {
+  color: var(--color-link-hover);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-strong);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Prose defaults for article body */
+.prose-id {
+  max-width: var(--container-prose);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-fg);
+}
+.prose-id h2 {
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+  font-weight: 700;
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.01em;
+}
+.prose-id h3 {
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+  font-weight: 600;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-2);
+}
+.prose-id h4 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-2);
+}
+.prose-id p {
+  margin-bottom: var(--space-4);
+}
+.prose-id ul,
+.prose-id ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+}
+.prose-id ul {
+  list-style: disc;
+}
+.prose-id ol {
+  list-style: decimal;
+}
+.prose-id li {
+  margin-bottom: var(--space-2);
+}
+.prose-id strong {
+  font-weight: 600;
+  color: var(--color-fg);
+}
+.prose-id code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--color-bg-muted);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-sm);
+}
+.prose-id table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+  font-size: var(--text-sm);
+}
+.prose-id th,
+.prose-id td {
+  border: 1px solid var(--color-border);
+  padding: var(--space-3);
+  text-align: left;
+  vertical-align: top;
+}
+.prose-id th {
+  background: var(--color-bg-subtle);
+  font-weight: 600;
+}
+.prose-id blockquote {
+  border-left: 3px solid var(--color-brand);
+  padding-left: var(--space-4);
+  margin: var(--space-6) 0;
+  color: var(--color-fg-muted);
+  font-style: italic;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+.skip-link:focus {
+  left: var(--space-4);
+  top: var(--space-4);
+  background: var(--color-brand);
+  color: var(--color-brand-fg);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  z-index: 1000;
+}

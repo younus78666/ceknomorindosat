@@ -1,0 +1,165 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import { SITE } from "~/data/site.config";
+import { webPageSchema, organizationSchema } from "~/lib/schema";
+
+const slug = "terms";
+const h1 = "Terms of Service";
+
+const seo = {
+  title: "Terms of Service CekNomorIndosat.com",
+  noSuffix: true,
+  description:
+    "Syarat dan ketentuan pemakaian CekNomorIndosat.com: penggunaan yang diperbolehkan, batas tanggung jawab, dan ketentuan hak kekayaan intelektual.",
+  canonicalPath: `/${slug}`,
+  type: "website" as const,
+  publishedTime: "2026-05-04",
+  modifiedTime: "2026-05-04",
+};
+
+const url = `${SITE.url}/${slug}`;
+const pageJsonLd = [
+  webPageSchema({
+    type: "WebPage",
+    name: h1,
+    description: seo.description,
+    url,
+    datePublished: "2026-05-04",
+    dateModified: "2026-05-04",
+  }),
+  organizationSchema(),
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  emitArticleSchema={false}
+  jsonLd={pageJsonLd}
+  breadcrumbs={[{ name: "Beranda", href: "/" }, { name: "Terms of Service" }]}
+>
+  <p>
+    Halaman ini berisi syarat dan ketentuan pemakaian situs
+    CekNomorIndosat.com. Dengan mengakses atau memakai situs, Anda
+    dianggap setuju dengan ketentuan di bawah ini. Bila Anda tidak setuju
+    dengan satu atau lebih ketentuan, mohon untuk tidak melanjutkan
+    pemakaian situs.
+  </p>
+
+  <h2>Sifat layanan</h2>
+  <p>
+    CekNomorIndosat.com menyediakan konten informasi dalam bentuk
+    panduan, artikel, dan halaman referensi yang berhubungan dengan
+    layanan seluler Indonesia. Konten ditujukan untuk tujuan edukasi
+    umum, bukan sebagai nasihat profesional, layanan teknis berbayar,
+    atau pengganti customer service operator.
+  </p>
+
+  <h2>Pemakaian yang diperbolehkan</h2>
+  <p>
+    Anda dipersilakan untuk:
+  </p>
+  <ul>
+    <li>Membaca dan memakai panduan untuk keperluan pribadi.</li>
+    <li>Membagikan tautan ke halaman situs ini di media sosial dan komunikasi pribadi.</li>
+    <li>Mengutip kalimat singkat dengan menyertakan tautan sumber, sesuai prinsip fair use.</li>
+    <li>Menerjemahkan konten untuk pemakaian non-komersial dengan pencantuman sumber.</li>
+  </ul>
+
+  <h2>Pemakaian yang dilarang</h2>
+  <p>
+    Anda tidak diperbolehkan melakukan hal-hal berikut tanpa izin
+    tertulis dari pengelola situs.
+  </p>
+  <ul>
+    <li>Menyalin sebagian besar atau seluruh halaman ke situs lain (scraping).</li>
+    <li>Memodifikasi konten lalu mempublikasikannya seolah-olah karya sendiri.</li>
+    <li>Memakai konten untuk tujuan komersial tanpa lisensi.</li>
+    <li>Menjalankan automated tools (bot scraper, spider) yang membebani server.</li>
+    <li>Memasukkan kode berbahaya, malware, atau payload eksploitasi lewat formulir, komentar, atau saluran pengiriman lain.</li>
+    <li>Menggunakan situs untuk aktivitas penipuan, termasuk meniru identitas pengelola situs untuk menjebak orang lain.</li>
+  </ul>
+
+  <h2>Akurasi konten</h2>
+  <p>
+    Kami berusaha memastikan setiap kode dial, format SMS, nomor telepon,
+    dan langkah aplikasi yang ditampilkan akurat pada saat publikasi.
+    Operator seluler dapat mengubah layanan tanpa pemberitahuan, dan
+    perubahan tersebut bisa membuat informasi di situs ini menjadi tidak
+    aktual untuk sementara waktu sampai pembaruan dilakukan. Anda
+    setuju untuk memverifikasi informasi penting lewat saluran resmi
+    operator sebelum bertindak.
+  </p>
+
+  <h2>Tautan ke pihak ketiga</h2>
+  <p>
+    Situs ini dapat berisi tautan ke situs pihak ketiga, termasuk halaman
+    bantuan operator, akun media sosial resmi, atau toko aplikasi.
+    Tautan disediakan sebagai referensi, dan kami tidak punya kendali
+    atas konten, kebijakan privasi, atau praktik situs pihak ketiga
+    tersebut. Pemakaian situs pihak ketiga tunduk pada syarat dan
+    ketentuan masing-masing.
+  </p>
+
+  <h2>Hak kekayaan intelektual</h2>
+  <p>
+    Seluruh konten orisinal di situs ini, termasuk teks, struktur
+    halaman, desain, dan logo CekNomorIndosat.com, dilindungi hak cipta
+    pengelola situs. Logo dan merek dagang pihak lain yang muncul di
+    situs (seperti nama operator dan layanan) adalah hak masing-masing
+    pemilik dan dipakai semata untuk keperluan referensi yang sah.
+  </p>
+
+  <h2>Iklan dan konten pihak ketiga</h2>
+  <p>
+    Situs ini memuat iklan dari jaringan periklanan. Konten iklan, klaim
+    yang dibuat dalam iklan, dan tindakan pengunjung setelah mengklik
+    iklan adalah tanggung jawab pengiklan dan pengunjung yang
+    bersangkutan. Pengelola situs tidak menjamin produk atau layanan
+    yang ditampilkan dalam iklan.
+  </p>
+
+  <h2>Batas tanggung jawab</h2>
+  <p>
+    Konten situs disediakan "sebagaimana adanya" tanpa jaminan dalam
+    bentuk apapun, baik tersurat maupun tersirat. Pengelola situs tidak
+    bertanggung jawab atas:
+  </p>
+  <ul>
+    <li>Kerugian langsung maupun tidak langsung yang muncul dari pemakaian situs.</li>
+    <li>Kehilangan pulsa, gagal aktivasi paket, atau kerusakan data karena salah tafsir panduan.</li>
+    <li>Gangguan akses situs akibat masalah hosting, jaringan, atau force majeure.</li>
+    <li>Tindakan pihak ketiga yang ditemukan lewat tautan eksternal di situs.</li>
+  </ul>
+  <p>
+    Sejauh diizinkan hukum yang berlaku, batas tanggung jawab pengelola
+    terbatas pada nilai nominal Rp 0 (nol rupiah) atau jumlah maksimum
+    yang diizinkan hukum, mana yang lebih kecil.
+  </p>
+
+  <h2>Penghentian akses</h2>
+  <p>
+    Pengelola berhak menolak, membatasi, atau menghentikan akses
+    pengunjung ke situs sewaktu-waktu, terutama bila ditemukan
+    pelanggaran ketentuan ini. Penghentian akses dapat dilakukan tanpa
+    pemberitahuan terlebih dahulu.
+  </p>
+
+  <h2>Hukum yang berlaku</h2>
+  <p>
+    Ketentuan ini disusun sesuai dengan hukum Republik Indonesia. Sengketa
+    yang muncul terkait pemakaian situs akan diselesaikan secara
+    musyawarah. Kalau tidak tercapai, sengketa dapat dibawa ke
+    pengadilan yang berwenang sesuai hukum domisili pengunjung atau
+    pengelola, mana yang lebih relevan dengan kasus terkait.
+  </p>
+
+  <h2>Perubahan ketentuan</h2>
+  <p>
+    Ketentuan ini dapat diperbarui sewaktu-waktu. Perubahan material akan
+    ditandai dengan pembaruan tanggal "Terakhir diperbarui" di bagian
+    atas halaman. Pemakaian situs setelah pembaruan dianggap sebagai
+    persetujuan terhadap versi terbaru.
+  </p>
+</PageLayout>

@@ -1,0 +1,18 @@
+---
+import { SITE } from "~/data/site.config";
+const { date = SITE.lastUpdatedDefault, iso } = Astro.props as { date?: string; iso?: string };
+---
+
+<p class="last-updated">
+  <span class="lu-label">Terakhir diperbarui:</span>
+  <time datetime={iso}>{date}</time>
+</p>
+
+<style>
+  .last-updated {
+    color: var(--color-fg-subtle);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+  }
+  .lu-label { font-weight: 500; }
+</style>

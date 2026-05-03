@@ -1,0 +1,231 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import QuickAnswer from "~/components/QuickAnswer.astro";
+import AdSlot from "~/components/AdSlot.astro";
+import FAQ from "~/components/FAQ.astro";
+import HowTo from "~/components/HowTo.astro";
+
+const slug = "cek-nomor-indosat-lewat-aplikasi-myim3";
+const h1 = "Cara Cek Nomor Indosat di Aplikasi myIM3";
+
+const seo = {
+  title: "Cara Cek Nomor Indosat di Aplikasi myIM3 (Panduan 2026)",
+  noSuffix: true,
+  description:
+    "Panduan lengkap cek nomor IM3 di aplikasi myIM3: install, login OTP, lihat profil, paket aktif, dan solusi jika OTP tidak masuk.",
+  canonicalPath: `/${slug}`,
+  type: "article" as const,
+  publishedTime: "2026-05-01",
+  modifiedTime: "2026-05-01",
+  keywords: [
+    "cek nomor indosat lewat aplikasi myim3",
+    "cek nomor di myim3",
+    "myim3 login",
+    "myim3 otp gagal",
+    "aplikasi myim3 indosat",
+  ],
+};
+
+const faqItems = [
+  {
+    question: "Apakah aplikasi myIM3 gratis?",
+    answer:
+      "Ya. Aplikasi tersedia gratis di Google Play Store dan App Store. Yang terpakai hanyalah kuota internet untuk login dan memuat halaman, biasanya kurang dari 5 MB per sesi singkat.",
+  },
+  {
+    question: "Bisakah satu aplikasi myIM3 menampilkan banyak nomor?",
+    answer:
+      "Bisa. myIM3 mendukung sampai sepuluh nomor IM3 dalam satu akun. Buka menu Akun, tap Tambah Nomor, lalu masukkan nomor lain dan verifikasi OTP. Penggantian nomor aktif dilakukan lewat menu Beralih Akun.",
+  },
+  {
+    question: "Apa beda myIM3 dengan portal myim3.indosat.id?",
+    answer:
+      "Fungsinya sama, hanya beda kanal. Aplikasi cocok untuk akses harian di ponsel, sedangkan portal web nyaman untuk pengguna yang lebih sering pakai laptop atau tidak ingin install aplikasi tambahan.",
+  },
+  {
+    question: "Apakah perlu paket data untuk login myIM3?",
+    answer:
+      "Perlu, walau hanya sedikit. Login OTP butuh koneksi internet aktif dari WiFi atau kuota seluler. Setelah login, halaman beranda yang menampilkan nomor juga butuh data untuk memuat. Tanpa internet, gunakan kode dial *888# sebagai alternatif.",
+  },
+  {
+    question: "Bisakah login myIM3 tanpa SIM IM3 di ponsel?",
+    answer:
+      "Tidak. Login pertama wajib lewat OTP yang dikirim ke SIM IM3 di ponsel yang sama. Setelah aktif, sesi login bisa bertahan beberapa hari, jadi Anda tetap bisa membuka aplikasi sementara saat berpindah ponsel selama belum logout.",
+  },
+  {
+    question: "Apakah myIM3 menyimpan data pulsa secara real time?",
+    answer:
+      "Hampir. Pulsa dan kuota tampil dengan jeda 1 sampai 5 menit setelah transaksi terakhir. Untuk angka yang benar-benar mutakhir, tarik halaman ke bawah agar aplikasi melakukan refresh manual.",
+  },
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  breadcrumbs={[
+    { name: "Beranda", href: "/" },
+    { name: "Cek Nomor Lewat myIM3" },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Cara cek nomor di aplikasi myIM3: buka aplikasi, login dengan
+      <strong> OTP </strong>yang dikirim ke SIM IM3, lalu lihat nomor utama di
+      bagian atas halaman beranda. Nomor juga tampil di menu Akun bersama
+      paket aktif, kuota, dan masa berlaku kartu.
+    </p>
+  </QuickAnswer>
+
+  <p>
+    myIM3 adalah aplikasi resmi pelanggan Indosat IM3 yang menyatukan info
+    nomor, pulsa, kuota, paket aktif, riwayat transaksi, dan pembelian paket
+    dalam satu tempat. Panduan ini menjelaskan cara install, login pertama,
+    membaca data nomor, mengelola paket aktif, dan solusi paling sering muncul
+    saat OTP tidak masuk.
+  </p>
+
+  <AdSlot name="post-answer" />
+
+  <h2>Install aplikasi myIM3</h2>
+  <p>
+    Aplikasi tersedia di dua toko aplikasi resmi. Total ukuran unduh sekitar
+    50 MB, dengan dukungan Android 8.0 ke atas dan iOS 13 ke atas.
+  </p>
+  <ul>
+    <li><strong>Android.</strong> Buka Google Play Store, cari "myIM3", lalu tap Install pada aplikasi yang dirilis Indosat Ooredoo Hutchison.</li>
+    <li><strong>iPhone.</strong> Buka App Store, cari "myIM3", lalu tap Get pada aplikasi resmi.</li>
+    <li><strong>HarmonyOS / Huawei.</strong> Versi resmi tersedia di AppGallery dengan pencarian yang sama.</li>
+  </ul>
+  <p>
+    Hindari mengunduh APK dari situs pihak ketiga. Versi tidak resmi sering
+    membawa malware atau gagal menerima OTP karena beda tanda tangan
+    aplikasi.
+  </p>
+
+  <HowTo
+    name="Login pertama myIM3 dengan OTP"
+    description="Selesai dalam dua menit asal SIM IM3 ada di ponsel dan jaringan SMS aktif."
+    totalTime="PT2M"
+    steps={[
+      {
+        name: "Buka aplikasi myIM3",
+        text: "Tap ikon aplikasi setelah selesai unduh. Aplikasi akan meminta izin akses ke SMS, telepon, dan notifikasi.",
+      },
+      {
+        name: "Pilih nomor IM3",
+        text: "Tap kotak nomor di layar pembuka. Aplikasi akan otomatis mendeteksi nomor IM3 yang terpasang di kartu SIM. Konfirmasi dengan tap Lanjut.",
+      },
+      {
+        name: "Tunggu OTP via SMS",
+        text: "Kode OTP enam digit dikirim ke SIM IM3 dalam 30 sampai 60 detik. Aplikasi sering mengisi otomatis kode tanpa perlu Anda mengetik manual.",
+      },
+      {
+        name: "Konfirmasi nama dan email",
+        text: "Login pertama meminta data nama dan email untuk akun. Email tidak harus diverifikasi langsung tapi membantu pemulihan akun nanti.",
+      },
+      {
+        name: "Selesai",
+        text: "Setelah konfirmasi, halaman beranda terbuka dengan nomor utama tampil di pojok atas.",
+      },
+    ]}
+  />
+
+  <h2>Di mana nomor tampil setelah login</h2>
+  <p>
+    Nomor IM3 muncul di tiga tempat berbeda di dalam aplikasi.
+  </p>
+  <ul>
+    <li><strong>Header beranda.</strong> Bagian paling atas halaman utama, di sebelah ikon profil.</li>
+    <li><strong>Menu Akun.</strong> Tap ikon profil di pojok kanan atas. Halaman ini menampilkan nomor lengkap dengan status pelanggan (Prabayar atau Pascabayar).</li>
+    <li><strong>Kartu paket aktif.</strong> Setiap kartu paket di halaman beranda menyertakan nomor pemilik di bawah nama paket.</li>
+  </ul>
+
+  <h2>Cek paket aktif dan kuota</h2>
+  <p>
+    Halaman beranda menampilkan kartu setiap paket yang sedang berjalan. Tiap
+    kartu berisi nama paket, sisa kuota dalam GB, masa berlaku, dan tombol
+    perpanjang. Tap satu kartu untuk melihat rincian, termasuk pemecahan
+    kuota utama, kuota malam, dan kuota aplikasi seperti TikTok atau YouTube.
+  </p>
+  <p>
+    Untuk pelanggan Freedom Internet dan IM3 Platinum, kartu paket juga
+    menampilkan kuota chat, kuota sosial media, dan kuota gaming dalam tab
+    terpisah. Tarik halaman ke bawah untuk refresh manual.
+  </p>
+
+  <AdSlot name="mid-content" />
+
+  <h2>Lihat profil lengkap</h2>
+  <p>
+    Tap ikon profil di pojok kanan atas, lalu pilih menu Akun atau Profil
+    Saya. Halaman ini menampilkan tujuh data utama:
+  </p>
+  <ul>
+    <li>Nomor IM3 utama dan nomor tambahan jika ada.</li>
+    <li>Status pelanggan: Prabayar atau Pascabayar.</li>
+    <li>Tanggal aktivasi kartu.</li>
+    <li>Email dan nama yang terdaftar.</li>
+    <li>Foto KTP yang dipakai saat registrasi.</li>
+    <li>Status NIK dan nomor KK terdaftar.</li>
+    <li>Riwayat ganti nomor jika pernah dilakukan.</li>
+  </ul>
+
+  <h2>Tidak bisa login? Solusi yang sering bekerja</h2>
+  <p>
+    Empat masalah login paling umum dan cara memperbaikinya berurutan dari
+    yang paling ringan.
+  </p>
+  <ol>
+    <li><strong>Aplikasi crash di pembuka.</strong> Bersihkan cache aplikasi lewat Pengaturan &rarr; Aplikasi &rarr; myIM3 &rarr; Penyimpanan, lalu buka ulang.</li>
+    <li><strong>Layar OTP tidak lanjut.</strong> Pastikan koneksi internet stabil. Pindahkan ponsel ke WiFi sebentar, lalu coba lagi.</li>
+    <li><strong>"Nomor tidak terdaftar".</strong> SIM mungkin masih dalam masa aktivasi. Tunggu 30 menit setelah aktivasi pertama sebelum mencoba login.</li>
+    <li><strong>"Nomor sudah dipakai akun lain".</strong> Logout dari akun lama lewat menu Akun &rarr; Keluar di ponsel pertama, lalu login di ponsel baru.</li>
+  </ol>
+
+  <h2>SIM tidak menerima OTP: penyebab dan jalan keluar</h2>
+  <p>
+    OTP yang tidak masuk adalah keluhan login paling umum. Tujuh pemicu yang
+    sering jadi biang keladi:
+  </p>
+  <ul>
+    <li>Pulsa Rp 0 di sebagian ponsel yang membutuhkan saldo minimal untuk menerima SMS.</li>
+    <li>Kartu sudah masuk masa tenggang.</li>
+    <li>Memori inbox SMS penuh sehingga pesan baru tidak masuk.</li>
+    <li>Pesan ditandai sebagai spam oleh aplikasi pesan.</li>
+    <li>Slot dual SIM yang dipilih bukan slot IM3.</li>
+    <li>Sinyal seluler hanya 1 bar, sehingga SMS gagal dikirim.</li>
+    <li>Pemblokiran SMS sender 88 atau 4444 di aplikasi keamanan.</li>
+  </ul>
+  <p>
+    Solusi cepat: buka aplikasi pesan, hapus inbox lama, isi pulsa minimal
+    Rp 5.000, pindah ke area sinyal kuat, lalu tap "Kirim ulang OTP" di
+    aplikasi myIM3.
+  </p>
+
+  <h2>Alternatif kalau myIM3 gagal terus</h2>
+  <p>
+    Selalu ada jalur cadangan. Kalau aplikasi tetap tidak bisa login setelah
+    semua langkah di atas, gunakan satu dari empat alternatif:
+  </p>
+  <ul>
+    <li><strong>Portal web</strong> di <em>myim3.indosat.id</em> yang memakai sistem login OTP yang sama.</li>
+    <li><strong>Kode dial</strong> <code>*888#</code> untuk cek nomor cepat tanpa internet.</li>
+    <li><strong>SMS</strong> ketik <code>INFO</code> kirim ke <code>363</code>.</li>
+    <li><strong>Call center</strong> di <code>185</code> dari kartu IM3 atau <code>021-3000-3000</code> dari telepon lain.</li>
+  </ul>
+
+  <AdSlot name="pre-faq" />
+
+  <FAQ items={faqItems} />
+
+  <h2>Panduan terkait</h2>
+  <ul>
+    <li><a href="/">Panduan utama cek nomor Indosat</a>.</li>
+    <li><a href="/cek-nomor-indosat-im3">Cara cek nomor IM3 sendiri (semua metode)</a>.</li>
+    <li><a href="/cek-nomor-indosat-lewat-ussd">Cek nomor lewat USSD lengkap</a>.</li>
+    <li><a href="/cara-cek-pulsa-indosat">Cara cek pulsa Indosat</a>.</li>
+    <li><a href="/cara-cek-kuota-indosat">Cara cek kuota Indosat</a>.</li>
+  </ul>
+</PageLayout>

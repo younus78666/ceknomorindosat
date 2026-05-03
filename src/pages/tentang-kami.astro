@@ -1,0 +1,112 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import { SITE } from "~/data/site.config";
+import { webPageSchema, organizationSchema } from "~/lib/schema";
+
+const slug = "tentang-kami";
+const h1 = "Tentang CekNomorIndosat.com";
+
+const seo = {
+  title: "Tentang CekNomorIndosat.com",
+  noSuffix: true,
+  description:
+    "CekNomorIndosat.com adalah situs panduan independen yang membantu pelanggan IM3 menemukan informasi cek nomor, pulsa, kuota, dan registrasi yang akurat dan terbaru.",
+  canonicalPath: `/${slug}`,
+  type: "website" as const,
+  publishedTime: "2026-05-04",
+  modifiedTime: "2026-05-04",
+};
+
+const url = `${SITE.url}/${slug}`;
+const pageJsonLd = [
+  webPageSchema({
+    type: "AboutPage",
+    name: h1,
+    description: seo.description,
+    url,
+    datePublished: "2026-05-04",
+    dateModified: "2026-05-04",
+  }),
+  organizationSchema(),
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  emitArticleSchema={false}
+  jsonLd={pageJsonLd}
+  breadcrumbs={[{ name: "Beranda", href: "/" }, { name: "Tentang Kami" }]}
+>
+  <p>
+    CekNomorIndosat.com adalah situs panduan independen yang menyediakan
+    informasi sederhana, terbaru, dan mudah diikuti seputar layanan
+    Indosat IM3. Kami fokus pada satu tujuan: membantu pelanggan menemukan
+    jawaban yang dia butuhkan dalam hitungan detik, terutama untuk
+    pertanyaan harian seperti cara cek nomor, cek pulsa, cek kuota, dan
+    registrasi kartu prabayar.
+  </p>
+
+  <h2>Independensi editorial</h2>
+  <p>
+    Situs ini tidak dimiliki, didanai, dikelola, atau berafiliasi dengan
+    Indosat Ooredoo Hutchison. Kami tidak memakai logo resmi, tidak
+    mengaku mewakili pihak operator, dan tidak menyalin halaman bantuan
+    resmi mereka. Semua tulisan dibuat oleh tim editorial independen yang
+    melakukan pengecekan langsung ke sumber resmi sebelum publikasi.
+  </p>
+  <p>
+    Pendapatan situs ini berasal dari iklan jaringan tampilan dan
+    afiliasi, yang ditampilkan terpisah dari isi panduan. Pemasang iklan
+    tidak punya pengaruh terhadap apa yang ditulis tim editorial.
+  </p>
+
+  <h2>Tujuan utama: panduan yang berpihak ke pengguna</h2>
+  <p>
+    Banyak pelanggan IM3 yang masih bingung saat butuh kode dial yang
+    benar, ingin tahu masa aktif kartu, atau perlu menghentikan langganan
+    yang menyedot pulsa. Beberapa blog menyalin informasi tahun lalu
+    tanpa memperbarui, beberapa lain menyertakan kode tidak resmi yang
+    berisiko. Kami hadir untuk menambal celah ini dengan panduan yang
+    diverifikasi dan diperbarui secara berkala.
+  </p>
+
+  <h2>Cara kami memverifikasi informasi</h2>
+  <p>
+    Setiap kode dial, format SMS, nomor support, dan langkah aplikasi
+    diuji silang dengan minimal tiga sumber sebelum dipublikasikan.
+    Sumber yang kami pakai antara lain:
+  </p>
+  <ul>
+    <li>Halaman bantuan resmi Indosat di <strong>care.im3.id</strong>.</li>
+    <li>Akun media sosial resmi <strong>@IndosatCare</strong>.</li>
+    <li>Aplikasi <strong>myIM3</strong> sebagai sumber kode dan info paket aktif.</li>
+    <li>Pengumuman call center <strong>185</strong> dan komunikasi resmi lain.</li>
+    <li>Pemberitaan dari media terpercaya yang mengutip sumber resmi langsung.</li>
+  </ul>
+  <p>
+    Bila ada perbedaan informasi antarsumber, kami memilih sumber yang
+    paling resmi dan paling baru, lalu menulis tanggal pemeriksaan
+    terakhir di setiap halaman.
+  </p>
+
+  <h2>Yang tidak kami lakukan</h2>
+  <p>
+    Beberapa hal di luar cakupan situs ini, dan kami menyebutnya terbuka
+    agar pengunjung tidak salah harap.
+  </p>
+  <ul>
+    <li>Kami tidak memproses transaksi pulsa, paket, atau pembayaran tagihan.</li>
+    <li>Kami tidak menyimpan data NIK, nomor KK, atau informasi identitas pengunjung.</li>
+    <li>Kami tidak mewakili Indosat dalam masalah akun, dispute, atau pengaduan resmi.</li>
+    <li>Kami tidak menjawab pertanyaan akun spesifik. Hubungi <strong>185</strong> untuk hal tersebut.</li>
+  </ul>
+
+  <h2>Kontak</h2>
+  <p>
+    Untuk koreksi, masukan, kerja sama media, atau iklan, silakan kunjungi
+    halaman <a href="/kontak">Kontak</a>. Kami membaca setiap pesan dan
+    membalas dalam batas wajar sesuai jadwal redaksi.
+  </p>
+</PageLayout>

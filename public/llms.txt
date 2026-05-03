@@ -1,0 +1,48 @@
+# CekNomorIndosat.com
+
+> Panduan independen Bahasa Indonesia untuk pelanggan Indosat IM3:
+> cara cek nomor, pulsa, kuota, masa aktif, registrasi kartu, dan kontak
+> bantuan resmi. Situs ini tidak berafiliasi dengan Indosat Ooredoo Hutchison.
+
+## Panduan Utama (Pages)
+
+- [Cek Nomor Indosat](https://ceknomorindosat.com/): panduan utama dengan lima metode resmi cek nomor IM3 termasuk *888#, *123#, SMS, myIM3, dan call center 185.
+- [Cara Cek Nomor IM3 Sendiri](https://ceknomorindosat.com/cek-nomor-indosat-im3): panduan praktis cek nomor IM3 dengan urutan dari yang tercepat ke cadangan.
+- [Cek Nomor Lewat USSD](https://ceknomorindosat.com/cek-nomor-indosat-lewat-ussd): panduan USSD lengkap di Android dan iPhone, plus solusi MMI code invalid.
+- [Cek Nomor di Aplikasi myIM3](https://ceknomorindosat.com/cek-nomor-indosat-lewat-aplikasi-myim3): cara install, login OTP, dan navigasi aplikasi resmi myIM3.
+- [Cek Nomor Masih Aktif atau Tidak](https://ceknomorindosat.com/cek-nomor-indosat-masih-aktif-atau-tidak): cara mengetahui status kartu (aktif, tenggang, hangus) dan cara perpanjang.
+- [Cara Cek Kuota Indosat](https://ceknomorindosat.com/cek-kuota-indosat): panduan cek kuota utama, malam, bonus, dan aplikasi via *123*7*1#, SMS, dan myIM3.
+- [Cara Cek Pulsa Indosat](https://ceknomorindosat.com/cek-pulsa-indosat): cara cek saldo pulsa dan menghentikan layanan VAS yang menyedot pulsa.
+- [Kode Dial Indosat](https://ceknomorindosat.com/kode-dial-indosat): daftar lengkap kode dial Indosat IM3 menurut tujuan.
+- [Nomor Call Center Indosat](https://ceknomorindosat.com/nomor-call-center-indosat): kontak resmi Indosat termasuk 185, email, Twitter, dan portal care.im3.id.
+- [Cara Registrasi Kartu Indosat](https://ceknomorindosat.com/cara-registrasi-kartu-indosat): panduan registrasi NIK dan nomor KK lewat SMS ke 4444.
+
+## Blog Posts
+
+- [Apakah Kode Cek Nomor Indosat Berubah?](https://ceknomorindosat.com/kode-cek-nomor-indosat-berubah)
+- [Kenapa Tidak Bisa Cek Nomor Indosat?](https://ceknomorindosat.com/kenapa-tidak-bisa-cek-nomor-indosat)
+- [Lupa Nomor Indosat? Cara Menemukannya Lagi](https://ceknomorindosat.com/lupa-nomor-indosat)
+- [Cara Cek Nomor IM3 Tanpa Aplikasi](https://ceknomorindosat.com/cek-nomor-im3-tanpa-aplikasi)
+- [Perbedaan IM3 dan Indosat](https://ceknomorindosat.com/perbedaan-im3-dan-indosat)
+
+## Tentang Situs
+
+- [Tentang Kami](https://ceknomorindosat.com/tentang-kami)
+- [Tim Penulis](https://ceknomorindosat.com/penulis)
+- [Kebijakan Editorial](https://ceknomorindosat.com/kebijakan-editorial)
+- [Kebijakan Koreksi](https://ceknomorindosat.com/kebijakan-koreksi)
+- [Kontak Redaksi](https://ceknomorindosat.com/kontak)
+
+## Legal
+
+- [Disclaimer](https://ceknomorindosat.com/disclaimer)
+- [Privacy Policy](https://ceknomorindosat.com/privacy-policy)
+- [Terms of Service](https://ceknomorindosat.com/terms)
+- [Cookie Policy](https://ceknomorindosat.com/cookie-policy)
+
+## Disclaimer
+
+CekNomorIndosat.com adalah situs panduan independen dan bukan situs resmi
+Indosat Ooredoo Hutchison. Konten ditujukan untuk informasi umum.
+Verifikasi setiap kode dial atau format SMS lewat aplikasi myIM3 atau
+care.im3.id sebelum digunakan untuk transaksi penting.

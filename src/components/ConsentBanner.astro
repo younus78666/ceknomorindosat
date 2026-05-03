@@ -1,0 +1,119 @@
+---
+import { ANALYTICS } from "~/data/analytics.config";
+const { REQUIRE_CONSENT } = ANALYTICS;
+---
+
+{REQUIRE_CONSENT && (
+  <Fragment>
+    <div id="cni-consent" class="consent" hidden role="dialog" aria-labelledby="cni-consent-title" aria-describedby="cni-consent-desc">
+      <div class="inner">
+        <p id="cni-consent-title" class="title">Cookie dan analitik</p>
+        <p id="cni-consent-desc" class="desc">
+          Situs ini memakai cookie untuk analitik dan menampilkan iklan yang relevan.
+          Detail tersedia di
+          <a href="/cookie-policy">Cookie Policy</a> dan
+          <a href="/privacy-policy">Privacy Policy</a>.
+        </p>
+        <div class="actions">
+          <button type="button" data-consent="denied" class="btn btn-ghost">Tolak</button>
+          <button type="button" data-consent="granted" class="btn btn-primary">Setuju</button>
+        </div>
+      </div>
+    </div>
+
+    <script is:inline>
+      {`
+        (function(){
+          var KEY = 'cni_consent';
+          var banner = document.getElementById('cni-consent');
+          if (!banner) return;
+          var stored = null;
+          try { stored = localStorage.getItem(KEY); } catch (e) {}
+          if (!stored) banner.hidden = false;
+          banner.querySelectorAll('[data-consent]').forEach(function(btn){
+            btn.addEventListener('click', function(){
+              var v = btn.getAttribute('data-consent');
+              try { localStorage.setItem(KEY, v); } catch (e) {}
+              banner.hidden = true;
+              if (typeof window.gtag === 'function') {
+                window.gtag('consent', 'update', {
+                  ad_storage: v,
+                  ad_user_data: v,
+                  ad_personalization: v,
+                  analytics_storage: v,
+                });
+              }
+            });
+          });
+        })();
+      `}
+    </script>
+
+    <style>
+      .consent {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        background: var(--color-surface);
+        border-top: 1px solid var(--color-border);
+        box-shadow: var(--shadow-lg);
+      }
+      .consent .inner {
+        max-width: var(--container-page);
+        margin: 0 auto;
+        padding: var(--space-4);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: var(--space-4);
+        align-items: center;
+      }
+      .consent .title {
+        font-weight: 700;
+        font-size: var(--text-sm);
+        color: var(--color-fg);
+        margin-bottom: var(--space-1);
+      }
+      .consent .desc {
+        color: var(--color-fg-muted);
+        font-size: var(--text-sm);
+        line-height: var(--leading-relaxed);
+        margin: 0;
+      }
+      .consent .desc a {
+        color: var(--color-link);
+      }
+      .consent .actions {
+        display: flex;
+        gap: var(--space-2);
+      }
+      .consent .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: var(--space-2) var(--space-4);
+        border-radius: var(--radius-md);
+        font-weight: 600;
+        font-size: var(--text-sm);
+        cursor: pointer;
+        border: 1px solid transparent;
+      }
+      .consent .btn-primary {
+        background: var(--color-fg);
+        color: var(--color-fg-inverted);
+      }
+      .consent .btn-ghost {
+        background: var(--color-surface);
+        color: var(--color-fg);
+        border-color: var(--color-border-strong);
+      }
+      @media (max-width: 640px) {
+        .consent .inner { grid-template-columns: 1fr; }
+        .consent .actions { justify-content: stretch; }
+        .consent .btn { flex: 1; }
+      }
+    </style>
+  </Fragment>
+)}

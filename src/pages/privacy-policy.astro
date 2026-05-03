@@ -1,0 +1,179 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import { SITE } from "~/data/site.config";
+import { webPageSchema, organizationSchema } from "~/lib/schema";
+
+const slug = "privacy-policy";
+const h1 = "Privacy Policy";
+
+const seo = {
+  title: "Privacy Policy CekNomorIndosat.com",
+  noSuffix: true,
+  description:
+    "Kebijakan privasi CekNomorIndosat.com: data yang dikumpulkan, cookie, layanan analitik, jaringan iklan, dan hak pengunjung atas data.",
+  canonicalPath: `/${slug}`,
+  type: "website" as const,
+  publishedTime: "2026-05-04",
+  modifiedTime: "2026-05-04",
+};
+
+const url = `${SITE.url}/${slug}`;
+const pageJsonLd = [
+  webPageSchema({
+    type: "WebPage",
+    name: h1,
+    description: seo.description,
+    url,
+    datePublished: "2026-05-04",
+    dateModified: "2026-05-04",
+  }),
+  organizationSchema(),
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  emitArticleSchema={false}
+  jsonLd={pageJsonLd}
+  breadcrumbs={[{ name: "Beranda", href: "/" }, { name: "Privacy Policy" }]}
+>
+  <p>
+    Kebijakan privasi ini menjelaskan jenis data yang dikumpulkan saat
+    Anda mengunjungi CekNomorIndosat.com, bagaimana data tersebut dipakai,
+    dengan siapa data dibagikan, serta hak Anda sebagai pengunjung. Dengan
+    memakai situs ini, Anda dianggap menyetujui ketentuan yang dijelaskan
+    di sini.
+  </p>
+
+  <h2>Data yang dikumpulkan secara otomatis</h2>
+  <p>
+    Saat Anda membuka halaman, server kami dan layanan pihak ketiga yang
+    kami pakai mencatat informasi teknis berikut.
+  </p>
+  <ul>
+    <li>Alamat IP dalam bentuk teranonimisasi.</li>
+    <li>Jenis perangkat, sistem operasi, dan browser.</li>
+    <li>Halaman yang dikunjungi dan durasi kunjungan.</li>
+    <li>URL referer yang membawa Anda ke situs ini.</li>
+    <li>Bahasa peramban dan zona waktu.</li>
+  </ul>
+  <p>
+    Data ini dipakai untuk menganalisis pola lalu lintas, mendeteksi
+    penyalahgunaan, dan memperbaiki performa situs. Data tidak dipakai
+    untuk mengidentifikasi pengunjung secara individu.
+  </p>
+
+  <h2>Data yang Anda kirim secara aktif</h2>
+  <p>
+    CekNomorIndosat.com tidak memiliki form registrasi atau form pembelian
+    online. Satu-satunya saluran tempat Anda mengirim data secara aktif
+    adalah email ke alamat redaksi. Email yang masuk berisi data sukarela
+    seperti nama, alamat email, dan isi pesan, dan dipakai semata untuk
+    menanggapi pesan Anda.
+  </p>
+  <p>
+    Kami tidak meminta dan tidak menyimpan NIK, nomor KK, password,
+    OTP, kode kartu kredit, atau detail rekening bank. Kalau ada pesan
+    yang berisi data sensitif, kami menghapusnya dari kotak masuk
+    setelah pesan ditanggapi.
+  </p>
+
+  <h2>Cookie dan teknologi serupa</h2>
+  <p>
+    Situs ini memakai cookie untuk mengingat preferensi tampilan,
+    mengukur kunjungan, dan menyajikan iklan. Penjelasan lengkap tentang
+    cookie tersedia di halaman <a href="/cookie-policy">Cookie Policy</a>.
+  </p>
+
+  <h2>Layanan analitik pihak ketiga</h2>
+  <p>
+    Kami berencana memakai atau sedang memakai layanan analitik berikut
+    untuk memahami pengunjung secara agregat.
+  </p>
+  <ul>
+    <li>
+      <strong>Google Analytics 4.</strong> Mencatat kunjungan dengan IP
+      teranonimisasi sesuai pengaturan default. Detail kebijakan tersedia
+      di halaman privasi Google.
+    </li>
+    <li>
+      <strong>Microsoft Clarity.</strong> Merekam interaksi pengunjung
+      lewat session replay teranonimisasi dan heatmap, untuk mempelajari
+      bagaimana halaman dipakai.
+    </li>
+  </ul>
+  <p>
+    Anda dapat menonaktifkan analitik dengan ekstensi browser seperti
+    Google Analytics Opt-Out, atau dengan pengaturan Do Not Track di
+    browser Anda.
+  </p>
+
+  <h2>Iklan dan jaringan periklanan</h2>
+  <p>
+    Situs ini dapat menampilkan iklan dari jaringan periklanan berikut.
+  </p>
+  <ul>
+    <li><strong>Adsterra</strong> untuk iklan tampilan dan native.</li>
+    <li><strong>Monetag</strong> untuk format social bar, popunder, dan push notification.</li>
+  </ul>
+  <p>
+    Jaringan ini menggunakan cookie pihak ketiga dan identifier perangkat
+    untuk menampilkan iklan yang relevan. Anda dapat keluar dari
+    personalisasi iklan lewat halaman opt-out yang disediakan tiap
+    jaringan, atau lewat pengaturan privasi browser dan sistem operasi
+    Anda.
+  </p>
+
+  <h2>Pembagian data</h2>
+  <p>
+    Kami tidak menjual data pengunjung. Data hanya dibagikan dalam tiga
+    konteks berikut:
+  </p>
+  <ul>
+    <li>Penyedia layanan teknis seperti hosting, analitik, dan jaringan iklan, sesuai keperluan operasional situs.</li>
+    <li>Permintaan resmi dari aparat penegak hukum sesuai hukum yang berlaku.</li>
+    <li>Saat dibutuhkan untuk melindungi hak hukum, keamanan, atau properti pengelola situs.</li>
+  </ul>
+
+  <h2>Penyimpanan data</h2>
+  <p>
+    Log akses server disimpan tidak lebih dari 12 bulan, lalu dihapus
+    secara otomatis. Email yang masuk ke alamat redaksi disimpan sesuai
+    kebutuhan pengarsipan, dan dapat dihapus atas permintaan pengirim.
+  </p>
+
+  <h2>Hak pengunjung</h2>
+  <p>
+    Anda memiliki hak berikut atas data Anda.
+  </p>
+  <ul>
+    <li>Meminta informasi tentang data apa yang dimiliki tentang Anda.</li>
+    <li>Meminta koreksi data yang tidak akurat.</li>
+    <li>Meminta penghapusan data yang sudah tidak diperlukan.</li>
+    <li>Menolak pemrosesan untuk tujuan tertentu seperti analitik atau iklan.</li>
+  </ul>
+  <p>
+    Untuk menggunakan hak-hak ini, kirim email ke
+    <strong> redaksi@ceknomorindosat.com </strong>dengan subjek
+    "Permintaan Privasi" dan keterangan singkat tentang permintaan Anda.
+    Kami menjawab dalam tujuh hari kerja.
+  </p>
+
+  <h2>Privasi anak</h2>
+  <p>
+    Situs ini ditujukan untuk pengunjung dewasa dan tidak diarahkan secara
+    aktif kepada anak di bawah 13 tahun. Kami tidak sengaja mengumpulkan
+    data dari anak-anak. Bila orang tua atau wali menemukan bahwa anak
+    mereka telah mengirim data, hubungi kami untuk penghapusan.
+  </p>
+
+  <h2>Perubahan kebijakan</h2>
+  <p>
+    Kebijakan ini dapat diperbarui untuk mengikuti perubahan layanan
+    pihak ketiga atau aturan privasi yang berlaku. Versi terbaru selalu
+    tersedia di halaman ini, dengan tanggal "Terakhir diperbarui"
+    menunjukkan revisi paling baru.
+  </p>
+</PageLayout>

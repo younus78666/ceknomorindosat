@@ -1,0 +1,213 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import QuickAnswer from "~/components/QuickAnswer.astro";
+import AdSlot from "~/components/AdSlot.astro";
+import FAQ from "~/components/FAQ.astro";
+import HowTo from "~/components/HowTo.astro";
+import DataTable from "~/components/DataTable.astro";
+
+const slug = "cek-pulsa-indosat";
+const h1 = "Cara Cek Pulsa Indosat dengan Cepat";
+
+const seo = {
+  title: "Cara Cek Pulsa Indosat IM3 dengan Cepat (2026)",
+  noSuffix: true,
+  description:
+    "Cara cek pulsa Indosat IM3 lewat *888#, aplikasi myIM3, dan SMS, plus cara cek langganan aktif yang menyedot pulsa lewat *726#.",
+  canonicalPath: `/${slug}`,
+  type: "article" as const,
+  publishedTime: "2026-05-01",
+  modifiedTime: "2026-05-01",
+  keywords: [
+    "cek pulsa indosat",
+    "cek pulsa im3",
+    "*888# pulsa",
+    "*726# stop layanan",
+    "pulsa kesedot indosat",
+    "cek langganan aktif indosat",
+  ],
+};
+
+const faqItems = [
+  {
+    question: "Berapa biaya cek pulsa lewat *888#?",
+    answer:
+      "Gratis. Kode *888# adalah layanan UMB resmi Indosat dan tidak menarik biaya pulsa, kuota, maupun internet. Cek pulsa bisa dilakukan kapan saja selama kartu masih dalam masa aktif dan ada sinyal seluler.",
+  },
+  {
+    question: "Apa beda *888# dan *123# untuk cek pulsa?",
+    answer:
+      "Keduanya gratis dan menampilkan saldo pulsa. *888# adalah shortcut UMB satu langkah yang langsung memunculkan info pulsa, kuota, dan masa aktif. *123# membuka menu lengkap layanan IM3 yang butuh navigasi tambahan, tetapi memberi akses ke menu Beli Paket dan Cek Tagihan.",
+  },
+  {
+    question: "Kenapa pulsa saya tiba-tiba berkurang tanpa transaksi?",
+    answer:
+      "Penyebab paling umum adalah langganan VAS atau konten premium yang aktif tanpa sadar, sering dari klik iklan. Sebab lain: auto-renewal paket aktif, biaya roaming, atau SMS premium ke nomor pendek. Cek langganan aktif lewat *726#, lalu pilih menu Stop untuk menghentikan.",
+  },
+  {
+    question: "Bagaimana cara melihat riwayat pemakaian pulsa?",
+    answer:
+      "Buka aplikasi myIM3, masuk ke menu Akun, lalu pilih Riwayat Transaksi. Halaman ini menampilkan log pemakaian pulsa, isi ulang, pembelian paket, dan pemotongan VAS. Riwayat tersedia hingga 30 hingga 90 hari ke belakang tergantung versi aplikasi.",
+  },
+  {
+    question: "Apakah pulsa Indosat bisa dipindahkan ke nomor lain?",
+    answer:
+      "Bisa, lewat fitur Transfer Pulsa. Caranya: tekan *123*151#, masukkan nomor tujuan dan nominal, lalu konfirmasi. Tarif transfer dan minimum transfer mengikuti aturan terbaru Indosat. Cek tarif lengkap di myIM3 sebelum konfirmasi agar tidak salah hitung.",
+  },
+  {
+    question: "Apa yang bisa dilakukan dengan pulsa selain telepon dan SMS?",
+    answer:
+      "Pulsa Indosat bisa dipakai untuk beli paket internet, beli paket telepon, langganan layanan digital seperti Google Play, perpanjang masa aktif, transfer ke nomor lain, dan pembayaran lewat partner Dompetku. Pilihan beli paket terlengkap ada di aplikasi myIM3.",
+  },
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  breadcrumbs={[
+    { name: "Beranda", href: "/" },
+    { name: "Cek Pulsa Indosat" },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Cara cek pulsa Indosat paling cepat: tekan
+      <strong><code>*888#</code></strong> lalu panggil. Saldo pulsa langsung
+      tampil di pop up bersama nomor IM3 dan masa aktif kartu. Gratis, tidak
+      memotong pulsa, dan bekerja meski tanpa internet.
+    </p>
+  </QuickAnswer>
+
+  <p>
+    Cek pulsa rutin penting untuk dua hal: memastikan saldo cukup untuk
+    transaksi penting dan memantau apakah ada pemotongan tidak wajar dari
+    layanan premium. Panduan ini merangkum lima cara resmi cek pulsa IM3,
+    cara melihat riwayat pemakaian, dan cara menghentikan langganan yang
+    menyedot pulsa lewat <code>*726#</code>.
+  </p>
+
+  <h2>Tabel metode cek pulsa Indosat</h2>
+  <DataTable
+    caption="Empat cara resmi cek pulsa IM3 dan kondisinya"
+    headers={["Metode", "Format", "Biaya", "Butuh internet"]}
+    rows={[
+      ["UMB shortcut", "Tekan <code>*888#</code>", "Gratis", "Tidak"],
+      ["USSD menu", "Tekan <code>*123#</code> &rarr; Info Pulsa", "Gratis", "Tidak"],
+      ["Aplikasi myIM3", "Halaman beranda setelah login", "Butuh kuota", "Ya"],
+      ["Call center", "Hubungi <code>185</code>", "Gratis dari IM3", "Tidak"],
+    ]}
+  />
+
+  <AdSlot name="post-answer" />
+
+  <HowTo
+    name="Cek pulsa lewat *888#"
+    description="Cara satu langkah tanpa navigasi menu. Selesai dalam 15 detik."
+    totalTime="PT15S"
+    steps={[
+      {
+        name: "Buka aplikasi telepon",
+        text: "Tap ikon telepon di layar utama. Pengguna dual SIM perlu memilih kartu IM3 sebagai SIM panggilan default sebelum melanjutkan.",
+      },
+      {
+        name: "Ketik *888# pada keypad",
+        text: "Pastikan kode lengkap dengan tanda bintang dan pagar, tanpa spasi.",
+      },
+      {
+        name: "Tekan tombol panggil",
+        text: "Pop up muncul dalam 2 sampai 5 detik. Saldo pulsa tampil pada baris pertama atau kedua, bersama dengan tanggal masa aktif kartu.",
+      },
+    ]}
+  />
+
+  <h2>Cek pulsa di aplikasi myIM3</h2>
+  <p>
+    Aplikasi myIM3 menampilkan saldo pulsa di bagian atas halaman beranda
+    setelah login. Tampilan menyertakan ikon dompet, nominal pulsa, dan
+    tanggal masa aktif. Tap angka pulsa untuk membuka halaman rincian dengan
+    grafik pemakaian tujuh hari terakhir, isi ulang terakhir, dan tombol Top
+    Up cepat.
+  </p>
+  <p>
+    Untuk pelanggan pascabayar, halaman ini menampilkan tagihan berjalan
+    bukan saldo pulsa. Saldo pulsa pascabayar ada di bagian Pulsa Bonus jika
+    Anda menerima pulsa hadiah dari paket atau program loyalitas.
+  </p>
+
+  <h2>SMS dan call center sebagai alternatif</h2>
+  <p>
+    Saat USSD gagal merespon, dua jalur cadangan tetap tersedia.
+  </p>
+  <ul>
+    <li><strong>Hubungi 185</strong> dari kartu IM3 (gratis) atau <strong>021-3000-3000</strong> dari telepon lain. Petugas akan memverifikasi identitas sebelum memberitahu saldo pulsa.</li>
+    <li><strong>SMS bantuan ke 363.</strong> Ketik kata <code>BANTUAN</code>, kirim ke 363, lalu balas SMS dari sistem dengan kata kunci yang diminta untuk menerima info saldo.</li>
+  </ul>
+
+  <AdSlot name="mid-content" />
+
+  <h2>Kenapa pulsa kadang berkurang sendiri</h2>
+  <p>
+    Saldo pulsa yang menyusut tanpa transaksi yang Anda sadari hampir selalu
+    bersumber dari salah satu lima penyebab di bawah ini.
+  </p>
+  <ol>
+    <li><strong>Langganan VAS aktif.</strong> Layanan konten premium seperti ringtone, ramalan zodiak, atau kuis yang aktif lewat klik iklan tidak sengaja. Tarif harian Rp 1.000 sampai Rp 2.500 sering tidak terasa sampai bulanan.</li>
+    <li><strong>Auto-renewal paket aktif.</strong> Beberapa paket diperpanjang otomatis di tanggal jatuh tempo. Cek tab Paket Aktif di myIM3 untuk lihat status auto-renewal.</li>
+    <li><strong>SMS premium ke nomor pendek.</strong> SMS yang dikirim ke nomor empat angka biasanya berbiaya jauh lebih mahal daripada SMS biasa.</li>
+    <li><strong>Roaming.</strong> Pulsa terpotong saat ponsel terhubung jaringan operator asing meski Anda tidak menelepon atau pakai internet.</li>
+    <li><strong>Pembelian dompet digital.</strong> Top up Dompetku, GoPay, OVO, atau ShopeePay yang dilakukan dengan pemotongan pulsa.</li>
+  </ol>
+
+  <h2>Cek dan hentikan langganan yang menyedot pulsa</h2>
+  <p>
+    Indosat menyediakan kanal khusus untuk mengelola layanan VAS lewat kode
+    UMB <code>*726#</code>. Tiga langkah pemeriksaan rutin yang dianjurkan
+    minimal sebulan sekali.
+  </p>
+  <ol>
+    <li><strong>Cek status langganan.</strong> Tekan <code>*726#</code> lalu panggil. Pilih menu Status untuk melihat daftar layanan VAS yang sedang aktif di nomor Anda.</li>
+    <li><strong>Stop satu per satu.</strong> Pilih layanan yang ingin dihentikan, lalu konfirmasi pilihan Stop atau Unreg.</li>
+    <li><strong>Stop semua sekaligus.</strong> Tekan <code>*123*44#</code>, pilih menu Unreg Semua Layanan untuk menonaktifkan seluruh VAS dalam satu langkah.</li>
+  </ol>
+  <p>
+    Pilihan SMS juga tersedia. Ketik <strong>STOP</strong> kirim ke
+    <strong> 726 </strong>untuk mengakhiri layanan tanpa membuka aplikasi
+    panggilan.
+  </p>
+
+  <h2>Lihat riwayat pemakaian pulsa</h2>
+  <p>
+    Aplikasi myIM3 menyimpan riwayat transaksi pulsa hingga 90 hari ke
+    belakang. Buka menu Akun, lalu pilih Riwayat Transaksi atau History.
+    Halaman ini menampilkan tujuh kategori transaksi:
+  </p>
+  <ul>
+    <li>Pembelian paket internet, telepon, dan SMS.</li>
+    <li>Isi ulang dari semua kanal (konter, dompet digital, voucher).</li>
+    <li>Pemakaian pulsa untuk telepon ke nomor lain.</li>
+    <li>SMS keluar ke nomor biasa atau nomor premium.</li>
+    <li>Pemotongan langganan VAS.</li>
+    <li>Roaming jika ponsel pernah aktif di luar negeri.</li>
+    <li>Bonus dan cashback.</li>
+  </ul>
+  <p>
+    Riwayat ini berguna saat Anda perlu menelusuri sumber pemotongan pulsa
+    yang tidak terduga. Setiap transaksi disertai timestamp, jadi mudah
+    dicocokkan dengan aktivitas Anda di hari itu.
+  </p>
+
+  <AdSlot name="pre-faq" />
+
+  <FAQ items={faqItems} />
+
+  <h2>Panduan terkait</h2>
+  <ul>
+    <li><a href="/">Panduan utama cek nomor Indosat</a>.</li>
+    <li><a href="/kode-dial-indosat">Daftar lengkap kode dial Indosat</a> untuk semua menu UMB.</li>
+    <li><a href="/cek-kuota-indosat">Cara cek kuota Indosat IM3</a>.</li>
+    <li><a href="/cek-nomor-indosat-lewat-aplikasi-myim3">Pakai aplikasi myIM3 untuk cek semua info kartu</a>.</li>
+    <li><a href="/cek-nomor-indosat-masih-aktif-atau-tidak">Cek masa aktif kartu IM3</a>.</li>
+  </ul>
+</PageLayout>

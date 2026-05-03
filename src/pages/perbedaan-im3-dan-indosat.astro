@@ -1,0 +1,243 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import QuickAnswer from "~/components/QuickAnswer.astro";
+import AdSlot from "~/components/AdSlot.astro";
+import FAQ from "~/components/FAQ.astro";
+import DataTable from "~/components/DataTable.astro";
+
+const slug = "perbedaan-im3-dan-indosat";
+const h1 = "Perbedaan IM3 dan Indosat yang Perlu Diketahui";
+
+const seo = {
+  title: "Perbedaan IM3 dan Indosat yang Perlu Diketahui",
+  noSuffix: true,
+  description:
+    "Penjelasan sederhana perbedaan IM3, Indosat, dan Indosat Ooredoo Hutchison, plus pengaruhnya pada cek nomor, kuota, pulsa, dan kontak support.",
+  canonicalPath: `/${slug}`,
+  type: "article" as const,
+  publishedTime: "2026-05-04",
+  modifiedTime: "2026-05-04",
+  keywords: [
+    "perbedaan im3 dan indosat",
+    "im3 atau indosat",
+    "indosat ooredoo hutchison",
+    "merek im3",
+    "ioh tri merger",
+  ],
+};
+
+const faqItems = [
+  {
+    question: "Saya pelanggan lama Mentari, sekarang masuk merek apa?",
+    answer:
+      "Mentari adalah brand prabayar lama yang dilebur ke dalam IM3 setelah penyederhanaan merek pada awal 2010-an. Pelanggan eks-Mentari sekarang masuk dalam keluarga IM3 dengan nomor lama yang tetap aktif. Layanan dan kode dial yang dipakai sama persis dengan pelanggan IM3 baru.",
+  },
+  {
+    question: "Apakah pelanggan eks-Tri pindah ke IM3 setelah merger?",
+    answer:
+      "Pelanggan Tri (3 Indonesia) tetap memakai brand Tri pada banyak komunikasi resmi, walau sekarang berada di bawah perusahaan yang sama dengan Indosat. Beberapa kode dial dan paket sudah disinkronkan, tetapi struktur brand Tri belum sepenuhnya dilebur ke IM3 hingga pertengahan 2026.",
+  },
+  {
+    question: "Saat mengisi pulsa di konter, sebut IM3 atau Indosat?",
+    answer:
+      "Keduanya dimengerti penjual. Konter biasanya menyebut prabayar IM3 secara umum sebagai 'pulsa Indosat'. Yang penting Anda pastikan nomor yang diisi benar. Kalau kasir bingung, sebut awalan tiga digit nomor seperti 0855, 0856, 0857, atau 0858 untuk menghilangkan keraguan.",
+  },
+  {
+    question: "Apakah ada perbedaan layanan antara nomor lama dan nomor IM3 baru?",
+    answer:
+      "Tidak ada perbedaan layanan, kuota, atau tarif. Semua pelanggan IM3 berbagi satu jaringan dan satu sistem layanan. Yang berbeda hanyalah paket promo yang sesekali ditujukan untuk pelanggan baru atau pelanggan kategori tertentu seperti pengguna data berat.",
+  },
+  {
+    question: "Domain mana yang resmi: indosatooredoo.com atau im3.id?",
+    answer:
+      "Keduanya resmi dan aktif. indosatooredoo.com lebih banyak menampilkan informasi korporat dan layanan pascabayar bisnis. im3.id fokus pada pelanggan prabayar dengan halaman bantuan, paket, dan portal myIM3. Untuk urusan harian sebagai pelanggan, im3.id adalah pintu masuk yang paling relevan.",
+  },
+  {
+    question: "Kalau ada laporan media tentang Indosat, apakah berarti IM3 juga terdampak?",
+    answer:
+      "Biasanya iya. Berita tentang gangguan jaringan, perubahan tarif, atau kebijakan baru Indosat Ooredoo Hutchison berlaku ke seluruh produk di bawahnya, termasuk IM3. Konfirmasi ke akun resmi @IndosatCare atau care.im3.id selalu disarankan untuk memastikan dampak ke nomor Anda.",
+  },
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  schemaType="BlogPosting"
+  breadcrumbs={[
+    { name: "Beranda", href: "/" },
+    { name: "Blog", href: "/blog" },
+    { name: "Perbedaan IM3 dan Indosat" },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Singkatnya: <strong>IM3</strong> adalah merek prabayar.
+      <strong> Indosat</strong> adalah nama operator.
+      <strong> Indosat Ooredoo Hutchison</strong> adalah nama perusahaan
+      sejak merger dengan Tri pada Januari 2022. Ketiganya merujuk ke
+      jaringan yang sama, jadi kode dial, kuota, dan pulsa berlaku identik
+      tidak peduli nama mana yang Anda kenal.
+    </p>
+  </QuickAnswer>
+
+  <p>
+    Pertanyaan ini sering muncul karena tiga nama sering dipakai bergantian
+    di konter, iklan, dan media: IM3, Indosat, dan Indosat Ooredoo Hutchison
+    (sering disingkat IOH). Apakah ini perusahaan berbeda? Apakah pelanggan
+    IM3 layanan dan tarifnya beda dengan pelanggan Indosat? Tulisan ini
+    menjawab dengan bahasa sederhana, lalu menjelaskan kapan masing-masing
+    nama relevan saat Anda melakukan cek nomor, urusan paket, atau
+    menghubungi support.
+  </p>
+
+  <h2>IM3: merek prabayar untuk pelanggan harian</h2>
+  <p>
+    IM3 adalah brand prabayar Indonesia yang dipakai untuk mayoritas
+    pelanggan rumahan. Saat Anda membeli kartu Rp 5.000 di konter pinggir
+    jalan, hampir pasti yang Anda dapatkan adalah kartu IM3. Brand ini
+    diluncurkan pada awal 2000-an dan sejak itu menjadi nama yang paling
+    dikenal di telinga konsumen Indonesia.
+  </p>
+  <p>
+    Pelanggan IM3 menggunakan nomor dengan awalan 0855, 0856, 0857, dan
+    0858 untuk kartu yang diterbitkan setelah era IM3. Nomor lama dengan
+    awalan 0814, 0815, 0816, 0817, 0818, dan 0819 dari era Indosat lama
+    dan eks-Mentari sekarang juga masuk keluarga IM3.
+  </p>
+
+  <h2>Indosat: nama operator yang mengelola jaringan</h2>
+  <p>
+    Indosat adalah nama operator telekomunikasi yang berdiri sejak 1967,
+    awalnya sebagai Indonesian Satellite Corporation. Selama puluhan tahun,
+    Indosat mengelola jaringan, menara, frekuensi, dan layanan jangka
+    panjang seperti pascabayar dan layanan korporat. Brand IM3 adalah salah
+    satu produk Indosat untuk segmen prabayar.
+  </p>
+  <p>
+    Bagi pelanggan harian, perbedaan ini tidak terlalu terasa. Yang Anda
+    pakai adalah nomor dengan kartu fisik. Yang ada di belakang layar
+    adalah jaringan Indosat. Brand IM3 adalah pintu masuk pengguna ke
+    jaringan tersebut.
+  </p>
+
+  <AdSlot name="post-answer" />
+
+  <h2>Indosat Ooredoo Hutchison: nama perusahaan setelah merger</h2>
+  <p>
+    Pada Januari 2022, Indosat Ooredoo (kombinasi Indosat dengan investor
+    Qatar) bergabung dengan Tri Indonesia (anak usaha Hutchison dari Hong
+    Kong) menjadi satu perusahaan: Indosat Ooredoo Hutchison atau disingkat
+    IOH. Merger ini menyatukan dua jaringan besar dan menjadikan IOH sebagai
+    operator seluler terbesar kedua di Indonesia berdasarkan jumlah
+    pelanggan.
+  </p>
+  <p>
+    Untuk pelanggan IM3, dampak praktis dari merger ini bertahap. Cakupan
+    sinyal di banyak daerah ikut meningkat karena penggabungan menara
+    Indosat dan Tri. Beberapa kebijakan paket disinkronkan secara perlahan.
+    Nomor lama dari kedua sisi tetap aktif tanpa perlu ganti.
+  </p>
+
+  <h2>Kenapa ketiga nama ini muncul bersamaan</h2>
+  <p>
+    Pemakaian istilah biasanya tergantung konteks.
+  </p>
+  <ul>
+    <li>
+      <strong>Konter dan toko fisik</strong> sering menyebut "Indosat" sebagai
+      nama umum, walau yang dijual adalah kartu IM3.
+    </li>
+    <li>
+      <strong>Iklan dan promo</strong> memakai "IM3" karena ini brand resmi
+      yang dikenal pelanggan.
+    </li>
+    <li>
+      <strong>Berita dan laporan keuangan</strong> memakai "Indosat Ooredoo
+      Hutchison" atau "IOH" sebagai nama perusahaan resmi.
+    </li>
+    <li>
+      <strong>Media sosial dan support resmi</strong> bisa memakai ketiganya
+      bergantian, dengan akun seperti @IndosatCare untuk respon ke pelanggan.
+    </li>
+  </ul>
+
+  <h2>Pengaruh ke cek nomor, kuota, dan pulsa</h2>
+  <p>
+    Inilah bagian penting bagi pelanggan harian: ketiga nama tidak
+    mempengaruhi cara Anda mengakses layanan. Semuanya jalur sama.
+  </p>
+  <ul>
+    <li>
+      <strong>Cek nomor:</strong> tekan <code>*888#</code> atau
+      <code>*123#</code>. Berlaku untuk semua pelanggan dengan awalan 0814
+      sampai 0819 dan 0855 sampai 0858, baik kartu lama maupun baru.
+    </li>
+    <li>
+      <strong>Cek pulsa:</strong> sama seperti di atas. Tidak ada kode
+      khusus per merek.
+    </li>
+    <li>
+      <strong>Cek kuota:</strong> shortcut <code>*123*7*1#</code> atau via
+      aplikasi myIM3. Pelanggan eks-Mentari, eks-Indosat lama, dan IM3 baru
+      memakai cara yang sama.
+    </li>
+    <li>
+      <strong>Aplikasi resmi:</strong> myIM3 adalah satu-satunya aplikasi
+      konsumen yang aktif. Tidak ada aplikasi terpisah untuk Indosat atau
+      IOH.
+    </li>
+  </ul>
+
+  <AdSlot name="mid-content" />
+
+  <h2>Saat menghubungi support, sebut yang mana</h2>
+  <p>
+    Petugas support sudah terbiasa mendengar ketiga nama. Tidak ada cara
+    yang salah, tetapi ada cara yang membuat percakapan lebih cepat.
+  </p>
+  <ul>
+    <li>
+      <strong>Untuk masalah harian (pulsa, paket, sinyal),</strong> sebut "IM3"
+      atau langsung sebut nomor Anda. Petugas akan langsung membuka data
+      pelanggan.
+    </li>
+    <li>
+      <strong>Untuk pertanyaan korporat atau pascabayar bisnis,</strong>
+      sebut "Indosat" atau "Indosat Ooredoo Hutchison". Tim B2B lebih
+      familiar dengan nama formal.
+    </li>
+    <li>
+      <strong>Saat lapor masalah jaringan</strong> di media sosial, mention
+      @IndosatCare. Akun ini menangani semua brand di bawah IOH, jadi
+      respon lebih cepat dibanding mention nama generik.
+    </li>
+  </ul>
+
+  <h2>Tabel ringkas</h2>
+  <DataTable
+    caption="Perbedaan IM3, Indosat, dan Indosat Ooredoo Hutchison"
+    headers={["Nama", "Apa", "Konteks pemakaian"]}
+    rows={[
+      ["IM3", "Merek prabayar", "Iklan, kartu fisik, paket konsumen"],
+      ["Indosat", "Nama operator", "Jaringan, menara, layanan korporat"],
+      ["Indosat Ooredoo Hutchison (IOH)", "Nama perusahaan", "Berita, laporan keuangan, kebijakan resmi"],
+      ["Tri", "Brand pascamerger", "Pelanggan eks-Hutchison, masih aktif sebagian"],
+      ["Mentari", "Brand prabayar lama", "Sudah dilebur ke IM3"],
+    ]}
+  />
+
+  <AdSlot name="pre-faq" />
+
+  <FAQ items={faqItems} />
+
+  <h2>Bacaan terkait</h2>
+  <ul>
+    <li><a href="/">Panduan utama cek nomor Indosat</a> dengan kode terverifikasi.</li>
+    <li><a href="/cek-nomor-indosat-im3">Cara cek nomor IM3 sendiri</a>.</li>
+    <li><a href="/kode-dial-indosat">Daftar kode dial Indosat lengkap</a>.</li>
+    <li><a href="/nomor-call-center-indosat">Nomor call center Indosat 185</a>.</li>
+    <li><a href="/cek-nomor-indosat-masih-aktif-atau-tidak">Cek masa aktif kartu IM3</a>.</li>
+  </ul>
+</PageLayout>

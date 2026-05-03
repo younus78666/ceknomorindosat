@@ -1,0 +1,203 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import QuickAnswer from "~/components/QuickAnswer.astro";
+import AdSlot from "~/components/AdSlot.astro";
+import FAQ from "~/components/FAQ.astro";
+import DataTable from "~/components/DataTable.astro";
+
+const slug = "nomor-call-center-indosat";
+const h1 = "Nomor Call Center Indosat dan Cara Menghubungi Bantuan";
+
+const seo = {
+  title: "Nomor Call Center Indosat 185 dan Bantuan Resmi 2026",
+  noSuffix: true,
+  description:
+    "Daftar resmi nomor call center Indosat IM3, email, Twitter @IndosatCare, dan portal care.im3.id, plus tips menyiapkan data sebelum menghubungi.",
+  canonicalPath: `/${slug}`,
+  type: "article" as const,
+  publishedTime: "2026-05-01",
+  modifiedTime: "2026-05-01",
+  keywords: [
+    "nomor call center indosat",
+    "call center im3",
+    "185 indosat",
+    "care.im3.id",
+    "@IndosatCare",
+    "email indosat",
+  ],
+};
+
+const faqItems = [
+  {
+    question: "Apakah call center 185 berbayar?",
+    answer:
+      "Tidak, jika Anda menelepon dari kartu Indosat. Panggilan dari nomor IM3 ke 185 gratis 24 jam. Pelanggan operator lain yang ingin menghubungi Indosat menggunakan nomor 021-3000-3000 dengan tarif sesuai operator masing-masing.",
+  },
+  {
+    question: "Berapa lama waktu tunggu di call center Indosat?",
+    answer:
+      "Bervariasi tergantung jam panggilan. Jam tersibuk biasanya pukul 11:00 sampai 13:00 dan 18:00 sampai 21:00 dengan antrian yang lebih panjang. Jam paling sepi adalah dini hari pukul 02:00 sampai 06:00 dan pagi pukul 07:00 sampai 09:00.",
+  },
+  {
+    question: "Apakah saya bisa minta bantuan lewat WhatsApp?",
+    answer:
+      "Indosat tidak menyediakan nomor WhatsApp publik untuk call center umum. Saluran resmi yang dianjurkan adalah aplikasi myIM3 (live chat), portal care.im3.id, akun Twitter @IndosatCare, dan call center 185. Hindari nomor WhatsApp yang mengaku sebagai Indosat dari sumber tidak resmi.",
+  },
+  {
+    question: "Apa data yang ditanya petugas saat verifikasi?",
+    answer:
+      "Empat data umum yang ditanya: nama lengkap, NIK pada kartu identitas yang dipakai registrasi, tanggal lahir, dan empat digit terakhir dari nomor pulsa atau paket terakhir. Petugas resmi tidak pernah meminta password aplikasi atau OTP yang masuk ke ponsel Anda.",
+  },
+  {
+    question: "Bagaimana laporan kehilangan SIM atau nomor diretas?",
+    answer:
+      "Hubungi 185 sesegera mungkin untuk meminta blokir sementara. Setelah pelaporan via telepon, datang ke gerai resmi Indosat dengan KTP asli untuk pengajuan kartu pengganti dengan nomor sama. Proses verifikasi bisa memakan waktu satu sampai tiga hari kerja.",
+  },
+  {
+    question: "Apakah care.im3.id bisa menyelesaikan masalah tanpa telepon?",
+    answer:
+      "Untuk banyak kasus, bisa. Portal menyediakan FAQ, status gangguan jaringan terkini, formulir pengaduan online, dan live chat dengan agent. Saluran ini cocok untuk pelanggan yang lebih suka komunikasi tertulis atau berada di area dengan sinyal terbatas.",
+  },
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  breadcrumbs={[
+    { name: "Beranda", href: "/" },
+    { name: "Call Center Indosat" },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Hubungi call center Indosat di <strong><code>185</code></strong> dari
+      kartu IM3 (gratis, 24 jam) atau <strong><code>021-3000-3000</code></strong>
+      dari telepon lain. Saluran resmi tambahan: portal
+      <strong> care.im3.id</strong>, akun Twitter
+      <strong> @IndosatCare</strong>, dan email <strong>care@im3.id</strong>.
+    </p>
+  </QuickAnswer>
+
+  <p>
+    Bantuan resmi Indosat tersebar di beberapa kanal yang masing-masing punya
+    kelebihan. Telepon ke 185 paling cepat untuk masalah mendesak, sedangkan
+    portal care.im3.id dan aplikasi myIM3 lebih nyaman untuk pertanyaan yang
+    butuh dokumentasi tertulis. Panduan ini merangkum kontak resmi, kapan
+    harus menghubungi, data yang perlu disiapkan, dan peringatan keamanan
+    yang penting agar tidak menjadi korban penipuan.
+  </p>
+
+  <h2>Daftar kontak resmi Indosat</h2>
+  <DataTable
+    caption="Kanal bantuan resmi Indosat IM3 yang aktif Mei 2026"
+    headers={["Kanal", "Detail", "Biaya", "Operasional"]}
+    rows={[
+      ["Call center IM3", "<code>185</code>", "Gratis dari IM3", "24 jam"],
+      ["Call center umum", "<code>021-3000-3000</code>", "Sesuai tarif operator", "24 jam"],
+      ["Email pelanggan", "<code>care@im3.id</code>", "Gratis", "Balas 1-3 hari kerja"],
+      ["Portal bantuan", "care.im3.id", "Gratis (butuh kuota)", "24 jam"],
+      ["Twitter resmi", "@IndosatCare", "Gratis (butuh kuota)", "07:00-23:00"],
+      ["Live chat", "Aplikasi myIM3 menu Bantuan", "Gratis (butuh kuota)", "24 jam"],
+    ]}
+  />
+
+  <AdSlot name="post-answer" />
+
+  <h2>Kapan perlu menghubungi support</h2>
+  <p>
+    Tidak semua masalah perlu telepon ke call center. Tujuh kondisi berikut
+    layak diangkat ke saluran bantuan, sementara masalah ringan biasanya bisa
+    diselesaikan dengan kode dial atau aplikasi myIM3.
+  </p>
+  <ul>
+    <li><strong>SIM tiba-tiba terblokir.</strong> Sinyal hilang, ponsel menampilkan "no service" walau di area cakupan jaringan.</li>
+    <li><strong>Pulsa atau paket tidak masuk setelah lebih dari satu jam pembelian.</strong></li>
+    <li><strong>Nomor diretas atau ada aktivitas mencurigakan.</strong></li>
+    <li><strong>Kartu hilang atau tertinggal di ponsel yang dicuri.</strong></li>
+    <li><strong>Verifikasi NIK gagal saat registrasi ulang.</strong></li>
+    <li><strong>Tagihan pascabayar yang tidak sesuai.</strong></li>
+    <li><strong>Gangguan jaringan yang berlangsung lebih dari beberapa jam di satu area.</strong></li>
+  </ul>
+
+  <h2>Data yang perlu disiapkan sebelum menghubungi</h2>
+  <p>
+    Petugas akan meminta verifikasi sebelum membantu. Siapkan empat data
+    berikut untuk mempercepat proses.
+  </p>
+  <ol>
+    <li><strong>Nomor IM3 lengkap</strong> dengan kode awalan, contohnya 0857-xxxx-xxxx.</li>
+    <li><strong>NIK</strong> pada kartu identitas yang dipakai registrasi pertama kali.</li>
+    <li><strong>Nama lengkap dan tanggal lahir</strong> sesuai KTP.</li>
+    <li><strong>Detail kasus</strong> seperti tanggal kejadian, screenshot bila ada, dan empat digit terakhir transaksi terakhir.</li>
+  </ol>
+
+  <h2>Peringatan keamanan: petugas resmi tidak pernah meminta OTP</h2>
+  <p>
+    Ini titik paling penting. Petugas resmi Indosat <strong>tidak pernah
+    meminta</strong> OTP yang masuk ke ponsel Anda, password aplikasi myIM3,
+    PIN dompet digital, atau detail kartu kredit lengkap. Kalau ada penelepon
+    yang mengaku petugas Indosat dan meminta data sensitif tersebut, hampir
+    pasti itu penipuan.
+  </p>
+  <p>
+    Modus paling sering: penelepon mengaku ada hadiah dari Indosat, masalah
+    tagihan, atau verifikasi sistem, lalu meminta Anda menyebut OTP yang baru
+    masuk. Tutup telepon, lalu hubungi 185 langsung untuk konfirmasi jika
+    ragu.
+  </p>
+
+  <AdSlot name="mid-content" />
+
+  <h2>Masalah umum dan solusi cepat</h2>
+
+  <h3>SIM tiba-tiba terblokir</h3>
+  <p>
+    Sebelum menelepon 185, coba lima langkah cepat: lepas SIM dan pasang
+    ulang, restart ponsel, pindah ke area sinyal lebih kuat, cek masa aktif
+    lewat ponsel lain, dan pastikan ponsel tidak dalam mode pesawat. Kalau
+    semua gagal, hubungi 185 dengan menyiapkan KTP asli untuk verifikasi.
+  </p>
+
+  <h3>Nomor hilang dari daftar SIM aktif</h3>
+  <p>
+    Penyebab paling umum: kartu sudah lewat masa tenggang dan dinonaktifkan.
+    Konfirmasi status lewat 185 dengan menyebut NIK terdaftar. Kalau nomor
+    masih tersedia (belum didaur ulang ke pelanggan baru), Anda bisa
+    mengaktifkan kembali dengan kunjungan ke gerai resmi.
+  </p>
+
+  <h3>Kuota tidak masuk setelah pembelian</h3>
+  <p>
+    Tunggu 5 sampai 15 menit setelah pembelian sukses. Kalau tetap tidak
+    masuk, cek riwayat transaksi di myIM3 untuk konfirmasi pembayaran. Bila
+    transaksi tercatat berhasil tetapi kuota tidak masuk, hubungi 185 dengan
+    menyebut nomor referensi transaksi yang ada di riwayat.
+  </p>
+
+  <h2>Kanal alternatif untuk komunikasi tertulis</h2>
+  <p>
+    Tiga kanal di bawah ini cocok untuk masalah yang butuh dokumentasi
+    tertulis atau saat antrian telepon panjang.
+  </p>
+  <ul>
+    <li><strong>Live chat di aplikasi myIM3.</strong> Buka aplikasi, masuk ke menu Bantuan, lalu tap ikon chat. Riwayat percakapan tersimpan di aplikasi.</li>
+    <li><strong>Portal care.im3.id.</strong> Cocok untuk pertanyaan kompleks. Login dengan nomor IM3, isi formulir, lalu pantau status di halaman tiket.</li>
+    <li><strong>Twitter @IndosatCare.</strong> Mention atau DM akun resmi untuk respon publik. Akun ini biasanya cepat tanggap untuk keluhan singkat.</li>
+  </ul>
+
+  <AdSlot name="pre-faq" />
+
+  <FAQ items={faqItems} />
+
+  <h2>Panduan terkait</h2>
+  <ul>
+    <li><a href="/">Panduan utama cek nomor Indosat</a>.</li>
+    <li><a href="/kode-dial-indosat">Daftar kode dial Indosat lengkap</a>.</li>
+    <li><a href="/cek-pulsa-indosat">Cara cek pulsa Indosat IM3</a>.</li>
+    <li><a href="/cek-kuota-indosat">Cara cek kuota Indosat</a>.</li>
+    <li><a href="/cek-nomor-indosat-masih-aktif-atau-tidak">Cek masa aktif kartu IM3</a>.</li>
+    <li><a href="/cara-registrasi-kartu-indosat">Cara registrasi kartu IM3 dengan NIK</a>.</li>
+  </ul>
+</PageLayout>

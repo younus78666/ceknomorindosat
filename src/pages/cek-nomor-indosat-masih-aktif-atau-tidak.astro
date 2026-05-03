@@ -1,0 +1,220 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import QuickAnswer from "~/components/QuickAnswer.astro";
+import AdSlot from "~/components/AdSlot.astro";
+import FAQ from "~/components/FAQ.astro";
+import HowTo from "~/components/HowTo.astro";
+import DataTable from "~/components/DataTable.astro";
+
+const slug = "cek-nomor-indosat-masih-aktif-atau-tidak";
+const h1 = "Cara Cek Nomor Indosat Masih Aktif atau Tidak";
+
+const seo = {
+  title: "Cek Nomor Indosat Masih Aktif atau Tidak (Cara Cepat 2026)",
+  noSuffix: true,
+  description:
+    "Cara cek status nomor IM3: aktif, tenggang, atau hangus lewat *888#, myIM3, dan tes panggilan, plus penjelasan masa aktif vs masa tenggang.",
+  canonicalPath: `/${slug}`,
+  type: "article" as const,
+  publishedTime: "2026-05-01",
+  modifiedTime: "2026-05-01",
+  keywords: [
+    "cek nomor indosat masih aktif atau tidak",
+    "cek masa aktif im3",
+    "masa tenggang indosat",
+    "nomor im3 hangus",
+    "perpanjang masa aktif im3",
+  ],
+};
+
+const faqItems = [
+  {
+    question: "Berapa lama masa tenggang kartu IM3?",
+    answer:
+      "Tiga puluh hari setelah masa aktif kartu habis. Selama periode ini, kartu masih bisa menerima panggilan dan SMS masuk, tetapi tidak bisa untuk telepon keluar, kirim SMS, atau akses internet. Lewat 30 hari tanpa perpanjangan, nomor masuk antrean penonaktifan permanen.",
+  },
+  {
+    question: "Apakah selama masa tenggang masih bisa terima telepon?",
+    answer:
+      "Bisa. Pelanggan tetap menerima panggilan dan SMS masuk selama 30 hari masa tenggang. Hanya layanan keluar yang dimatikan. Saat panggilan masuk diterima, perpanjangan masa aktif tetap perlu dilakukan agar layanan keluar kembali aktif.",
+  },
+  {
+    question: "Bagaimana cara perpanjang masa aktif tanpa beli paket?",
+    answer:
+      "Kirim SMS dengan format AKTIF3, AKTIF14, atau AKTIF30 ke 555. Tarif resmi: AKTIF3 untuk 3 hari seharga Rp 2.000, AKTIF14 untuk 14 hari Rp 5.000, dan AKTIF30 untuk 30 hari yang harganya bervariasi tergantung wilayah. Pulsa harus tersedia untuk pemotongan biaya.",
+  },
+  {
+    question: "Nomor saya muncul 'tidak terdaftar' di myIM3, apa artinya?",
+    answer:
+      "Pesan ini biasanya berarti satu dari tiga hal: kartu sudah masuk masa tenggang penuh, kartu sudah dinonaktifkan secara permanen, atau ada gangguan sistem sementara. Coba cek lewat kode dial *888# dan SMS ke 363. Kalau ketiganya gagal, hubungi 185 untuk verifikasi status NIK.",
+  },
+  {
+    question: "Setelah nomor hangus, bisakah diaktifkan kembali?",
+    answer:
+      "Sangat sulit. Setelah masa tenggang berakhir, nomor masuk daftar daur ulang dan biasanya dijual ulang setelah 60 hingga 90 hari. Reaktivasi nomor lama memerlukan kunjungan ke gerai resmi Indosat dengan KTP, dan keberhasilannya tergantung apakah nomor sudah dimiliki orang lain atau belum.",
+  },
+  {
+    question: "Bagaimana mengetahui sisa masa aktif sebelum kehabisan?",
+    answer:
+      "Tampilan kode dial *888# dan halaman beranda myIM3 menyertakan tanggal masa aktif setiap kali Anda cek nomor. Aplikasi myIM3 juga mengirim notifikasi tujuh hari, tiga hari, dan satu hari sebelum masa aktif berakhir, asal notifikasi diizinkan di pengaturan ponsel.",
+  },
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  breadcrumbs={[
+    { name: "Beranda", href: "/" },
+    { name: "Cek Aktif atau Tidak" },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Cek status nomor IM3 paling cepat: tekan <strong><code>*888#</code></strong>
+      lalu panggil. Kalau pop up muncul beserta tanggal masa aktif, kartu masih
+      aktif. Kalau muncul pesan "tidak terdaftar" atau panggilan keluar selalu
+      ditolak, kartu sedang dalam masa tenggang atau sudah hangus.
+    </p>
+  </QuickAnswer>
+
+  <p>
+    Setiap kartu prabayar IM3 melewati tiga fase: masa aktif, masa tenggang,
+    lalu hangus. Mengetahui di fase mana nomor Anda berada penting agar pulsa
+    tidak hilang dan nomor lama tidak diambil orang lain. Panduan ini
+    merangkum lima cara cepat memeriksa status, beserta tindakan yang perlu
+    diambil sebelum kartu kedaluwarsa.
+  </p>
+
+  <AdSlot name="post-answer" />
+
+  <h2>Tiga fase nomor IM3</h2>
+  <DataTable
+    caption="Perbedaan masa aktif, masa tenggang, dan hangus pada kartu IM3"
+    headers={["Fase", "Layanan keluar", "Layanan masuk", "Durasi", "Pemulihan"]}
+    rows={[
+      ["Masa aktif", "Aktif", "Aktif", "Sesuai sisa hari yang tampil", "Tidak perlu"],
+      ["Masa tenggang", "Mati", "Aktif", "30 hari setelah masa aktif habis", "Isi pulsa atau perpanjang"],
+      ["Hangus", "Mati", "Mati", "Permanen setelah masa tenggang", "Datang ke gerai (sulit)"],
+    ]}
+  />
+
+  <HowTo
+    name="Cek status nomor IM3 lewat *888#"
+    description="Cara paling cepat menentukan kartu aktif, tenggang, atau hangus."
+    totalTime="PT30S"
+    steps={[
+      {
+        name: "Buka aplikasi telepon",
+        text: "Tekan ikon telepon dan masuk ke keypad. Pengguna dual SIM perlu memilih kartu IM3 sebagai SIM panggilan default.",
+      },
+      {
+        name: "Ketik *888# lalu panggil",
+        text: "Tunggu pop up dalam 2 sampai 5 detik. Pop up berisi nomor, sisa pulsa, dan tanggal masa aktif jika kartu masih dalam fase aktif.",
+      },
+      {
+        name: "Baca tanggal masa aktif",
+        text: "Bandingkan tanggal yang tampil dengan tanggal hari ini. Tanggal di masa depan berarti aktif. Tanggal sudah lewat berarti masuk masa tenggang. Pop up tidak muncul sama sekali atau error berarti kartu kemungkinan hangus.",
+      },
+    ]}
+  />
+
+  <h2>Cek status di aplikasi myIM3</h2>
+  <p>
+    Buka aplikasi myIM3 dan login dengan OTP. Halaman beranda menampilkan
+    nomor utama bersama label kecil di bawahnya: "Aktif sampai dd-mm-yyyy"
+    untuk kartu yang masih dalam masa aktif. Untuk pelanggan yang sudah
+    masuk masa tenggang, label berubah menjadi "Dalam masa tenggang sampai
+    dd-mm-yyyy" dengan ikon peringatan kuning.
+  </p>
+  <p>
+    Tap kartu nomor untuk membuka halaman detail. Halaman ini menampilkan
+    sisa hari masa aktif, tombol "Perpanjang Masa Aktif", dan riwayat isi
+    ulang terakhir. Kalau aplikasi gagal login dengan pesan "nomor tidak
+    terdaftar", kartu sangat mungkin sudah hangus.
+  </p>
+
+  <h2>Tes panggilan dan SMS</h2>
+  <p>
+    Cara klasik tapi pasti: coba lakukan panggilan dan kirim SMS keluar.
+    Hasilnya membantu mengidentifikasi fase nomor.
+  </p>
+  <ul>
+    <li><strong>Panggilan keluar berhasil.</strong> Kartu dalam masa aktif.</li>
+    <li><strong>Panggilan keluar gagal dengan pesan operator.</strong> Kartu masuk masa tenggang. Coba minta orang lain menelepon nomor Anda. Kalau panggilan masuk berhasil, status tenggang terkonfirmasi.</li>
+    <li><strong>Panggilan masuk dan keluar gagal total.</strong> Kartu kemungkinan sudah hangus atau ada gangguan jaringan. Lakukan kode dial untuk konfirmasi.</li>
+  </ul>
+
+  <h2>Membaca indikator sinyal</h2>
+  <p>
+    Indikator sinyal di status bar memberi petunjuk kasar tentang status
+    kartu. Kartu yang masih sehat menampilkan bar sinyal lengkap dengan
+    keterangan nama operator "IOH", "IM3", atau "Indosat" di atasnya. Kartu
+    bermasalah menunjukkan beberapa pola berbeda.
+  </p>
+  <ul>
+    <li><strong>Sinyal silang atau "No service".</strong> Tidak selalu berarti hangus. Bisa jadi area tanpa cakupan jaringan, SIM lepas dari slot, atau perlu restart.</li>
+    <li><strong>Bar sinyal penuh tapi tidak bisa telepon.</strong> Tanda khas masa tenggang. Layanan masuk aktif sehingga sinyal terlihat bagus, tetapi layanan keluar diblokir.</li>
+    <li><strong>Indikator emergency only.</strong> Kartu tidak terbaca jaringan. Lepas SIM, bersihkan, lalu pasang ulang. Kalau tetap sama, kartu sudah dinonaktifkan.</li>
+  </ul>
+
+  <AdSlot name="mid-content" />
+
+  <h2>Beda masa aktif dan masa tenggang secara teknis</h2>
+  <p>
+    Masa aktif adalah periode kartu menerima semua layanan. Pelanggan bisa
+    menelepon keluar, mengirim SMS keluar, dan memakai kuota internet sampai
+    tanggal yang ditentukan. Lama masa aktif bertambah setiap kali pelanggan
+    isi pulsa atau membeli paket aktif.
+  </p>
+  <p>
+    Masa tenggang adalah periode 30 hari setelah masa aktif habis. Selama
+    fase ini, layanan keluar dimatikan tetapi kartu masih bisa menerima
+    panggilan dan SMS. Tujuannya memberi pelanggan waktu untuk perpanjang
+    sebelum nomor benar-benar dilepas. Lewat 30 hari tanpa perpanjangan,
+    nomor masuk antrean penonaktifan dan biasanya didaur ulang dalam 60
+    sampai 90 hari berikutnya.
+  </p>
+
+  <h2>Yang harus dilakukan sebelum nomor expired</h2>
+  <p>
+    Ada empat cara umum memperpanjang masa aktif IM3, mulai dari yang paling
+    murah.
+  </p>
+  <ol>
+    <li><strong>Beli pulsa.</strong> Setiap nominal pulsa otomatis menambah masa aktif. Tabel resmi tampil di myIM3 saat memilih nominal.</li>
+    <li><strong>Beli paket aktif via SMS.</strong> Kirim <code>AKTIF3</code>, <code>AKTIF14</code>, atau <code>AKTIF30</code> ke <code>555</code>. Pilihan ini hemat untuk yang hanya butuh perpanjangan singkat.</li>
+    <li><strong>Beli paket data.</strong> Hampir semua paket di myIM3 menambah masa aktif sesuai durasi paket.</li>
+    <li><strong>Voucher fisik.</strong> Voucher pulsa tradisional dari konter masih bekerja. Ketik <code>*556*kode-voucher#</code> lalu panggil.</li>
+  </ol>
+  <p>
+    Aktifkan notifikasi push myIM3 agar peringatan masa aktif tujuh hari,
+    tiga hari, dan satu hari sebelum kedaluwarsa muncul otomatis di ponsel.
+  </p>
+
+  <h2>Setelah hangus, masih bisa diselamatkan?</h2>
+  <p>
+    Mungkin, tetapi peluangnya tergantung waktu dan keberuntungan. Datang ke
+    gerai resmi Indosat (Bukan konter biasa) dengan KTP yang dipakai
+    registrasi. Petugas akan mengecek status nomor di sistem. Kalau nomor
+    belum dijual ulang, reaktivasi memungkinkan setelah verifikasi NIK. Jika
+    nomor sudah dimiliki pelanggan baru, satu-satunya pilihan adalah membeli
+    kartu baru dan mendaftar ulang ke layanan-layanan penting yang masih
+    pakai nomor lama.
+  </p>
+
+  <AdSlot name="pre-faq" />
+
+  <FAQ items={faqItems} />
+
+  <h2>Panduan terkait</h2>
+  <ul>
+    <li><a href="/">Panduan utama cek nomor Indosat</a>.</li>
+    <li><a href="/cek-nomor-indosat-im3">Cara cek nomor IM3 sendiri</a>.</li>
+    <li><a href="/cek-nomor-indosat-lewat-ussd">Panduan USSD lengkap untuk cek nomor</a>.</li>
+    <li><a href="/cek-nomor-indosat-lewat-aplikasi-myim3">Cara cek nomor di aplikasi myIM3</a>.</li>
+    <li><a href="/cara-cek-pulsa-indosat">Cara cek pulsa Indosat</a>.</li>
+    <li><a href="/call-center-indosat">Hubungi call center Indosat 185</a>.</li>
+  </ul>
+</PageLayout>

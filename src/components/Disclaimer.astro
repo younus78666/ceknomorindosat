@@ -1,0 +1,23 @@
+---
+import { SITE } from "~/data/site.config";
+const { variant = "inline" } = Astro.props as { variant?: "inline" | "boxed" };
+---
+
+<aside class:list={["disclaimer", variant === "boxed" && "is-boxed"]} role="note" aria-label="Disclaimer">
+  <p>{SITE.legalDisclaimer}</p>
+</aside>
+
+<style>
+  .disclaimer {
+    color: var(--color-fg-muted);
+    font-size: var(--text-sm);
+    margin: var(--space-6) 0;
+  }
+  .disclaimer.is-boxed {
+    background: var(--color-warning-soft);
+    border-left: 3px solid var(--color-warning);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    color: var(--color-fg);
+  }
+</style>

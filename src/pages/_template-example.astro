@@ -1,0 +1,98 @@
+---
+/**
+ * EXAMPLE PAGE TEMPLATE — copy this file to create new content pages.
+ * Filename starts with underscore so Astro does not build it as a route.
+ *
+ * Authoring checklist (matches global content rules):
+ *   1. Direct answer in first 80 words (QuickAnswer block above first ad).
+ *   2. Add LastUpdated (defaults to "Mei 2026").
+ *   3. Use prose-id wrapper for body styling.
+ *   4. Add AdSlot after answer, mid-content, before FAQ, footer (footer auto in PageLayout).
+ *   5. Add FAQ component (auto-emits FAQ schema).
+ *   6. Add HowTo component when steps apply (auto-emits HowTo schema).
+ *   7. Register the page in src/data/internal-links.ts so RelatedLinks works.
+ *   8. Disclaimer is auto-rendered by PageLayout.
+ */
+
+import PageLayout from "~/layouts/PageLayout.astro";
+import QuickAnswer from "~/components/QuickAnswer.astro";
+import AdSlot from "~/components/AdSlot.astro";
+import FAQ from "~/components/FAQ.astro";
+import HowTo from "~/components/HowTo.astro";
+import DataTable from "~/components/DataTable.astro";
+
+const slug = "contoh-halaman";
+const h1 = "Contoh Halaman: Cara Memakai Komponen";
+
+const seo = {
+  title: "Contoh Halaman",
+  description:
+    "Halaman contoh yang menunjukkan cara menyusun konten utilitas Indosat dengan jawaban cepat, langkah, tabel, dan FAQ.",
+  canonicalPath: `/${slug}`,
+  type: "article" as const,
+  publishedTime: "2026-05-01",
+  modifiedTime: "2026-05-01",
+};
+
+const faqItems = [
+  {
+    question: "Pertanyaan contoh pertama?",
+    answer:
+      "Jawaban singkat dan jelas. Letakkan poin utama di kalimat pertama, lalu tambahkan konteks bila perlu.",
+  },
+  {
+    question: "Pertanyaan contoh kedua?",
+    answer: "Gunakan paragraf pendek. Hindari kalimat yang terlalu panjang.",
+  },
+];
+---
+
+<PageLayout seo={seo} h1={h1} slug={slug}>
+  <QuickAnswer>
+    <p>
+      Ringkasan jawaban dalam 1-3 kalimat. Sebut metode utama, langsung dan
+      jelas, sebelum pembaca melihat iklan pertama.
+    </p>
+  </QuickAnswer>
+
+  <AdSlot name="post-answer" />
+
+  <h2>Subjudul pembuka</h2>
+  <p>
+    Paragraf pembuka mengulang inti jawaban dengan konteks lebih luas. Hindari
+    pengulangan kata kunci secara berlebihan.
+  </p>
+
+  <HowTo
+    name="Langkah singkat"
+    description="Contoh langkah berurutan dengan schema HowTo."
+    totalTime="PT2M"
+    steps={[
+      { name: "Buka aplikasi", text: "Jalankan aplikasi pada perangkat Anda." },
+      { name: "Pilih menu", text: "Ketuk menu yang relevan untuk melanjutkan." },
+      { name: "Selesai", text: "Hasil akan muncul di layar dalam beberapa detik." },
+    ]}
+  />
+
+  <h2>Tabel ringkasan</h2>
+  <DataTable
+    headers={["Metode", "Format", "Biaya"]}
+    rows={[
+      ["Dial", "<code>*123#</code>", "Gratis"],
+      ["SMS", "Ketik <code>INFO</code> kirim ke 363", "Sesuai tarif"],
+      ["Aplikasi", "myIM3", "Butuh kuota"],
+    ]}
+  />
+
+  <AdSlot name="mid-content" />
+
+  <h2>Catatan penting</h2>
+  <p>
+    Tambahkan informasi tambahan, batasan, atau kondisi khusus yang perlu
+    diketahui pembaca.
+  </p>
+
+  <AdSlot name="pre-faq" />
+
+  <FAQ items={faqItems} />
+</PageLayout>

@@ -1,0 +1,221 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import QuickAnswer from "~/components/QuickAnswer.astro";
+import AdSlot from "~/components/AdSlot.astro";
+import FAQ from "~/components/FAQ.astro";
+import HowTo from "~/components/HowTo.astro";
+
+const slug = "cek-nomor-indosat-im3";
+const h1 = "Cara Cek Nomor Indosat IM3 Sendiri";
+
+const seo = {
+  title: "Cara Cek Nomor Indosat IM3 Sendiri (5 Metode 2026)",
+  noSuffix: true,
+  description:
+    "Cara cek nomor IM3 sendiri lewat *888#, aplikasi myIM3, pengaturan ponsel, SMS, dan call center. Bekerja meski tanpa pulsa atau kuota.",
+  canonicalPath: `/${slug}`,
+  type: "article" as const,
+  publishedTime: "2026-05-01",
+  modifiedTime: "2026-05-01",
+  keywords: [
+    "cek nomor indosat im3",
+    "cara cek nomor im3 sendiri",
+    "cek nomor im3 lupa",
+    "lihat nomor im3",
+    "*888#",
+    "myim3",
+  ],
+};
+
+const faqItems = [
+  {
+    question: "Apakah IM3 sama dengan Indosat Ooredoo?",
+    answer:
+      "IM3 adalah merek prabayar yang dijalankan oleh Indosat Ooredoo Hutchison. Setelah merger Indosat Ooredoo dan Tri pada Januari 2022, semua produk prabayar disatukan di bawah merek IM3. Jadi pelanggan IM3 lama, eks-Indosat Ooredoo, dan eks-Mentari kini berada di jaringan yang sama.",
+  },
+  {
+    question: "Apa beda *888# dan *123# untuk cek nomor?",
+    answer:
+      "Keduanya gratis dan menampilkan nomor Anda. Bedanya, *888# adalah kode UMB yang langsung memunculkan menu cek pulsa, kuota, dan nomor dalam satu tampilan. Kode *123# membuka menu utama yang lebih lengkap, tapi butuh beberapa langkah navigasi sampai sampai ke info nomor.",
+  },
+  {
+    question: "Kenapa pengaturan ponsel menampilkan 'Tidak diketahui' untuk nomor SIM?",
+    answer:
+      "Itu hal normal. Operator di Indonesia, termasuk IM3, jarang menulis nomor MSISDN ke chip SIM, sehingga ponsel tidak bisa membacanya dari pengaturan. Pakai cara *888# atau aplikasi myIM3 untuk hasil pasti.",
+  },
+  {
+    question: "Apakah cek nomor bisa lewat WhatsApp?",
+    answer:
+      "Bisa, secara tidak langsung. Buka WhatsApp, masuk ke menu Pengaturan, lalu lihat profil Anda. Jika WhatsApp didaftarkan dengan nomor IM3 utama, nomor itu tampil di halaman profil. Cara ini hanya bekerja kalau Anda ingat nomor saat mendaftar WhatsApp.",
+  },
+  {
+    question: "Bagaimana kalau saya pakai eSIM IM3?",
+    answer:
+      "Semua metode tetap berlaku untuk eSIM. Kode *888# dan *123# bekerja sama persis di profil eSIM aktif. Aplikasi myIM3 juga mendukung pelanggan eSIM. Pastikan profil eSIM IM3 dipilih sebagai SIM panggilan sebelum menekan kode dial.",
+  },
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  breadcrumbs={[
+    { name: "Beranda", href: "/" },
+    { name: "Cek Nomor IM3" },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Cara tercepat cek nomor IM3 sendiri: tekan <strong><code>*888#</code></strong>
+      lalu panggil. Nomor langsung muncul di layar bersama sisa pulsa dan masa
+      aktif. Gratis, tidak butuh internet, dan tetap bekerja meski pulsa Rp 0.
+    </p>
+  </QuickAnswer>
+
+  <p>
+    IM3 adalah merek prabayar yang dijalankan Indosat Ooredoo Hutchison. Nomor
+    IM3 dimulai dengan awalan 0855, 0856, 0857, 0858, dan beberapa nomor lama
+    seperti 0814, 0815, 0816, 0817, 0818, dan 0819. Panduan ini fokus pada satu
+    hal: bagaimana melihat nomor Anda sendiri saat lupa, lengkap dengan metode
+    cadangan jika cara utama gagal.
+  </p>
+
+  <AdSlot name="post-answer" />
+
+  <HowTo
+    name="Cara tercepat: tekan *888#"
+    description="Berhasil dalam 30 detik tanpa internet, tanpa pulsa, dan tanpa aplikasi tambahan."
+    totalTime="PT30S"
+    steps={[
+      {
+        name: "Buka aplikasi telepon",
+        text: "Pergi ke menu panggilan, sama seperti saat akan menelepon nomor biasa. Pengguna dual SIM perlu memastikan slot kartu IM3 dipilih sebagai default.",
+      },
+      {
+        name: "Ketik *888# lalu tekan panggil",
+        text: "Tunggu beberapa detik sampai pop up muncul. Pop up berisi menu Info Pulsa, Kuota, dan Cek Nomor.",
+      },
+      {
+        name: "Baca tampilan layar",
+        text: "Nomor IM3 Anda muncul di baris pertama atau kedua, biasanya bersamaan dengan saldo pulsa dan tanggal masa aktif. Tutup pop up setelah selesai.",
+      },
+    ]}
+  />
+
+  <h2>Cek nomor lewat aplikasi myIM3</h2>
+  <p>
+    Aplikasi myIM3 menampilkan nomor utama tepat di bagian atas halaman beranda
+    setelah Anda berhasil login. Login pertama meminta kode OTP yang dikirim ke
+    SIM IM3 di ponsel, jadi pastikan kartu sudah terpasang dan ada sinyal saat
+    mendaftar. Setelah login, nomor selalu siap dilihat tanpa perlu mengetik
+    kode dial lagi.
+  </p>
+  <p>
+    Aplikasi tersedia gratis di Google Play Store dan App Store. Selain
+    menampilkan nomor, myIM3 menyimpan riwayat paket aktif, kuota tersisa, masa
+    aktif, dan transaksi pulsa. Tidak ingin install aplikasi? Buka
+    <strong> myim3.indosat.id</strong> di browser dengan langkah login yang
+    sama.
+  </p>
+
+  <h2>Lihat nomor di pengaturan ponsel</h2>
+  <p>
+    Beberapa ponsel menyimpan nomor SIM di menu pengaturan, walaupun cara ini
+    tidak selalu berhasil di Indonesia karena operator jarang menulis MSISDN ke
+    chip SIM. Tetap layak dicoba sebagai cara cadangan tanpa sinyal.
+  </p>
+  <ul>
+    <li>
+      <strong>Android.</strong> Buka <em>Pengaturan</em> &rarr;
+      <em>Tentang Ponsel</em> &rarr; <em>Status</em> &rarr;
+      <em>Status SIM</em>. Cari baris "Nomor saya" atau "Nomor telepon di SIM".
+    </li>
+    <li>
+      <strong>iPhone.</strong> Buka <em>Settings</em> &rarr;
+      <em>General</em> &rarr; <em>About</em>. Gulir ke baris "Phone Number".
+    </li>
+    <li>
+      <strong>Samsung One UI.</strong> Buka <em>Pengaturan</em> &rarr;
+      <em>Tentang Ponsel</em> &rarr; <em>Informasi SIM</em>.
+    </li>
+  </ul>
+  <p>
+    Jika baris nomor menampilkan "Tidak diketahui" atau kosong, lewati cara ini
+    dan pakai <code>*888#</code> langsung.
+  </p>
+
+  <h2>Bantuan dari SMS atau call center</h2>
+  <p>
+    SMS klasik masih bekerja. Buka pesan baru, ketik <strong>INFO</strong>,
+    lalu kirim ke <strong>363</strong>. Balasan dengan informasi nomor masuk
+    dalam beberapa detik. Biaya mengikuti tarif SMS standar, biasanya Rp 150
+    sampai Rp 350 per pengiriman.
+  </p>
+  <p>
+    Cara terakhir: hubungi call center IM3 di nomor <strong>185</strong> dari
+    kartu Indosat (gratis), atau <strong>021-3000-3000</strong> dari telepon
+    lain. Petugas akan meminta verifikasi identitas seperti nama lengkap, NIK,
+    dan tanggal lahir sebelum membuka data nomor yang terdaftar.
+  </p>
+
+  <AdSlot name="mid-content" />
+
+  <h2>Kalau tidak ada pulsa, kuota, atau internet</h2>
+  <p>
+    Inilah salah satu kelebihan kode dial. <code>*888#</code> dan
+    <code>*123#</code> bekerja meski saldo pulsa Rp 0, kuota habis, dan WiFi
+    mati. Yang dibutuhkan hanya sinyal seluler dari kartu IM3 yang masih dalam
+    masa aktif. Karena itu, simpan dua kode ini sebagai jurus pertama saat
+    Anda terdesak melihat nomor di tempat tanpa internet.
+  </p>
+  <p>
+    Untuk pelanggan yang sudah masuk masa tenggang, kode dial mungkin gagal.
+    Solusinya, isi pulsa dulu agar kartu kembali aktif, lalu ulangi kode.
+  </p>
+
+  <h2>Error yang sering muncul saat cek nomor</h2>
+  <p>
+    Lima pesan error berikut paling sering dilaporkan pengguna IM3 saat
+    menjalankan kode dial. Tabel solusinya berurutan dari yang paling cepat
+    dicoba.
+  </p>
+  <ul>
+    <li>
+      <strong>"Connection problem or invalid MMI code"</strong> di Android.
+      Penyebabnya pop up USSD diblokir oleh aplikasi keamanan. Buka
+      <em>Pengaturan</em> &rarr; <em>Aplikasi</em> &rarr;
+      <em>Telepon</em> &rarr; <em>Izin</em> dan aktifkan izin USSD.
+    </li>
+    <li>
+      <strong>"Service not available".</strong> Sinyal terlalu lemah atau
+      sedang ada gangguan jaringan di area Anda. Pindah ke ruangan lain atau
+      tunggu beberapa menit.
+    </li>
+    <li>
+      <strong>Pop up tidak muncul setelah panggil.</strong> Pastikan SIM IM3
+      berada di slot yang dipilih sebagai SIM panggilan default, lalu coba lagi.
+    </li>
+    <li>
+      <strong>"Permintaan ditolak".</strong> Kartu sudah masuk masa tenggang
+      atau dinonaktifkan. Cek status SIM lewat call center 185.
+    </li>
+    <li>
+      <strong>Pop up muncul tapi kosong.</strong> Tutup pop up, restart ponsel,
+      lalu ulangi <code>*888#</code>. Kalau tetap kosong, pakai aplikasi myIM3.
+    </li>
+  </ul>
+
+  <AdSlot name="pre-faq" />
+
+  <FAQ items={faqItems} />
+
+  <h2>Panduan terkait</h2>
+  <ul>
+    <li><a href="/">Kembali ke panduan utama cek nomor Indosat</a>.</li>
+    <li><a href="/cara-cek-pulsa-indosat">Cara cek pulsa Indosat IM3</a>.</li>
+    <li><a href="/kode-dial-indosat">Daftar kode dial Indosat lengkap</a>.</li>
+    <li><a href="/cara-registrasi-kartu-indosat">Cara registrasi kartu IM3 dengan NIK</a>.</li>
+    <li><a href="/call-center-indosat">Kontak call center Indosat 185</a>.</li>
+  </ul>
+</PageLayout>

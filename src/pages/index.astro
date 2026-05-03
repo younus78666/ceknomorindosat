@@ -1,0 +1,299 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import QuickAnswer from "~/components/QuickAnswer.astro";
+import AdSlot from "~/components/AdSlot.astro";
+import FAQ from "~/components/FAQ.astro";
+import HowTo from "~/components/HowTo.astro";
+import DataTable from "~/components/DataTable.astro";
+import LastUpdated from "~/components/LastUpdated.astro";
+import Disclaimer from "~/components/Disclaimer.astro";
+import { SITE } from "~/data/site.config";
+import { articleSchema } from "~/lib/schema";
+
+const slug = "";
+const articleJsonLd = articleSchema({
+  headline: "Cek Nomor Indosat: Cara Cepat Melihat Nomor IM3 Sendiri",
+  description:
+    "Panduan resmi cek nomor Indosat IM3 lewat *888#, *123#, SMS, aplikasi myIM3, dan call center 185.",
+  url: SITE.url + "/",
+  datePublished: "2026-05-01",
+  dateModified: "2026-05-01",
+});
+const h1 = "Cek Nomor Indosat: Cara Cepat Melihat Nomor IM3 Sendiri";
+
+const seo = {
+  title: "Cek Nomor Indosat IM3: 5 Cara Cepat & Resmi 2026",
+  noSuffix: true,
+  description:
+    "Cara cek nomor Indosat IM3 sendiri lewat *888#, *123#, SMS, aplikasi myIM3, dan call center 185. Gratis, akurat, bisa tanpa kuota.",
+  canonicalPath: "/",
+  type: "article" as const,
+  publishedTime: "2026-05-01",
+  modifiedTime: "2026-05-01",
+  keywords: [
+    "cek nomor indosat",
+    "cara cek nomor im3",
+    "cek nomor sendiri indosat",
+    "kode cek nomor indosat",
+    "*888#",
+    "*123#",
+  ],
+};
+
+const faqItems = [
+  {
+    question: "Berapa biaya cek nomor lewat *888# atau *123#?",
+    answer:
+      "Gratis. Kode UMB *888# dan menu *123# tidak memotong pulsa, tidak menghabiskan kuota, dan tidak butuh koneksi internet. Anda hanya perlu sinyal seluler dari kartu IM3 yang masih aktif.",
+  },
+  {
+    question: "Apakah cek nomor lewat myIM3 butuh login?",
+    answer:
+      "Ya. Aplikasi myIM3 meminta verifikasi OTP ke nomor yang dipasang. Setelah login pertama, nomor utama tampil di halaman profil tanpa perlu mengetik kode dial. Aplikasi tersedia di Google Play Store dan App Store.",
+  },
+  {
+    question: "Bisakah cek nomor Indosat tanpa pulsa dan tanpa kuota?",
+    answer:
+      "Bisa. Metode kode dial seperti *888# dan *123# bekerja meski pulsa Rp 0 dan kuota habis, asal SIM masih dalam masa aktif dan ada sinyal. Cara ini paling cocok ketika Anda tidak punya akses internet.",
+  },
+  {
+    question: "Kode *888# saya tidak bisa, kenapa?",
+    answer:
+      "Tiga penyebab paling umum: sinyal lemah, kartu sudah masuk masa tenggang, atau aplikasi panggilan diblokir oleh pengaturan dual SIM. Coba pindah ke area dengan sinyal lebih baik, restart ponsel, atau gunakan kode alternatif *12330#. Kalau tetap gagal, hubungi 185.",
+  },
+  {
+    question: "Bagaimana cara mengetahui nomor di kartu lama yang sudah lama tidak dipakai?",
+    answer:
+      "Pasang kartu lama ke ponsel, tunggu sampai sinyal muncul, lalu coba *888#. Jika kartu sudah melewati masa tenggang dan dinonaktifkan, nomor tidak akan tampil. Anda perlu datang ke gerai resmi Indosat dengan KTP untuk mengecek status kartu lewat data NIK.",
+  },
+  {
+    question: "Apakah nomor IM3, Indosat Ooredoo, dan IM3 Ooredoo Hutchison sama?",
+    answer:
+      "Ya, semuanya merujuk ke layanan yang sama. Indosat Ooredoo Hutchison adalah nama perusahaan setelah merger pada Januari 2022, dan IM3 adalah merek prabayar utamanya. Nomor lama dengan awalan 0855, 0856, 0857, 0858, 0814, 0815, 0816, 0817, 0818, 0819, dan 0859 tetap berlaku.",
+  },
+];
+---
+
+<BaseLayout seo={seo} jsonLd={[articleJsonLd]}>
+  <article class="home">
+    <div class="home-inner">
+      <header class="home-header">
+        <p class="kicker">Panduan utama</p>
+        <h1>{h1}</h1>
+        <LastUpdated />
+      </header>
+
+      <div class="prose-id">
+        <QuickAnswer>
+          <p>
+            Untuk cek nomor Indosat IM3 sendiri, tekan <strong><code>*888#</code></strong>
+            lalu pilih menu Info, atau tekan <strong><code>*123#</code></strong> dan
+            masuk ke menu Info Pelanggan. Nomor Anda akan tampil di layar dalam
+            beberapa detik. Kedua kode gratis, tidak memotong pulsa, dan tidak
+            butuh internet.
+          </p>
+        </QuickAnswer>
+
+        <p>
+          Lupa nomor sendiri saat diminta kasir konter, mengisi formulir online,
+          atau aktivasi e-wallet adalah hal yang sering terjadi. Panduan ini
+          merangkum lima cara resmi yang bisa dipakai pelanggan prabayar maupun
+          pascabayar Indosat IM3, lengkap dengan biaya, kebutuhan internet, dan
+          kondisi saat masing-masing metode paling cocok dipakai.
+        </p>
+
+        <h2>Tabel metode cek nomor Indosat</h2>
+        <DataTable
+          caption="Lima cara resmi cek nomor IM3 dan kebutuhannya"
+          headers={["Metode", "Format", "Biaya", "Butuh internet"]}
+          rows={[
+            ["Kode UMB", "Tekan <code>*888#</code> lalu panggil", "Gratis", "Tidak"],
+            ["Menu USSD", "Tekan <code>*123#</code> &rarr; Info", "Gratis", "Tidak"],
+            ["Aplikasi myIM3", "Buka aplikasi, login OTP", "Butuh kuota", "Ya"],
+            ["SMS Info", "Ketik <code>INFO</code> kirim ke <code>363</code>", "Tarif SMS standar", "Tidak"],
+            ["Call center", "Hubungi <code>185</code>", "Gratis dari IM3", "Tidak"],
+          ]}
+        />
+
+        <AdSlot name="post-answer" />
+
+        <HowTo
+          name="Cara cek nomor lewat *888#"
+          description="Metode tercepat. Bekerja meski pulsa Rp 0 dan kuota habis."
+          totalTime="PT30S"
+          steps={[
+            {
+              name: "Buka aplikasi panggilan",
+              text: "Masuk ke menu telepon di ponsel Anda, sama seperti saat akan menelepon nomor biasa.",
+            },
+            {
+              name: "Ketik *888# lalu tekan panggil",
+              text: "Pastikan kartu IM3 berada di slot SIM yang aktif. Kalau ponsel dual SIM, pilih SIM Indosat sebelum menekan panggil.",
+            },
+            {
+              name: "Pilih menu Info",
+              text: "Setelah pop up muncul, balas dengan angka yang menunjuk ke menu Info atau Cek Nomor. Nomor utama, sisa pulsa, dan masa aktif akan tampil di layar berikutnya.",
+            },
+          ]}
+        />
+
+        <h2>Cara cek nomor lewat *123#</h2>
+        <p>
+          Kode <code>*123#</code> adalah pintu masuk utama ke seluruh layanan
+          Indosat. Setelah menekan kode dan tombol panggil, balas pop up dengan
+          angka menu Info, lalu pilih submenu Pelanggan atau Cek Nomor sesuai
+          tampilan. Tampilan menu sesekali diperbarui Indosat, jadi posisi
+          angkanya bisa berbeda. Yang penting, ikuti label "Info" atau
+          "Pelanggan" sampai nomor Anda muncul.
+        </p>
+
+        <h2>Cek nomor di aplikasi myIM3</h2>
+        <p>
+          Aplikasi myIM3 menampilkan nomor utama tepat di bagian atas halaman
+          beranda setelah login. Login pertama meminta kode OTP yang dikirim ke
+          nomor yang Anda pasang, jadi pastikan SIM IM3 ada di ponsel saat
+          mendaftar. Aplikasi tersedia gratis di Google Play Store dan App Store.
+          Selain menampilkan nomor, myIM3 juga memperlihatkan kuota, masa aktif,
+          paket aktif, dan riwayat transaksi.
+        </p>
+        <p>
+          Tidak ingin install aplikasi? Buka <strong>myim3.indosat.id</strong>
+          di browser, login dengan nomor IM3, lalu masukkan OTP. Tampilan web
+          memperlihatkan informasi yang sama dengan aplikasi.
+        </p>
+
+        <h2>SMS dan panggilan ke call center</h2>
+        <p>
+          Cara klasik via SMS masih bekerja. Buka pesan baru, ketik kata
+          <strong> INFO </strong>, lalu kirim ke <strong>363</strong>. Balasan
+          berisi informasi nomor dan saldo akan masuk dalam hitungan detik.
+          Biaya mengikuti tarif SMS standar operator, biasanya Rp 150 sampai
+          Rp 350 per pesan.
+        </p>
+        <p>
+          Cara terakhir, hubungi call center IM3 di nomor <strong>185</strong>
+          dari kartu Indosat (gratis), atau <strong>021-3000-3000</strong> dari
+          telepon lain. Petugas akan menanyakan data verifikasi seperti nama,
+          NIK, dan tanggal lahir sebelum memberitahu nomor yang terdaftar.
+        </p>
+
+        <AdSlot name="mid-content" />
+
+        <h2>Kode tidak muncul atau gagal? Coba langkah ini</h2>
+        <p>
+          Kalau <code>*888#</code> atau <code>*123#</code> menampilkan pesan
+          error, "Connection problem", atau tidak ada respon sama sekali, coba
+          satu per satu langkah berikut sampai berhasil.
+        </p>
+        <ul>
+          <li>
+            <strong>Cek sinyal.</strong> Lihat indikator sinyal di status bar.
+            Kalau hanya 1 bar atau muncul tanda silang, pindah ke ruangan dengan
+            jaringan lebih kuat lalu ulangi.
+          </li>
+          <li>
+            <strong>Pastikan SIM aktif.</strong> Pelanggan yang sudah lewat masa
+            tenggang akan ditolak. Cek tanggal masa aktif lewat SMS atau gerai
+            resmi.
+          </li>
+          <li>
+            <strong>Pilih SIM yang benar.</strong> Pengguna dual SIM kadang
+            menekan panggil dari slot operator lain. Buka pengaturan SIM dan
+            pilih kartu IM3 sebagai SIM untuk panggilan.
+          </li>
+          <li>
+            <strong>Restart ponsel.</strong> Cara klasik yang sering bekerja.
+            Tunggu sinyal stabil lalu ulangi kode dial.
+          </li>
+          <li>
+            <strong>Pakai kode alternatif.</strong> Jika <code>*888#</code>
+            error, coba <code>*12330#</code> atau buka aplikasi myIM3.
+          </li>
+          <li>
+            <strong>Hubungi 185.</strong> Kalau lima langkah di atas semua
+            gagal, kemungkinan ada masalah pada kartu. Petugas akan memeriksa
+            status SIM lewat NIK Anda.
+          </li>
+        </ul>
+
+        <h2>Tips agar nomor tidak terlupa lagi</h2>
+        <p>
+          Setelah berhasil cek nomor, simpan di tempat yang mudah ditemukan.
+          Tiga cara praktis: tulis di kontak ponsel sendiri dengan nama "Nomor
+          Saya IM3", screenshot tampilan myIM3 dan simpan di folder Favorit, atau
+          aktifkan profil iSafe di pengaturan ponsel yang menampilkan nomor saat
+          layar terkunci. Pelanggan pascabayar bisa mencatat nomor di tagihan
+          bulanan yang dikirim Indosat lewat email.
+        </p>
+
+        <AdSlot name="pre-faq" />
+
+        <FAQ items={faqItems} />
+
+        <h2>Panduan terkait</h2>
+        <p>
+          Setelah tahu nomor sendiri, lanjutkan ke panduan utilitas Indosat
+          lainnya untuk kebutuhan harian.
+        </p>
+        <ul>
+          <li>
+            <a href="/cara-cek-pulsa-indosat">Cara cek pulsa Indosat</a> lewat
+            kode dial, SMS, dan myIM3.
+          </li>
+          <li>
+            <a href="/cara-cek-kuota-indosat">Cara cek kuota Indosat</a>
+            termasuk kuota utama, kuota malam, dan kuota aplikasi.
+          </li>
+          <li>
+            <a href="/kode-dial-indosat">Daftar kode dial Indosat</a> lengkap
+            untuk semua menu UMB.
+          </li>
+          <li>
+            <a href="/cara-registrasi-kartu-indosat">Registrasi kartu Indosat</a>
+            dengan NIK dan nomor KK.
+          </li>
+          <li>
+            <a href="/call-center-indosat">Call center Indosat 185</a> dan kanal
+            bantuan resmi lainnya.
+          </li>
+        </ul>
+
+        <Disclaimer variant="boxed" />
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .home {
+    background: var(--color-bg);
+  }
+  .home-inner {
+    max-width: var(--container-prose);
+    margin: 0 auto;
+    padding: var(--space-10) var(--space-4) var(--space-12);
+  }
+  .home-header {
+    margin-bottom: var(--space-6);
+  }
+  .kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    color: var(--color-fg-muted);
+    margin-bottom: var(--space-3);
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.5vw, var(--text-4xl));
+    font-weight: 800;
+    line-height: var(--leading-tight);
+    letter-spacing: -0.02em;
+    color: var(--color-fg);
+    margin-bottom: var(--space-3);
+  }
+  @media (max-width: 640px) {
+    .home-inner { padding: var(--space-6) var(--space-4) var(--space-10); }
+  }
+</style>

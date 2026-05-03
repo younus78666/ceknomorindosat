@@ -1,0 +1,239 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import QuickAnswer from "~/components/QuickAnswer.astro";
+import AdSlot from "~/components/AdSlot.astro";
+import FAQ from "~/components/FAQ.astro";
+
+const slug = "kenapa-tidak-bisa-cek-nomor-indosat";
+const h1 = "Kenapa Tidak Bisa Cek Nomor Indosat?";
+
+const seo = {
+  title: "Kenapa Tidak Bisa Cek Nomor Indosat? 9 Penyebab",
+  noSuffix: true,
+  description:
+    "Sembilan penyebab cek nomor IM3 gagal: sinyal, kartu belum aktif, MMI invalid, dual SIM, mode pesawat, masa tenggang, gangguan jaringan, dan solusinya.",
+  canonicalPath: `/${slug}`,
+  type: "article" as const,
+  publishedTime: "2026-05-04",
+  modifiedTime: "2026-05-04",
+  keywords: [
+    "kenapa tidak bisa cek nomor indosat",
+    "cek nomor im3 gagal",
+    "mmi code invalid",
+    "*888# tidak bisa",
+    "kode indosat error",
+    "troubleshoot indosat",
+  ],
+};
+
+const faqItems = [
+  {
+    question: "Berapa lama biasanya pop up *888# muncul setelah panggil?",
+    answer:
+      "Antara 2 sampai 5 detik pada kondisi sinyal normal. Kalau lebih dari 10 detik tidak ada respon, kemungkinan ada masalah pada salah satu dari tiga hal: sinyal, izin USSD di aplikasi telepon, atau status kartu.",
+  },
+  {
+    question: "Apakah pulsa terpotong saat *888# gagal?",
+    answer:
+      "Tidak. Kode UMB resmi seperti *888# tidak menarik biaya, baik saat berhasil maupun saat gagal. Yang berbiaya hanyalah perintah USSD yang sifatnya transaksional, dan biaya itu selalu tampil di pop up sebelum konfirmasi.",
+  },
+  {
+    question: "Kenapa di ponsel teman bisa tapi di ponsel saya gagal?",
+    answer:
+      "Tiga sebab paling umum: ponsel Anda terhubung ke menara dengan sinyal lebih lemah, aplikasi keamanan di ponsel Anda memblokir USSD, atau slot SIM yang dipilih bukan kartu IM3. Coba pinjam SIM IM3 ke ponsel lain untuk konfirmasi sumber masalah.",
+  },
+  {
+    question: "Bisakah saya cek nomor lewat WiFi tanpa sinyal seluler?",
+    answer:
+      "Tidak untuk USSD. Kode dial selalu butuh setidaknya satu bar sinyal seluler aktif. Pilihannya, gunakan aplikasi myIM3 yang memang berjalan di atas internet, atau aktifkan WiFi calling jika operator dan ponsel mendukungnya.",
+  },
+  {
+    question: "Setelah masa tenggang, masih bisa cek nomor?",
+    answer:
+      "Tidak konsisten. Pada sebagian ponsel, *888# tetap menampilkan pop up selama masa tenggang dengan keterangan tanggal kedaluwarsa. Pada sebagian lain, USSD sudah ditolak. Cara paling pasti adalah cek lewat aplikasi myIM3 atau hubungi 185 untuk konfirmasi status NIK.",
+  },
+  {
+    question: "Bagaimana jika sembilan penyebab di atas semua sudah dicek?",
+    answer:
+      "Hubungi call center 185 dari ponsel lain dengan menyebut nomor IM3 Anda dan KTP. Petugas akan memeriksa status kartu di sistem. Bila kartu masih aktif tetapi USSD tetap gagal, mereka akan mengeluarkan tiket teknis untuk pemeriksaan jaringan di area Anda.",
+  },
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  schemaType="BlogPosting"
+  breadcrumbs={[
+    { name: "Beranda", href: "/" },
+    { name: "Blog", href: "/blog" },
+    { name: "Kenapa Tidak Bisa Cek Nomor?" },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Cek nomor Indosat IM3 yang gagal hampir selalu disebabkan satu dari
+      sembilan hal: sinyal lemah, kartu belum aktif, MMI invalid, salah
+      slot dual SIM, mode pesawat, masa tenggang, gangguan jaringan, izin
+      USSD, atau aplikasi myIM3 error. Mulai diagnosis dari yang paling
+      cepat dicek: indikator sinyal dan slot SIM yang dipilih.
+    </p>
+  </QuickAnswer>
+
+  <p>
+    Skenarionya selalu mirip. Anda menekan <code>*888#</code>, panggil, dan
+    layar diam saja. Atau pop up muncul sebentar lalu menghilang. Atau
+    pesan "Connection problem or invalid MMI code" tampil tepat saat Anda
+    sedang buru-buru di kasir minimarket. Tulisan ini menelusuri sembilan
+    penyebab paling sering, urutan pengecekan dari yang paling cepat, dan
+    kapan harus berhenti mencoba sendiri lalu menghubungi 185.
+  </p>
+
+  <AdSlot name="post-answer" />
+
+  <h2>1. Sinyal lemah atau tidak stabil</h2>
+  <p>
+    Penyebab paling umum sekaligus paling sering terlewat. USSD butuh
+    setidaknya dua bar sinyal seluler untuk berhasil. Indikator yang
+    menunjukkan satu bar atau berkedip biasanya tidak cukup. Pindah ke area
+    yang lebih terbuka, dekat jendela, atau halaman, lalu coba lagi setelah
+    indikator stabil selama beberapa detik.
+  </p>
+
+  <h2>2. Kartu baru belum aktif sepenuhnya</h2>
+  <p>
+    Kartu IM3 yang baru dibeli dan diregistrasi butuh waktu sampai sistem
+    operator memproses pendaftaran. Selama 15 sampai 60 menit pertama
+    setelah aktivasi, USSD bisa menolak permintaan dengan pesan generik.
+    Tunggu satu jam penuh sebelum mencoba lagi. Bila setelah satu jam masih
+    gagal, cek status registrasi lewat SMS <code>INFO#MSISDN</code> ke
+    <code>4444</code>.
+  </p>
+
+  <h2>3. "Connection problem or invalid MMI code"</h2>
+  <p>
+    Pesan klasik di Android. Penyebabnya bukan kode USSD yang salah,
+    melainkan aplikasi telepon yang tidak punya izin mengirim USSD. Buka
+    Pengaturan, masuk ke Aplikasi, pilih Telepon, lalu cek Izin. Pastikan
+    USSD diaktifkan. Pada beberapa ponsel Xiaomi dan OPPO, fitur ini
+    bersembunyi di menu Optimasi Baterai atau MIUI Optimization.
+  </p>
+
+  <h2>4. Salah slot pada ponsel dual SIM</h2>
+  <p>
+    Pengguna dual SIM kadang menjalankan kode dari kartu yang salah. Buka
+    pengaturan SIM, set kartu IM3 sebagai SIM panggilan default, lalu coba
+    lagi. Cara cepat untuk konfirmasi: lihat ikon yang muncul di sebelah
+    tombol panggil. Ikon yang menunjuk ke SIM 1 atau SIM 2 menentukan
+    kartu mana yang akan menjalankan USSD.
+  </p>
+
+  <h2>5. Mode pesawat tertinggal aktif</h2>
+  <p>
+    Sering terjadi setelah penerbangan atau saat ponsel terlalu cepat
+    dimasukkan ke saku. Mode pesawat memutus semua koneksi seluler sehingga
+    USSD tidak punya jalur. Geser status bar dari atas, periksa ikon
+    pesawat, dan pastikan sudah dimatikan. Kalau ragu, aktifkan kembali
+    selama 10 detik lalu matikan agar koneksi memuat ulang.
+  </p>
+
+  <AdSlot name="mid-content" />
+
+  <h2>6. Kartu sudah masuk masa tenggang atau hangus</h2>
+  <p>
+    Kartu yang sudah lewat masa aktif sering menolak USSD walau ponsel
+    masih menerima sinyal. Indikator: bar sinyal tampak normal, tetapi
+    panggilan keluar selalu gagal dan USSD diabaikan tanpa pesan jelas.
+    Cara paling pasti adalah cek lewat aplikasi myIM3, atau minta orang
+    lain menelepon nomor Anda. Bila panggilan masuk berhasil tetapi keluar
+    gagal, kartu sedang dalam masa tenggang. Bila masuk dan keluar sama
+    sekali tidak bisa, kemungkinan sudah hangus.
+  </p>
+
+  <h2>7. Gangguan jaringan di area Anda</h2>
+  <p>
+    Indosat sesekali melakukan pemeliharaan menara atau menghadapi
+    gangguan tak terduga. Bila tetangga atau rekan kerja yang juga pakai
+    IM3 mengalami hal sama, kemungkinan besar masalahnya di sisi jaringan.
+    Cek akun Twitter @IndosatCare untuk pengumuman gangguan, atau buka
+    portal care.im3.id yang menyertakan halaman status jaringan untuk
+    setiap kota besar.
+  </p>
+
+  <h2>8. Aplikasi telepon yang nakal</h2>
+  <p>
+    Aplikasi telepon pihak ketiga, fitur Caller ID, dan task killer sering
+    memblokir USSD tanpa pemberitahuan jelas. Tanda khasnya: USSD bekerja
+    di mode aman tetapi gagal di mode normal. Solusi cepat: coba pakai
+    aplikasi telepon bawaan ponsel sebagai alternatif. Solusi jangka
+    panjang: nonaktifkan aplikasi telepon pihak ketiga atau atur ulang ke
+    aplikasi default.
+  </p>
+
+  <h2>9. Aplikasi myIM3 error atau gagal login</h2>
+  <p>
+    Kalau Anda biasa cek nomor lewat aplikasi dan tiba-tiba gagal, tiga
+    pemicu paling umum: cache aplikasi rusak, OTP tidak masuk karena inbox
+    SMS penuh, dan sesi login kedaluwarsa. Bersihkan cache lewat
+    Pengaturan Aplikasi, hapus pesan lama di inbox SMS, lalu coba login
+    ulang. Bila tetap gagal, beralih sementara ke kode dial sambil
+    investigasi aplikasi.
+  </p>
+
+  <h2>Urutan pengecekan tercepat</h2>
+  <p>
+    Daripada mencoba acak, jalankan pemeriksaan dengan urutan ini agar
+    masalah ketemu paling cepat.
+  </p>
+  <ol>
+    <li>Cek indikator sinyal di status bar.</li>
+    <li>Pastikan slot SIM IM3 dipilih sebagai default.</li>
+    <li>Cek apakah mode pesawat aktif tanpa sengaja.</li>
+    <li>Restart ponsel.</li>
+    <li>Coba kode <code>*888#</code> dari aplikasi telepon bawaan.</li>
+    <li>Bandingkan dengan aplikasi myIM3 untuk verifikasi status kartu.</li>
+    <li>Cek pengumuman gangguan di Twitter @IndosatCare.</li>
+  </ol>
+
+  <h2>Kapan harus menghubungi support</h2>
+  <p>
+    Tiga skenario yang sudah waktunya berhenti mencoba sendiri dan
+    menghubungi 185.
+  </p>
+  <ul>
+    <li>
+      <strong>Tujuh langkah di atas semua sudah dicek</strong> dan kartu masih
+      menolak USSD. Petugas akan memeriksa status kartu di sistem.
+    </li>
+    <li>
+      <strong>USSD bekerja di kartu lain di ponsel sama</strong> tetapi tidak
+      di kartu IM3 Anda. Indikasi masalah ada di kartu, bukan ponsel.
+    </li>
+    <li>
+      <strong>Masa aktif menurut catatan Anda masih panjang</strong> tetapi
+      semua layanan keluar mati. Bisa jadi ada blokir mendadak yang perlu
+      dibuka dari sisi operator.
+    </li>
+  </ul>
+  <p>
+    Bawa data: nomor lengkap, NIK, tanggal aktivasi terakhir, dan
+    screenshot pesan error. Hubungi 185 dari ponsel lain agar percakapan
+    tidak terputus saat petugas meminta Anda mencoba sesuatu di SIM yang
+    bermasalah.
+  </p>
+
+  <AdSlot name="pre-faq" />
+
+  <FAQ items={faqItems} />
+
+  <h2>Bacaan terkait</h2>
+  <ul>
+    <li><a href="/">Panduan utama cek nomor Indosat</a>.</li>
+    <li><a href="/cek-nomor-indosat-lewat-ussd">Panduan USSD lengkap</a> dengan solusi MMI invalid.</li>
+    <li><a href="/cek-nomor-indosat-masih-aktif-atau-tidak">Cek masa aktif kartu IM3</a>.</li>
+    <li><a href="/cek-nomor-indosat-lewat-aplikasi-myim3">Aplikasi myIM3 untuk cek nomor</a>.</li>
+    <li><a href="/nomor-call-center-indosat">Nomor call center Indosat 185</a>.</li>
+    <li><a href="/kode-cek-nomor-indosat-berubah">Apakah kode cek nomor Indosat berubah?</a></li>
+  </ul>
+</PageLayout>

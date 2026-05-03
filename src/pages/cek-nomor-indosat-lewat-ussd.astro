@@ -1,0 +1,227 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import QuickAnswer from "~/components/QuickAnswer.astro";
+import AdSlot from "~/components/AdSlot.astro";
+import FAQ from "~/components/FAQ.astro";
+import HowTo from "~/components/HowTo.astro";
+import DataTable from "~/components/DataTable.astro";
+
+const slug = "cek-nomor-indosat-lewat-ussd";
+const h1 = "Cara Cek Nomor Indosat Lewat USSD";
+
+const seo = {
+  title: "Cara Cek Nomor Indosat Lewat USSD (*888# & *123#)",
+  noSuffix: true,
+  description:
+    "Panduan USSD cek nomor Indosat IM3 lewat *888# dan *123# di Android dan iPhone, lengkap dengan solusi error MMI dan tips dual SIM.",
+  canonicalPath: `/${slug}`,
+  type: "article" as const,
+  publishedTime: "2026-05-01",
+  modifiedTime: "2026-05-01",
+  keywords: [
+    "cek nomor indosat lewat ussd",
+    "kode ussd indosat",
+    "*888# indosat",
+    "*123# indosat",
+    "mmi code invalid",
+    "ussd indosat android iphone",
+  ],
+};
+
+const faqItems = [
+  {
+    question: "Apa arti USSD?",
+    answer:
+      "USSD adalah singkatan dari Unstructured Supplementary Service Data. Protokol ini memungkinkan ponsel mengirim perintah singkat ke jaringan operator dan menerima respon teks tanpa internet. Kode seperti *888# dan *123# adalah perintah USSD yang dipakai Indosat IM3.",
+  },
+  {
+    question: "Apakah USSD memotong pulsa?",
+    answer:
+      "Tidak. Kode USSD resmi untuk cek nomor, pulsa, kuota, dan masa aktif tidak menarik biaya pulsa. Yang berbayar hanyalah perintah USSD yang sifatnya transaksional, misalnya pembelian paket, dan biaya tersebut tampil di layar sebelum konfirmasi.",
+  },
+  {
+    question: "Bedanya kode UMB dan USSD apa?",
+    answer:
+      "UMB (USSD Menu Browser) adalah jenis layanan USSD bermenu yang dipakai operator Indonesia, termasuk *888# milik Indosat. Secara teknis UMB tetap berjalan di atas USSD, jadi banyak orang menyebut keduanya sebagai hal yang sama.",
+  },
+  {
+    question: "Kenapa USSD muncul 'Connection problem or invalid MMI code'?",
+    answer:
+      "Pesan ini muncul ketika sinyal seluler buruk, format kode salah, atau pop up USSD diblokir aplikasi keamanan. Coba pindah ke area sinyal lebih kuat, ketik ulang kode dengan teliti, atau aktifkan izin USSD di pengaturan aplikasi telepon.",
+  },
+  {
+    question: "Apakah USSD bisa lewat WiFi calling?",
+    answer:
+      "Tidak. USSD memerlukan jaringan seluler aktif. Jika ponsel hanya tersambung WiFi tanpa sinyal seluler, kode dial gagal terkirim. Pastikan setidaknya satu bar sinyal seluler aktif sebelum menjalankan *888# atau *123#.",
+  },
+  {
+    question: "Adakah kode USSD cadangan selain *888# dan *123#?",
+    answer:
+      "Ada. Indosat juga menyediakan *12330# untuk akses menu pelanggan dan *885# di sebagian wilayah. Kalau dua kode utama gagal, dua alternatif ini layak dicoba sebelum beralih ke aplikasi myIM3.",
+  },
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  breadcrumbs={[
+    { name: "Beranda", href: "/" },
+    { name: "Cek Nomor Lewat USSD" },
+  ]}
+>
+  <QuickAnswer>
+    <p>
+      Cara cek nomor Indosat lewat USSD: tekan <strong><code>*888#</code></strong>
+      lalu panggil. Pop up akan muncul dalam 2-5 detik berisi nomor IM3, sisa
+      pulsa, dan masa aktif. Jika gagal, gunakan <code>*123#</code> sebagai
+      cadangan. Kedua kode gratis dan tidak butuh internet.
+    </p>
+  </QuickAnswer>
+
+  <p>
+    USSD adalah protokol pesan singkat yang berjalan di jaringan seluler tanpa
+    butuh data atau WiFi. Operator Indonesia memakai USSD untuk semua menu
+    cepat seperti cek nomor, cek pulsa, dan beli paket. Panduan ini membahas
+    kode USSD resmi Indosat IM3, langkah di Android dan iPhone, isi tampilan
+    layar, dan solusi error yang paling sering muncul.
+  </p>
+
+  <h2>Kode USSD resmi Indosat IM3</h2>
+  <DataTable
+    caption="Empat kode USSD aktif untuk cek nomor IM3"
+    headers={["Kode", "Fungsi", "Biaya", "Status"]}
+    rows={[
+      ["<code>*888#</code>", "Menu UMB cepat: nomor, pulsa, kuota", "Gratis", "Utama"],
+      ["<code>*123#</code>", "Menu lengkap layanan IM3", "Gratis", "Utama"],
+      ["<code>*12330#</code>", "Akses langsung info pelanggan", "Gratis", "Cadangan"],
+      ["<code>*885#</code>", "Layanan tambahan di sebagian wilayah", "Gratis", "Cadangan"],
+    ]}
+  />
+
+  <AdSlot name="post-answer" />
+
+  <HowTo
+    name="Cek nomor lewat USSD di Android"
+    description="Berhasil dalam 30 detik di hampir semua ponsel Android, termasuk Samsung, Xiaomi, OPPO, vivo, dan realme."
+    totalTime="PT30S"
+    steps={[
+      {
+        name: "Buka aplikasi Telepon",
+        text: "Tap ikon Telepon di layar utama atau di laci aplikasi. Pengguna ponsel dual SIM melanjutkan ke langkah 2.",
+      },
+      {
+        name: "Pilih SIM IM3 sebagai default",
+        text: "Buka pengaturan SIM lalu pilih kartu IM3 untuk panggilan keluar. Beberapa ponsel menampilkan pemilih SIM otomatis setelah panggilan dimulai.",
+      },
+      {
+        name: "Ketik *888# pada keypad",
+        text: "Masukkan tanda bintang, angka 888, dan tanda pagar tepat seperti tertulis. Hindari spasi.",
+      },
+      {
+        name: "Tekan tombol panggil",
+        text: "Tunggu 2 sampai 5 detik. Pop up berisi menu Info dan Cek Nomor akan muncul di tengah layar.",
+      },
+      {
+        name: "Baca informasi nomor",
+        text: "Nomor IM3 utama tampil pada baris pertama, biasanya bersamaan dengan saldo pulsa dan tanggal masa aktif. Tap Tutup untuk menutup pop up.",
+      },
+    ]}
+  />
+
+  <h2>Cara cek nomor lewat USSD di iPhone</h2>
+  <p>
+    Langkah di iPhone hampir identik dengan Android, hanya beda penempatan menu.
+    Buka aplikasi <strong>Phone</strong>, pilih tab <em>Keypad</em>, ketik
+    <code>*888#</code>, lalu ketuk tombol panggil hijau. iPhone menampilkan
+    respon USSD dalam pop up putih yang muncul di tengah layar. Untuk pengguna
+    iPhone dual SIM, pastikan baris <em>Default Voice Line</em> di Settings
+    &rarr; <em>Cellular</em> mengarah ke nomor IM3 sebelum menekan panggil.
+  </p>
+
+  <h2>Apa yang muncul di layar</h2>
+  <p>
+    Setelah <code>*888#</code> berhasil terkirim, pop up berisi tiga sampai
+    empat baris informasi penting. Format umum yang tampil di IM3:
+  </p>
+  <ul>
+    <li><strong>No:</strong> nomor utama IM3 dengan awalan 0855 sampai 0858 atau eks-Indosat 0814-0819.</li>
+    <li><strong>Pulsa:</strong> sisa saldo dalam rupiah.</li>
+    <li><strong>Masa aktif:</strong> tanggal kartu kedaluwarsa dalam format dd-mm-yyyy.</li>
+    <li><strong>Bonus:</strong> sisa kuota internet bila ada paket aktif.</li>
+  </ul>
+  <p>
+    Tampilan bisa berisi menu lanjutan untuk Cek Pulsa, Cek Kuota, Cek Tagihan,
+    dan Beli Paket. Balas pop up dengan angka menu untuk masuk ke submenu.
+  </p>
+
+  <h2>Solusi error "MMI code invalid" atau "Connection problem"</h2>
+  <p>
+    Pesan <em>"Connection problem or invalid MMI code"</em> di Android dan
+    <em>"Service unavailable"</em> di iPhone adalah keluhan paling umum saat
+    menjalankan USSD. Coba enam langkah ini berurutan sampai salah satu
+    berhasil.
+  </p>
+  <ol>
+    <li>Pastikan kode diketik tepat: <code>*</code>, angka, <code>#</code>, tanpa spasi.</li>
+    <li>Tutup aplikasi keamanan atau task killer yang berjalan di latar.</li>
+    <li>Aktifkan ulang Mode Pesawat selama 10 detik lalu matikan kembali.</li>
+    <li>Restart ponsel agar koneksi seluler segar.</li>
+    <li>Cek izin USSD di <em>Pengaturan</em> &rarr; <em>Aplikasi</em> &rarr; <em>Telepon</em> &rarr; <em>Izin</em>.</li>
+    <li>Coba kode cadangan <code>*12330#</code> atau buka aplikasi myIM3.</li>
+  </ol>
+
+  <AdSlot name="mid-content" />
+
+  <h2>Sinyal lemah atau jaringan bermasalah</h2>
+  <p>
+    USSD butuh jaringan seluler stabil. Indikator sinyal di status bar yang
+    menunjukkan satu bar atau tanda silang sering bikin kode gagal terkirim.
+    Pindah ke ruangan lebih terbuka, jendela, atau halaman, lalu coba lagi
+    setelah indikator naik ke dua bar atau lebih.
+  </p>
+  <p>
+    Saat ada gangguan jaringan regional, Indosat biasanya mengumumkan
+    pemeliharaan lewat akun media sosial resmi dan aplikasi myIM3. Jika
+    tetangga Anda yang juga pakai IM3 mengalami hal sama, kemungkinan besar ini
+    masalah jaringan, bukan ponsel Anda.
+  </p>
+
+  <h2>Tips pengguna dual SIM</h2>
+  <p>
+    Ponsel dual SIM membawa risiko khas: kode dial dijalankan dari kartu yang
+    salah. Tiga tips agar aman:
+  </p>
+  <ul>
+    <li>Set kartu IM3 sebagai SIM panggilan default di pengaturan SIM.</li>
+    <li>Pakai pemilih SIM eksplisit saat menekan panggil agar tidak salah slot.</li>
+    <li>Beri label kartu di kontak ponsel ("SIM 1: IM3", "SIM 2: Operator lain") supaya tidak tertukar saat darurat.</li>
+  </ul>
+  <p>
+    Pengguna eSIM IM3 mengikuti aturan sama. Pastikan profil eSIM IM3 aktif dan
+    dipilih sebagai default voice line sebelum mengetik kode dial.
+  </p>
+
+  <h2>Alternatif: cek nomor lewat aplikasi myIM3</h2>
+  <p>
+    Kalau USSD gagal terus, alihkan ke aplikasi myIM3. Login pertama meminta
+    OTP yang dikirim ke kartu IM3, jadi pastikan SIM ada di ponsel saat
+    mendaftar. Setelah login, nomor utama tampil di pojok atas halaman beranda
+    aplikasi tanpa perlu lagi mengetik kode. Aplikasi tersedia gratis di Google
+    Play Store dan App Store.
+  </p>
+
+  <AdSlot name="pre-faq" />
+
+  <FAQ items={faqItems} />
+
+  <h2>Panduan terkait</h2>
+  <ul>
+    <li><a href="/">Panduan utama cek nomor Indosat</a>.</li>
+    <li><a href="/cek-nomor-indosat-im3">Cara cek nomor IM3 sendiri (semua metode)</a>.</li>
+    <li><a href="/kode-dial-indosat">Daftar kode dial Indosat lengkap</a>.</li>
+    <li><a href="/cara-cek-pulsa-indosat">Cara cek pulsa Indosat</a>.</li>
+    <li><a href="/cara-cek-kuota-indosat">Cara cek kuota Indosat</a>.</li>
+  </ul>
+</PageLayout>

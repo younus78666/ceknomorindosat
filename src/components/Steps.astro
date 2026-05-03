@@ -1,0 +1,54 @@
+---
+interface Props {
+  items: { title?: string; text: string }[];
+  ordered?: boolean;
+}
+const { items, ordered = true } = Astro.props as Props;
+const Tag = ordered ? "ol" : "ul";
+---
+
+<Tag class="steps">
+  {items.map((it, i) => (
+    <li>
+      {ordered && <span class="num" aria-hidden="true">{i + 1}</span>}
+      <div class="body">
+        {it.title && <p class="title">{it.title}</p>}
+        <p class="text" set:html={it.text} />
+      </div>
+    </li>
+  ))}
+</Tag>
+
+<style>
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .steps li {
+    display: flex;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  .num {
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-brand-soft);
+    color: var(--color-fg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--text-sm);
+  }
+  .title { font-weight: 600; margin-bottom: var(--space-1); }
+  .text { color: var(--color-fg-muted); line-height: var(--leading-relaxed); }
+</style>

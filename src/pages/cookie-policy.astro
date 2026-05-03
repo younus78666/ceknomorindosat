@@ -1,0 +1,159 @@
+---
+import PageLayout from "~/layouts/PageLayout.astro";
+import { SITE } from "~/data/site.config";
+import { webPageSchema, organizationSchema } from "~/lib/schema";
+import DataTable from "~/components/DataTable.astro";
+
+const slug = "cookie-policy";
+const h1 = "Cookie Policy";
+
+const seo = {
+  title: "Cookie Policy CekNomorIndosat.com",
+  noSuffix: true,
+  description:
+    "Penjelasan cookie yang dipakai CekNomorIndosat.com: cookie esensial, analitik, iklan, dan cara mengontrol cookie lewat browser dan banner consent.",
+  canonicalPath: `/${slug}`,
+  type: "website" as const,
+  publishedTime: "2026-05-04",
+  modifiedTime: "2026-05-04",
+};
+
+const url = `${SITE.url}/${slug}`;
+const pageJsonLd = [
+  webPageSchema({
+    type: "WebPage",
+    name: h1,
+    description: seo.description,
+    url,
+    datePublished: "2026-05-04",
+    dateModified: "2026-05-04",
+  }),
+  organizationSchema(),
+];
+---
+
+<PageLayout
+  seo={seo}
+  h1={h1}
+  slug={slug}
+  emitArticleSchema={false}
+  jsonLd={pageJsonLd}
+  breadcrumbs={[{ name: "Beranda", href: "/" }, { name: "Cookie Policy" }]}
+>
+  <p>
+    Halaman ini menjelaskan cookie yang dipakai di CekNomorIndosat.com.
+    Cookie adalah berkas teks kecil yang disimpan oleh browser saat Anda
+    mengunjungi situs. Cookie membantu situs mengingat preferensi Anda,
+    mengukur kunjungan, dan menampilkan iklan yang lebih relevan.
+  </p>
+
+  <h2>Jenis cookie yang dipakai</h2>
+  <DataTable
+    caption="Kategori cookie di CekNomorIndosat.com"
+    headers={["Kategori", "Tujuan", "Penyedia", "Durasi"]}
+    rows={[
+      ["Cookie esensial", "Menjaga sesi pengunjung dan preferensi tampilan", "CekNomorIndosat.com", "Sesi atau hingga 1 tahun"],
+      ["Cookie analitik", "Mencatat statistik kunjungan agregat", "Google Analytics, Microsoft Clarity", "Hingga 14 bulan"],
+      ["Cookie iklan", "Menampilkan iklan yang relevan dan mengukur performa iklan", "Adsterra, Monetag", "Hingga 13 bulan"],
+      ["Cookie consent", "Mengingat pilihan persetujuan cookie Anda", "CekNomorIndosat.com", "12 bulan"],
+    ]}
+  />
+
+  <h2>Cookie esensial</h2>
+  <p>
+    Cookie ini dibutuhkan agar situs berfungsi dengan baik. Tanpa cookie
+    esensial, beberapa fitur seperti pengingat bahasa atau preferensi
+    tema bisa terganggu. Cookie esensial tidak butuh persetujuan
+    eksplisit karena tidak dipakai untuk pelacakan.
+  </p>
+
+  <h2>Cookie analitik</h2>
+  <p>
+    Cookie analitik membantu kami memahami berapa banyak orang yang
+    membuka situs, halaman mana yang paling populer, dan perangkat apa
+    yang dipakai. Dua layanan utama yang kami pakai:
+  </p>
+  <ul>
+    <li>
+      <strong>Google Analytics 4.</strong> Memakai cookie pihak pertama
+      seperti _ga dan _ga_*. IP teranonimisasi sesuai pengaturan default.
+      Data agregat membantu kami memperbaiki struktur situs.
+    </li>
+    <li>
+      <strong>Microsoft Clarity.</strong> Memakai cookie sesi dan
+      identifier perangkat untuk merekam interaksi (heatmap dan session
+      replay) tanpa mengambil informasi sensitif yang Anda ketik.
+    </li>
+  </ul>
+
+  <h2>Cookie iklan</h2>
+  <p>
+    Iklan di situs ini dilayani oleh jaringan periklanan pihak ketiga.
+    Cookie iklan dipakai untuk menampilkan iklan yang relevan, mencegah
+    iklan yang sama muncul berulang, dan mengukur jumlah klik atau
+    tampilan.
+  </p>
+  <ul>
+    <li><strong>Adsterra</strong> untuk iklan tampilan dan native.</li>
+    <li><strong>Monetag</strong> untuk format social bar, popunder, dan push notification.</li>
+  </ul>
+  <p>
+    Anda dapat keluar dari personalisasi iklan lewat halaman opt-out
+    yang disediakan tiap jaringan, lewat halaman
+    <strong> youronlinechoices.eu</strong> untuk pengaturan iklan
+    Eropa, atau lewat pengaturan privasi browser dan sistem operasi.
+  </p>
+
+  <h2>Banner consent</h2>
+  <p>
+    Saat pertama kali membuka situs, Anda akan melihat banner persetujuan
+    cookie yang menanyakan apakah Anda menerima cookie analitik dan
+    iklan. Pilihan Anda disimpan dalam cookie consent dan dipakai sebagai
+    referensi untuk kunjungan berikutnya. Anda dapat mengubah preferensi
+    sewaktu-waktu lewat tautan "Pengaturan Cookie" di footer situs.
+  </p>
+
+  <h2>Mengontrol cookie lewat browser</h2>
+  <p>
+    Setiap browser modern menyediakan pengaturan cookie. Anda dapat
+    memblokir cookie pihak ketiga, menghapus cookie yang sudah ada, atau
+    mengaktifkan mode penjelajahan privat.
+  </p>
+  <ul>
+    <li><strong>Chrome.</strong> Pengaturan, lalu Privasi dan keamanan, lalu Cookie.</li>
+    <li><strong>Firefox.</strong> Pengaturan, lalu Privasi & Keamanan.</li>
+    <li><strong>Safari.</strong> Preferensi, lalu Privasi.</li>
+    <li><strong>Edge.</strong> Pengaturan, lalu Cookie dan izin situs.</li>
+    <li><strong>Browser ponsel.</strong> Pengaturan, lalu Privasi atau Cookie.</li>
+  </ul>
+  <p>
+    Memblokir semua cookie dapat mengakibatkan beberapa fitur situs tidak
+    berfungsi dengan baik.
+  </p>
+
+  <h2>Cookie pihak ketiga di luar kendali kami</h2>
+  <p>
+    Iklan dan widget pihak ketiga (jika muncul di situs) dapat memuat
+    cookie tambahan dari domain lain. Kebijakan cookie pihak ketiga
+    tunduk pada ketentuan masing-masing penyedia. Kami menyarankan Anda
+    membaca kebijakan privasi penyedia yang relevan untuk informasi
+    lengkap.
+  </p>
+
+  <h2>Perubahan kebijakan cookie</h2>
+  <p>
+    Kebijakan cookie ini dapat diperbarui untuk mengikuti penambahan atau
+    pergantian layanan pihak ketiga. Versi terbaru selalu tersedia di
+    halaman ini. Tanggal "Terakhir diperbarui" di bagian atas halaman
+    menunjukkan revisi paling baru. Pemakaian situs setelah pembaruan
+    dianggap sebagai persetujuan terhadap kebijakan terbaru.
+  </p>
+
+  <h2>Pertanyaan tentang cookie</h2>
+  <p>
+    Untuk pertanyaan tentang cookie atau permintaan terkait pemrosesan
+    data lewat cookie, kirim email ke
+    <strong> redaksi@ceknomorindosat.com </strong>dengan subjek
+    "Pertanyaan Cookie".
+  </p>
+</PageLayout>

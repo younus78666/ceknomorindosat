@@ -1,0 +1,50 @@
+---
+const { title = "Jawaban cepat" } = Astro.props as { title?: string };
+---
+
+<aside class="quick-answer" aria-label={title}>
+  <p class="qa-label">{title}</p>
+  <div class="qa-body">
+    <slot />
+  </div>
+</aside>
+
+<style>
+  .quick-answer {
+    background: var(--color-brand-soft);
+    border: 1px solid var(--color-brand-strong);
+    border-left: 4px solid var(--color-brand-strong);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4) var(--space-5);
+    margin: var(--space-6) 0;
+  }
+  .qa-label {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    color: var(--color-fg-muted);
+    margin-bottom: var(--space-2);
+  }
+  .qa-body {
+    color: var(--color-fg);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+  }
+  .qa-body :global(p) {
+    margin-bottom: var(--space-2);
+  }
+  .qa-body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+  .qa-body :global(strong) {
+    font-weight: 700;
+  }
+  .qa-body :global(code) {
+    font-family: var(--font-mono);
+    background: var(--color-surface);
+    padding: 0.1em 0.4em;
+    border-radius: var(--radius-sm);
+    font-size: 0.92em;
+  }
+</style>

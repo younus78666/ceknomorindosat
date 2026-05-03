@@ -1,0 +1,98 @@
+---
+import { SITE, NAV_FOOTER } from "~/data/site.config";
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p class="footer-name">{SITE.name}</p>
+      <p class="footer-desc">{SITE.shortDescription}</p>
+    </div>
+    <nav aria-label="Navigasi footer" class="footer-nav">
+      <ul>
+        {NAV_FOOTER.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+  <div class="footer-disclaimer">
+    <p>{SITE.legalDisclaimer}</p>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {year} {SITE.name}. Semua hak cipta dilindungi.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-bg-subtle);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-16);
+  }
+  .footer-inner {
+    max-width: var(--container-page);
+    margin: 0 auto;
+    padding: var(--space-10) var(--space-4) var(--space-6);
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-8);
+  }
+  .footer-name {
+    font-weight: 700;
+    color: var(--color-fg);
+    margin-bottom: var(--space-2);
+  }
+  .footer-desc {
+    color: var(--color-fg-muted);
+    font-size: var(--text-sm);
+    max-width: 30rem;
+  }
+  .footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2) var(--space-4);
+  }
+  .footer-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: var(--space-1) 0;
+    color: var(--color-fg-muted);
+    text-decoration: none;
+    font-size: var(--text-sm);
+  }
+  .footer-nav a:hover {
+    color: var(--color-fg);
+    text-decoration: underline;
+  }
+  .footer-disclaimer {
+    max-width: var(--container-page);
+    margin: 0 auto;
+    padding: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+  .footer-disclaimer p {
+    background: var(--color-warning-soft);
+    color: var(--color-fg);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    border-left: 3px solid var(--color-warning);
+  }
+  .footer-bottom {
+    max-width: var(--container-page);
+    margin: 0 auto;
+    padding: var(--space-4) var(--space-4) var(--space-8);
+    color: var(--color-fg-subtle);
+    font-size: var(--text-xs);
+  }
+
+  @media (max-width: 640px) {
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>

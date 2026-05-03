@@ -1,0 +1,96 @@
+---
+import { AD_SLOTS, ADS_ENABLED } from "~/data/ads.config";
+
+interface Props {
+  name: keyof typeof AD_SLOTS;
+}
+
+const { name } = Astro.props as Props;
+const config = AD_SLOTS[name];
+const isLive = ADS_ENABLED && config.network !== "none" && config.zoneId.length > 0;
+
+// Reserve exact CLS-safe height per format. Banner uses size.h. Native gets a
+// conservative 250px reservation so loaded native ads do not push content.
+const reservedHeight =
+  config.format === "banner" && config.size
+    ? config.size.h
+    : config.format === "native"
+      ? 250
+      : config.format === "social-bar" || config.format === "popunder" || config.format === "push"
+        ? 0
+        : 90;
+
+const reservedWidth =
+  config.format === "banner" && config.size ? config.size.w : null;
+
+const reserveStyle =
+  reservedHeight > 0
+    ? `min-height: ${reservedHeight}px;${reservedWidth ? ` max-width: ${reservedWidth}px;` : ""}`
+    : "";
+---
+
+<div
+  class:list={["ad-slot", `ad-slot-${config.format}`, isLive && "is-live"]}
+  data-ad-slot={name}
+  data-ad-network={config.network}
+  data-ad-format={config.format}
+  aria-label="Iklan"
+  style={reserveStyle}
+>
+  {!isLive && (
+    <div class="ad-placeholder" style={reserveStyle}>
+      <span class="ad-label">Slot iklan</span>
+      <span class="ad-id">{config.label}</span>
+      {config.size && (
+        <span class="ad-size">{config.size.w} x {config.size.h}</span>
+      )}
+    </div>
+  )}
+  {isLive && config.network === "adsterra" && (
+    <div data-adsterra-zone={config.zoneId} class="ad-host" style={reserveStyle}></div>
+  )}
+  {isLive && config.network === "monetag" && (
+    <div data-monetag-zone={config.zoneId} class="ad-host" style={reserveStyle}></div>
+  )}
+</div>
+
+<style>
+  .ad-slot {
+    margin: var(--space-6) auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .ad-placeholder {
+    width: 100%;
+    border: 1px dashed var(--color-border-strong);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-subtle);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3);
+    color: var(--color-fg-subtle);
+    font-size: var(--text-xs);
+    gap: var(--space-1);
+  }
+  .ad-label {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    font-size: 0.6875rem;
+  }
+  .ad-id { font-weight: 500; color: var(--color-fg-muted); }
+  .ad-size { font-family: var(--font-mono); font-size: 0.6875rem; }
+  .ad-host { width: 100%; }
+
+  /* Background ad formats do not occupy in-flow space */
+  .ad-slot-popunder, .ad-slot-social-bar, .ad-slot-push {
+    display: none;
+    margin: 0;
+  }
+  .ad-slot-popunder.is-live, .ad-slot-social-bar.is-live, .ad-slot-push.is-live {
+    display: block;
+  }
+</style>
