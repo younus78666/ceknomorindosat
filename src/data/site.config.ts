@@ -21,9 +21,9 @@ export const SITE = {
 
 export const NAV_PRIMARY = [
   { label: "Beranda", href: "/" },
-  { label: "Cek Nomor", href: "/cara-cek-nomor-indosat" },
-  { label: "Cek Pulsa", href: "/cara-cek-pulsa-indosat" },
-  { label: "Cek Kuota", href: "/cara-cek-kuota-indosat" },
+  { label: "Cek Nomor", href: "/cek-nomor-indosat-im3" },
+  { label: "Cek Pulsa", href: "/cek-pulsa-indosat" },
+  { label: "Cek Kuota", href: "/cek-kuota-indosat" },
   { label: "Kode Dial", href: "/kode-dial-indosat" },
   { label: "Blog", href: "/blog" },
 ] as const;
