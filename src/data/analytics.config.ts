@@ -15,7 +15,7 @@
  */
 
 export const ANALYTICS = {
-  GA4_MEASUREMENT_ID: "", // e.g. "G-XXXXXXXXXX"
+  GA4_MEASUREMENT_ID: "G-SXHM6SQ1BH",
   GTM_ID: "", // e.g. "GTM-XXXXXXX" (optional — leave blank to use direct gtag)
   CLARITY_PROJECT_ID: "", // e.g. "abc1234567"
   REQUIRE_CONSENT: true,
